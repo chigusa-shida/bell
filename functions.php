@@ -33,6 +33,12 @@ add_action('init', function () {
   add_post_type_support('page', 'excerpt'); //description用「抜粋」の項目追加
 });
 
+add_action('after_setup_theme', function () {
+  register_nav_menus(array(
+    'primary' => 'メインメニュー',
+  ));
+});
+
 //サイト名のみをタイトルタグに設定
 add_filter('document_title_parts', 'title_tagline');
 function title_tagline($title)
