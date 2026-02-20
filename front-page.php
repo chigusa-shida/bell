@@ -80,41 +80,11 @@
         </div>
       </div><!-- p-home-top__container -->
       <div class="p-home-top__mv">
-        <div class="swiper" id="js-swiper-home-mv">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="slide-img">
-                <picture>
-                  <source srcset="<?php echo get_theme_file_uri('assets/images/home_fv-00.webp'); ?>" type="image/webp" />
-                  <img src="<?php echo get_theme_file_uri('assets/images/home_fv-00.jpg'); ?>" alt="ベルデンタル画像" />
-                </picture>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="slide-img">
-                <picture>
-                  <source srcset="<?php echo get_theme_file_uri('assets/images/home_fv-05.webp'); ?>" type="image/webp" />
-                  <img src="<?php echo get_theme_file_uri('assets/images/home_fv-05.jpg'); ?>" alt="ベルデンタル画像" />
-                </picture>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="slide-img">
-                <picture>
-                  <source srcset="<?php echo get_theme_file_uri('assets/images/home_fv-06.webp'); ?>" type="image/webp" />
-                  <img src="<?php echo get_theme_file_uri('assets/images/home_fv-06.jpg'); ?>" alt="ベルデンタル画像" />
-                </picture>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="slide-img">
-                <picture>
-                  <source srcset="<?php echo get_theme_file_uri('assets/images/home_fv-07.webp'); ?>" type="image/webp" />
-                  <img src="<?php echo get_theme_file_uri('assets/images/home_fv-07.jpg'); ?>" alt="ベルデンタル画像" />
-                </picture>
-              </div>
-            </div>
-          </div>
+        <div class="slide-img">
+          <picture>
+            <source srcset="<?php echo get_theme_file_uri('assets/images/home_fv-00.webp'); ?>" type="image/webp" />
+            <img src="<?php echo get_theme_file_uri('assets/images/home_fv-00.jpg'); ?>" alt="ベルデンタル画像" />
+          </picture>
         </div>
       </div><!-- p-home-top__mv -->
       <div class="p-home-pickUp">
