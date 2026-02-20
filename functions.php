@@ -9,10 +9,12 @@ function my_script_init()
   $cssFileURI = get_template_directory_uri() . '/assets/stylesheets/' . basename($cssFilePath[0]);
   wp_enqueue_style('style-css', $cssFileURI);
 
-  $jsFilePath = glob(get_template_directory() . '/assets/javascripts/bundle*.js');
-  $jsFileURI = get_template_directory_uri() . '/assets/javascripts/' . basename($jsFilePath[0]);
+  // Swiper（CDN）
+  wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11');
+  wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array('jquery'), '11', true);
 
-  wp_enqueue_script('js', $jsFileURI, array('jquery'), '', true);
+  // テーマ用JS（ビルド不要・編集は app.js を直接）
+  wp_enqueue_script('app', get_theme_file_uri('assets/javascripts/app.js'), array('jquery', 'swiper'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
 
