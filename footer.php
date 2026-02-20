@@ -104,7 +104,7 @@
   </div>
 </footer>
 <div id="page-top">
-  <a href="#">PAGE TOP</a>
+  <a href="javascript:void(0)" role="button">PAGE TOP</a>
 </div>
 <?php wp_footer(); ?>
 
