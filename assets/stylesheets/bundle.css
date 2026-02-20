@@ -247,10 +247,113 @@ body {
   flex-direction: column;
   max-width: 1200px;
 }
+.p-about .p-about-section__content {
+    margin-top: 4%;
+  }
 .p-about .p-about-title__detail {
   display: flex;
   flex-direction: column;
 }
+.p-about .p-about-recruit__btn{
+    margin-top: 5%;
+}
+
+.p-about-planning__img {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 2; /* 横長比率、好みで調整OK */
+}
+
+.p-about-planning__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* PCレイアウト（3枚横並び & 1枚目広め） */
+.p-about-planning__images {
+  display: flex;
+}
+
+.p-about-planning__img:nth-child(1) {
+  flex: 0 0 50%; /* 1枚目を広めに */
+}
+
+.p-about-planning__img:nth-child(2),
+.p-about-planning__img:nth-child(3) {
+  flex: 0 0 25%; /* 残り2枚で合わせて50% */
+}
+.p-about-communication__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* PCレイアウト（3枚横並び & 1枚目広め） */
+.p-about-communication__images {
+  display: flex;
+}
+
+.p-about-communication__img {
+  flex: 0 0 33.333%;
+}
+.p-about-health__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* PCレイアウト（3枚横並び & 1枚目広め） */
+.p-about-health__images {
+  display: flex;
+}
+
+.p-about-health__img {
+  flex: 0 0 33.333%;
+}
+.p-about-environme__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* PCレイアウト（3枚横並び & 1枚目広め） */
+.p-about-environme__images {
+  display: flex;
+}
+
+.p-about-environme__img {
+  flex: 0 0 50%;
+}
+
+.p-about-technicians__images{
+    display: flex;
+  }
+  .p-about-technicians__img{
+    width: 50%;
+    aspect-ratio: 14/9; /* 画像の比率変更したいならここ調整 */
+    overflow: hidden;
+  }
+  .p-about-technicians__img img {
+    object-fit: cover;
+    height: 100%;
+  }
+.p-about-section__text{
+  margin-top: 4%;
+}
+.p-about-sales__images{
+    display: flex;
+  }
+  .p-about-sales__img{
+    width: 50%;
+    aspect-ratio: 13/9; /* 画像の比率変更したいならここ調整 */
+    overflow: hidden;
+  }
+  .p-about-sales__img img {
+    object-fit: cover;
+    height: 100%;
+  }
 .p-about .p-about-advantage__list {
   display: flex;
   flex-direction: column;
@@ -3215,7 +3318,7 @@ a {
     border-top: solid 1px #393939;
     padding: 20px 0;
   }
-  .p-about .p-about-advantage {
+  .p-about .p-about-section {
     padding-top: 50px;
   }
   .p-about .p-about-advantage__list {
@@ -3545,6 +3648,43 @@ a {
   .p-about .p-about-advantage__content {
     margin-top: max(35px, 6.5vw);
   }
+  .p-about .p-about-planning__images {
+    flex-wrap: wrap;
+  }
+
+  .p-about .p-about-planning__img:nth-child(1) {
+    flex: 0 0 100%; /* 上段1枚 */
+  }
+
+  .p-about .p-about-planning__img:nth-child(2),
+  .p-about .p-about-planning__img:nth-child(3) {
+    flex: 0 0 50%;  /* 下段2枚横並び */
+  }
+  .p-about .p-about-communication__images {
+    flex-wrap: wrap;
+  }
+
+  .p-about .p-about-communication__img:nth-child(1) {
+    flex: 0 0 100%; /* 上段1枚 */
+  }
+
+  .p-about .p-about-communication__img:nth-child(2),
+  .p-about .p-about-communication__img:nth-child(3) {
+    flex: 0 0 50%;  /* 下段2枚横並び */
+  }
+  .p-about .p-about-health__images {
+    flex-wrap: wrap;
+  }
+
+  .p-about .p-about-health__img:nth-child(1) {
+    flex: 0 0 100%; /* 上段1枚 */
+  }
+
+  .p-about .p-about-health__img:nth-child(2),
+  .p-about .p-about-health__img:nth-child(3) {
+    flex: 0 0 50%;  /* 下段2枚横並び */
+  }
+  
   .p-advantage {
     padding-bottom: 13.04%;
   }
@@ -4151,7 +4291,7 @@ a {
     font-size: 18px;
   }
   .p-heading__content {
-    margin-top: 8%;
+    margin-top: 4%;
   }
   .p-heading__text {
     gap: 20px;
@@ -4741,8 +4881,8 @@ a {
     transform: translateY(-50%);
     transition: all 0.3s ease-in-out;
   }
-  .p-about .p-about-advantage {
-    padding-top: 100px;
+  .p-about .p-about-section {
+    padding-top: 50px;
   }
   .p-about .p-about-advantage__content {
     margin-top: 200px;

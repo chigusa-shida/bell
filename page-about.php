@@ -14,11 +14,7 @@
                   <p class="p-heading__lead c-lead">お得意様からの信頼に知識と技術で応えします。</p>
                   <div class="p-heading__detail">
                     <p>
-                      11981年の創業以来、年間約7万症例におよぶ補綴物の製作に携わり、多くの歯科医院様より確かな信頼と実績を積み重ねてまいりました。私たちは「常に上を目指すチャレンジ精神と創造力」を大切にし、これまでに築き上げてきた経験と実績、そして最先端の技工技術を融合させ、高機能かつ高品質な技工物をご提供しています。
-                    </p>
-                    <p>
-                      何よりも、患者様が審美性・機能性・衛生面のすべてにおいてご満足いただき、日々の暮らしの幸福度を
-                      高めていただくことこそが、私たちの社会的使命であると信じ、日々研鑽を重ねております。
+                      1981年に設立されたベルデンタルラボラトリー株式会社は、日本各地の歯科医師と患者様に歯科技工サービスを提供しています。<br>私たちは、高品質な歯科技工製品、経験豊富な営業サポート、そして信頼できる品質へのこだわりを提供することに誇りを持っています。満足と喜びそして笑顔を第一に、私たちはあらゆる活動をしてまいります。私たちががお客様の歯科診療にもたらす満足と喜びそして笑顔を、ぜひ一度ご体験ください。
                     </p>
                   </div>
                 </div>
@@ -27,94 +23,216 @@
           </div>
         </section>
         <section>
-          <div class="p-about-advantage p-advantage" id="advantage">
-            <div class="p-about-advantage__heading">
-              <h2 class="c-title c-title--center" data-ja="私たちの強み"><span class="c-title--red">A</span>DVANTAGE</h2>
-            </div>
-            <div class="p-about-advantage__content">
-              <ul class="p-about-advantage__list">
-                <li class="p-about-advantage__list--item">
-                  <div class="p-advantage-card">
-                    <div class="p-advantage-card__main">
-                      <div class="p-advantage-card--link">
-                        <h3 class="p-advantage-card__label">Reason.1</h3>
-                        <div class="p-advantage-card__text">
-                          <p class="p-advantage-card__text--lead c-lead">豊富な経験と高い技術力</p>
-                          <div class="p-advantage-card__text--detail">
-                            近年、歯科業界のデジタル化が進む中で、高度な補綴物の設計・加工が可能となりました。しかし、どれほど優れた設備や機器があっても、やはり職人の「目」と「手」による繊細な技術は欠かせません。<br>私たちは、自費補綴やインプラントに特化した豊富な実績を背景に、高い技術力を誇る技工士集団が、適合・咬合・形態のすべてにおいて、限りなく自然な仕上がりを極限まで追求した補綴物をご提供しています。
-                          </div>
-                        </div>
-                        <!-- <div class="c-button p-advantage-card__but">
-                          <span class="c-button__pageLink">制作事例</span>
-                        </div> -->
-                      </div>
-                    </div>
-                    <div class="p-advantage-card__imgwrap">
-                      <div class="p-advantage-card__img">
-                        <picture>
-                          <source srcset="<?php echo get_theme_file_uri('assets/images/reason_1.webp'); ?>" type="image/webp" />
-                          <img src="<?php echo get_theme_file_uri('assets/images/reason_1.jpg'); ?>" alt="制作事例" />
-                        </picture>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="p-about-advantage__list--item">
-                  <div class="p-advantage-card reverse">
-                    <div class="p-advantage-card__main">
-                      <a href="<?php echo esc_url(home_url('/equipment/')); ?>" class=" p-advantage-card--link">
-                        <h3 class="p-advantage-card__label">Reason.2</h3>
-                        <div class="p-advantage-card__text">
-                          <p class="p-advantage-card__text--lead c-lead">最先端の技工を<br />可能にする設備環境</p>
-                          <div class="p-advantage-card__text--detail">
-                            私たちは最新のデジタル機器をいち早く導入し、最先端の技工を実現できる環境を整えています。<br>複数のCAD/CAMシステムをはじめ、3Dプリンターや大型ミリングマシンなど、先進の設備を充実させ、高精度かつ高品質な補綴物の製作を可能にしています。
-                          </div>
-                        </div>
-                        <div class="c-button p-advantage-card__but">
-                          <span class="c-button__pageLink">設備情報</span>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="p-advantage-card__imgwrap">
-                      <div class="p-advantage-card__img reverse">
-                        <picture>
-                          <source srcset="<?php echo get_theme_file_uri('assets/images/reason_2.webp'); ?>" type="image/webp" />
-                          <img src="<?php echo get_theme_file_uri('assets/images/reason_2.jpg'); ?>" alt="設備情報" />
-                        </picture>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="p-about-advantage__list--item">
-                  <div class="p-advantage-card">
-                    <div class="p-advantage-card__main">
-                      <a href="<?php echo esc_url(home_url('/fis/')); ?>" class="p-advantage-card--link">
-                        <h3 class="p-advantage-card__label">Reason.3</h3>
-                        <div class="p-advantage-card__text">
-                          <p class="p-advantage-card__text--lead c-lead">革新的な営業サポート</p>
-                          <div class="p-advantage-card__text--detail">
-                            営業部門は、グループ会社である有限会社FISが担っており、歯科技工物に関する専門知識を有する営業担当が、お客様のご要望に沿ったご提案をサポートいたします。当ラボと併設されているため、技工士と歯科医院様の橋渡し役として、よりスムーズで迅速な対応が可能です。<br>まさらに、当ラボとの連携にとどまらず、最新の歯科技工製品に関する情報提供も行っております。
-                          </div>
-                          <div class="c-button p-advantage-card__but">
-                            <span class="c-button__pageLink">営業サポート</span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="p-advantage-card__imgwrap">
-                      <div class="p-advantage-card__img">
-                        <picture>
-                          <source srcset="<?php echo get_theme_file_uri('assets/images/reason_3.webp'); ?>" type="image/webp" />
-                          <img src="<?php echo get_theme_file_uri('assets/images/reason_3.jpg'); ?>" alt="営業サポート" />
-                        </picture>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+          <div class="p-about-section">
+            <div class="p-heading">
+              <div class="p-heading__title">
+                <h2 class="c-title" data-ja="チーム"><span class="c-title--red">O</span>UR&nbsp;TEAMS</h2>
+              </div>
+              <div class="p-about-section__content">
+                <p>
+                  私たちは、歯科技工士、歯科技工営業、歯科技工販売企画で構成され才能と経験豊かな社員がお客様の要望を理解し、お客様の歯科診療に貢献します。
+                </p>
+              </div>
             </div>
           </div>
         </section>
+        <section>
+          <div class="p-about-section p-about-technicians">
+            <div class="p-heading">
+              <div class="p-heading__title">
+                <h2 class="c-title" data-ja="歯科技工士"><span class="c-title--red">D</span>ental&nbsp;<span class="c-title--red">T</span>echnicians</h2>
+              </div>
+            </div>
+            <div class="p-about-section__content">
+              <div class="p-about-technicians__images">
+                <div class="p-about-technicians__img">
+                  <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_technicians_01.webp')); ?>">
+                </div>
+                <div class="p-about-technicians__img">
+                  <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_technicians_02.webp')); ?>">
+                </div>
+              </div>
+              <div class="p-about-section__text">
+                <p>
+                  わたくしたちは2012年からCAD/CAMを導入、デジタル化による歯科技工製品の製作を充実してまいりました。
+                </p>
+                <p>
+                  CAD/CAMで製作する歯科技工製品であっても、豊富な経験と知識、技術をそなえた歯科技工士が、咬合、形態、適合をそなえた製品を製作します。
+                </p>
+                <p>
+                  わたしたちは一緒に働く歯科技工士を募集しています。
+                </p>
+              </div>
+              <div class="p-about-recruit__btn c-button">
+                <a href="<?php echo esc_url(home_url('/recruit/')); ?>" class="p-home-recruit__link">
+                  <span class="c-button__pageLink">募集要項</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="p-about-section p-about-sales">
+            <div class="p-heading">
+              <div class="p-heading__title">
+                <h2 class="c-title" data-ja="歯科技工営業"><span class="c-title--red">S</span>ales&nbsp;dental&nbsp;tech</h2>
+              </div>
+            </div>
+            <div class="p-about-section__content">
+              <div class="p-about-sales__images">
+                <div class="p-about-sales__img">
+                  <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_sales_01.webp')); ?>">
+                </div>
+                <div class="p-about-sales__img">
+                  <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_sales_02.webp')); ?>">
+                </div>
+              </div>
+              <div class="p-about-section__text">
+                <p>
+                  歯科技工製品の知識を持つお客様の担当営業が、ご要望に沿った提案とサポートをさせていただきます。
+                </p>
+                <p>
+                  営業社員は有限会社エフイスの所属となり事務所は当社施設内に併設されています。
+                </p>
+                <p>
+                  わたしたちは一緒に働く営業社員を募集しています。
+                </p>
+              </div>
+              <div class="p-about-recruit__btn c-button">
+                <a href="<?php echo esc_url(home_url('/recruit/')); ?>" class="p-home-recruit__link">
+                  <span class="c-button__pageLink">募集要項</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="p-about-section p-about-planning">
+            <div class="p-heading">
+              <div class="p-heading__title">
+                <h2 class="c-title" data-ja="歯科技工販売企画"><span class="c-title--red">S</span>ales&nbsp;Planning</h2>
+              </div>
+            </div>
+            <div class="p-about-section__content">
+              <div class="p-about-planning__images">
+                <div class="p-about-planning__img">
+                  <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_planning_01.webp')); ?>">
+                </div>
+                <div class="p-about-planning__img">
+                  <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_planning_02.webp')); ?>">
+                </div>
+                <div class="p-about-planning__img">
+                  <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_planning_03.webp')); ?>">
+                </div>
+              </div>
+              <div class="p-about-section__text">
+                <p>
+                  最新の材料、機器、製作方法の得た情報を元に歯科技工製品カタログ、簡便なパッキング、指示書などを企画立案、制作します。
+                </p>
+                <p>
+                  営業社員は有限会社エフイスの所属となり事務所は当社施設内に併設されています。
+                </p>
+                <p>
+                  わたしたちは一緒に働く事務社員を募集しています。
+                </p>
+              </div>
+              <div class="p-about-recruit__btn c-button">
+                <a href="<?php echo esc_url(home_url('/recruit/')); ?>" class="p-home-recruit__link">
+                  <span class="c-button__pageLink">募集要項</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="p-about-section p-about-communication">
+            <div class="p-heading">
+              <div class="p-heading__title">
+                <h2 class="c-title" data-ja="コミュニケーション"><span class="c-title--red">C</span>ommunication</h2>
+              </div>
+            </div>
+            <div class="p-about-section__content">
+              <div class="p-about-communication__images">
+                <div class="p-about-communication__img">
+                  <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_01.webp')); ?>">
+                </div>
+                <div class="p-about-communication__img">
+                  <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_02.webp')); ?>">
+                </div>
+                <div class="p-about-communication__img">
+                  <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_03.webp')); ?>">
+                </div>
+              </div>
+              <div class="p-about-section__text">
+                <p>
+                  小さな会社ですがわたくしたちは、”社員は家族”をビジョンとしている会社です。<br>W65.（BDLとFIS）ファミリーの一員に加わり、歯科技工士、歯科技工営業、歯科技工販売企画として、素晴らしいキャリアを築くチャンスを見つけましょう。
+                </p>
+                <p>
+                  当社W65.（BDLとFIS）で求人募集を行っています。<br>単なる家族経営の企業ではなく、社員間コミュニケーションの良い会社です。
+                </p>
+                <p>
+                  当社W65.（BDLとFIS）では、多様なバックグラウンドを持つ才能ある方々に、やりがいのある歯科技工士のキャリアを提供しています。<br>競争力のある給与、充実した福利厚生、そしてキャリアアップをサポートする研修機会で人生をお楽しみください。
+                </p>
+                <p>
+                  社内、ラウンジ、テラスなど、ワークライフバランスへの取り組みも充実しており、仕事と仲間との絆を育むことができます
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="p-about-section p-about-health">
+            <div class="p-heading">
+              <div class="p-heading__title">
+                <h2 class="c-title" data-ja="健康診断"><span class="c-title--red">H</span>ealth&nbsp;check</h2>
+              </div>
+            </div>
+            <div class="p-about-section__content">
+              <div class="p-about-health__images">
+                <div class="p-about-health__img">
+                  <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_health_01.webp')); ?>">
+                </div>
+                <div class="p-about-health__img">
+                  <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_health_02.webp')); ?>">
+                </div>
+                <div class="p-about-health__img">
+                  <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_health_03.webp')); ?>">
+                </div>
+              </div>
+              <div class="p-about-section__text">
+                <p>
+                  三階の多目的ラウンジをさながらクリニックに、歯科技工士、歯科技工営業、歯科技工販売企画の全社員が毎年、健康診断を受診します。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="p-about-section p-about-environme">
+            <div class="p-heading">
+              <div class="p-heading__title">
+                <h2 class="c-title" data-ja="作業環境測定"><span class="c-title--red">W</span>ork&nbsp;environme</h2>
+              </div>
+            </div>
+            <div class="p-about-section__content">
+              <div class="p-about-environme__images">
+                <div class="p-about-environme__img">
+                  <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_environme_01.webp')); ?>">
+                </div>
+                <div class="p-about-environme__img">
+                  <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_environme_02.webp')); ?>">
+                </div>
+              </div>
+              <div class="p-about-section__text">
+                <p>
+                  歯科技工室は労働安全法に基づく作業環境測定を毎年行い、歯科技工士の健康に悪影響がないよう努めています。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
       </div>
     </div>
   </div>
