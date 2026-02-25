@@ -3,18 +3,23 @@
   <div id="js-main">
     <div class="l-main">
       <div class="p-about">
+        <div class="p-page__heading" style="background-image:url('<?php echo esc_url( get_theme_file_uri('assets/images/about_fv.webp') ); ?>')">
+          <div class="p-heading__title">
+              <h2 class="c-title" data-ja="私たちについて"><span class="c-title--red">A</span>BOUT&nbsp;US</h2>
+          </div>
+        </div>
         <section>
           <div class="p-about-top">
             <div class="p-heading">
-              <div class="p-heading__title">
-                <h2 class="c-title" data-ja="私たちについて"><span class="c-title--red">A</span>BOUT&nbsp;US</h2>
-              </div>
               <div class="p-heading__content">
                 <div class="p-heading__text">
                   <p class="p-heading__lead c-lead">お得意様からの信頼に知識と技術で応えします。</p>
                   <div class="p-heading__detail">
                     <p>
-                      1981年に設立されたベルデンタルラボラトリー株式会社は、日本各地の歯科医師と患者様に歯科技工サービスを提供しています。<br>私たちは、高品質な歯科技工製品、経験豊富な営業サポート、そして信頼できる品質へのこだわりを提供することに誇りを持っています。満足と喜びそして笑顔を第一に、私たちはあらゆる活動をしてまいります。私たちががお客様の歯科診療にもたらす満足と喜びそして笑顔を、ぜひ一度ご体験ください。
+                      1981年に設立されたベルデンタルラボラトリー株式会社は、日本各地の歯科医師と患者様に歯科技工サービスを提供しています。
+                      <br>私たちは、高品質な歯科技工製品、経験豊富な営業サポート、そして信頼できる品質へのこだわりを提供することに誇りを持っています。
+                      <br>満足と喜びそして笑顔を第一に、私たちはあらゆる活動をしてまいります。
+                      <br> 私たちががお客様の歯科診療にもたらす満足と喜びそして笑顔を、ぜひ一度ご体験ください。
                     </p>
                   </div>
                 </div>
@@ -23,15 +28,96 @@
           </div>
         </section>
         <section>
-          <div class="p-about-section">
+          <div class="p-about-section p-about-teams">
             <div class="p-heading">
-              <div class="p-heading__title">
-                <h2 class="c-title" data-ja="チーム"><span class="c-title--red">O</span>UR&nbsp;TEAMS</h2>
+              <div class="p-heading__title text-center">
+                <h2 class="c-title" data-ja="私たちのチーム"><span class="c-title--red">OUR&nbsp;TEAMS</span></h2>
               </div>
               <div class="p-about-section__content">
-                <p>
-                  私たちは、歯科技工士、歯科技工営業、歯科技工販売企画で構成され才能と経験豊かな社員がお客様の要望を理解し、お客様の歯科診療に貢献します。
+                <p class="text-center">
+                  私たちは、歯科技工士、歯科技工営業、歯科技工販売企画で構成され<br>才能と経験豊かな社員がお客様の要望を理解し、お客様の歯科診療に貢献します。
                 </p>
+              </div>
+            </div>
+            <div class="slider-part" id="teamsSnap">
+              <div class="snap__viewport">
+                <div class="snap__panel is-active">
+                  <div class="p-career">
+                    <div class="p-career__inner">
+                      <!-- 左：テキスト -->
+                      <div class="p-career__content">
+                        <h2 class="p-career__title">歯科技工士</h2>
+                        <p>
+                          わたくしたちは2012年からCAD/CAMを導入、デジタル化による歯科技工製品の製作を充実してまいりました。
+                        </p>
+                        <p>
+                          CAD/CAMで製作する歯科技工製品であっても、豊富な経験と知識、技術をそなえた歯科技工士が、咬合、形態、適合をそなえた製品を製作します。
+                        </p>
+                        <p>わたしたちは一緒に働く歯科技工士を募集しています。</p>
+                      </div>
+                      <div class="p-career__media" aria-label="歯科技工士の作業風景と製作物">
+                        <div class="p-career__collage">
+                          <!-- 大（背景） -->
+                          <img class="p-career__img p-career__img--top" src="<?php echo esc_url(get_theme_file_uri('assets/images/technician-01.webp')); ?>" alt="" />
+
+                          <!-- 小（手前） -->
+                          <img class="p-career__img p-career__img--bottom" src="<?php echo esc_url(get_theme_file_uri('assets/images/technician-02.webp')); ?>" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="snap__panel">
+                  <div class="p-career">
+                    <div class="p-career__inner">
+                      <!-- 左：テキスト -->
+                      <div class="p-career__content">
+                        <h2 class="p-career__title">歯科技工営業</h2>
+                        <p>
+                          歯科技工製品の知識を持つお客様の担当営業が、ご要望に沿った提案とサポートをさせていただきます。</p>
+                        <p>営業社員は有限会社エフイスの所属となり事務所は当社施設内に併設されています。</p>
+                        <p>わたしたちは一緒に働く営業社員を募集しています。</p>
+                      </div>
+                      <div class="p-career__media" aria-label="歯科技工士の作業風景と製作物">
+                        <div class="p-career__collage">
+                          <!-- 大（背景） -->
+                          <img class="p-career__img p-career__img--top" src="<?php echo esc_url(get_theme_file_uri('assets/images/about-sales-1.webp')); ?>" alt="" />
+
+                          <!-- 小（手前） -->
+                          <img class="p-career__img p-career__img--bottom" src="<?php echo esc_url(get_theme_file_uri('assets/images/about-sales-2.webp')); ?>" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="snap__panel">
+                  <div class="p-career">
+                    <div class="p-career__inner">
+                      <!-- 左：テキスト -->
+                      <div class="p-career__content">
+                        <h2 class="p-career__title">歯科技工販売企画</h2>
+                        <p>最新の材料、機器、製作方法の得た情報を元に歯科技工製品カタログ、簡便なパッキング、指示書などを企画立案、制作します。</p>
+                        <p>営業社員は有限会社エフイスの所属となり事務所は当社施設内に併設されています。</p>
+                        <p>わたしたちは一緒に働く事務社員を募集しています</p>
+                      </div>
+                      <div class="p-career__media" aria-label="歯科技工士の作業風景と製作物">
+                        <div class="p-career__collage">
+                          <!-- 大（背景） -->
+                          <img class="p-career__img p-career__img--top" src="<?php echo esc_url(get_theme_file_uri('assets/images/about-jimu-01.webp')); ?>" alt="" />
+
+                          <!-- 小（手前） -->
+                          <img class="p-career__img p-career__img--bottom" src="<?php echo esc_url(get_theme_file_uri('assets/images/about-jimu-02.webp')); ?>" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <nav class="snap__pagination" aria-label="Pagination">
+                  <button type="button" class="snap__dot is-active" aria-label="1"></button>
+                  <button type="button" class="snap__dot" aria-label="2"></button>
+                  <button type="button" class="snap__dot" aria-label="3"></button>
+                </nav>
               </div>
             </div>
           </div>
@@ -39,8 +125,38 @@
         <section>
           <div class="p-about-section p-about-technicians">
             <div class="p-heading">
-              <div class="p-heading__title">
-                <h2 class="c-title" data-ja="歯科技工士"><span class="c-title--red">D</span>ental&nbsp;<span class="c-title--red">T</span>echnicians</h2>
+              <div class="p-heading__title text-center">
+                <h2 class="c-title" data-ja="品質を支える職場環境"><span class="c-title--red">ENVIRONMENT</span></h2>
+              </div>
+                <!-- ★ 横自動スクロール（ここ） -->
+              <div class="p-flow js-flow">
+                <div class="p-flow__track">
+                  <div class="p-flow__row">
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_01.webp')); ?>" alt="">
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_02.webp')); ?>" alt="">
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_03.webp')); ?>" alt="">
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/company_office-03.webp')); ?>" alt="">
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/company_office-04.webp')); ?>" alt="">
+                  </div>
+                  <div class="p-flow__row">
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_01.webp')); ?>" alt="">
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_02.webp')); ?>" alt="">
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_03.webp')); ?>" alt="">
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/company_office-03.webp')); ?>" alt="">
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/company_office-04.webp')); ?>" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="p-about-section__content text-center">
+                <p>
+                  小さな会社だからこそ、私たちは 人と人との距離が近い環境を大切にしています。<br>歯科技工士・営業・事務と役割は違っても、<br> 立場に関係なく意見を交わし、同じゴールに向かって話し合う。<br>そんな日々の対話が、技工の精度を少しずつ高めていきます。
+                </p>
+                <p>
+                  ラウンジやカウンター、テラスは、仕事の相談から何気ない会話まで、<br>自然とコミュニケーションが生まれる場所です。
+                </p>
+                <p>
+                気づきや違和感をすぐに共有できることが、<br>一つひとつの技工物に丁寧に向き合う力になります。<br>そして、良いものづくりを支えるのは、会話や空気感だけではありません。
+                </p>
               </div>
             </div>
             <div class="p-about-section__content">

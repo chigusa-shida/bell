@@ -106,23 +106,35 @@
               </div>
             </div>
           </div><!-- p-home-about -->
-          <div class="p-home-advantage__content">
+        </section>
+        <section>
+          <div class="p-home__section">
+            <div class="p-home-advantage">
+              <div hraef="" class="p-home-advantage__head">
+                <div class="p-home-advantage__title">
+                  <h2 class="c-title" data-ja="私たちの強み"><span class="c-title--red">A</span>DVANTAGE</h2>
+                </div>
+                <div class="p-home-advantage__btn c-button">
+                  <a href="<?php echo esc_url(home_url('/')); ?>/about#advantage">
+                    <span class="c-button__pageLink en">View&nbsp;More</span>
+                  </a>
+                </div>
+              </div>
+              <div class="p-home-advantage__content">
                 <div class="p-home-advantage__listWrap">
                   <ul class="p-home-advantage__list">
                     <li class="p-home-advantage__item">
                       <div class="p-home-advantage-card">
-                        <div class="p-home-advantage-card__title">
-                          <h3 class="p-home-advantage-card__label">OUR&nbsp;TEAMS</h3>
-                          <p class="p-home-advantage-card__lead">私たちのチーム</p>
-                        </div>
+                        <h3 class="p-home-advantage-card__label">Advantage.1</h3>
                         <div class="p-home-advantage-card__desc">
+                          <p class="p-home-advantage-card__lead">豊富な経験と高い技術力</p>
                           <p class="p-home-advantage-card__detail">
-                          自費、インプラントに特化した技工所だからこそできる技術力で最高の技工物をご提供します。
+                            自費、インプラントに特化した技工所だからこそできる技術力で最高の技工物をご提供します。
                           </p>
                         </div>
-                        <div class="p-home-advantage-card__btn c-button">
-                          <span class="c-button__pageLink en">View&nbsp;More</span>
-                        </div>
+                        <!-- <div class="p-home-advantage-card__btn c-button">
+                          <span class="c-button__pageLink">制作事例</span>
+                        </div> -->
                         <div class="p-home-advantage-card__img">
                           <picture>
                             <source srcset="<?php echo get_theme_file_uri('assets/images/reason_1.webp'); ?>" type="image/webp" />
@@ -133,17 +145,15 @@
                     </li>
                     <li class="p-home-advantage__item">
                       <a href="<?php echo esc_url(home_url('/equipment/')); ?>" class="p-home-advantage-card">
-                        <div class="p-home-advantage-card__title">
-                          <h3 class="p-home-advantage-card__label">ENVIRONMENT</h3>
-                          <p class="p-home-advantage-card__lead">品質を支える職場環境</p>
-                        </div>
+                        <h3 class="p-home-advantage-card__label">Advantage.2</h3>
                         <div class="p-home-advantage-card__desc">
+                          <p class="p-home-advantage-card__lead">最先端の技工を<br>可能にする設備環境</p>
                           <p class="p-home-advantage-card__detail">
                             最新のデジタル機器をいち早く導入し最先端の技工を可能にする環境を整えています。
                           </p>
                         </div>
                         <div class="p-home-advantage-card__btn c-button">
-                          <span class="c-button__pageLink en">View&nbsp;More</span>
+                          <span class="c-button__pageLink">設備情報</span>
                         </div>
                         <div class="p-home-advantage-card__img">
                           <picture>
@@ -155,15 +165,13 @@
                     </li>
                     <li class="p-home-advantage__item">
                       <a href="<?php echo esc_url(home_url('/fis/')); ?>" class="p-home-advantage-card">
-                        <div class="p-home-advantage-card__title">
-                          <h3 class="p-home-advantage-card__label">HISTORY</h3>
-                          <p class="p-home-advantage-card__lead">私たちの歴史</p>
-                        </div>
+                        <h3 class="p-home-advantage-card__label">Advantage.3</h3>
                         <div class="p-home-advantage-card__desc">
+                          <p class="p-home-advantage-card__lead">革新的な営業サポート</p>
                           <p class="p-home-advantage-card__detail">当ラボと併設された、歯科営業がある為歯科医院様と技工士のコミュニケーションがスムーズに行えます。</p>
                         </div>
                         <div class="p-home-advantage-card__btn c-button">
-                          <span class="c-button__pageLink en">View&nbsp;More</span>
+                          <span class="c-button__pageLink">営業サポート</span>
                         </div>
                         <div class="p-home-advantage-card__img">
                           <picture>
@@ -176,6 +184,8 @@
                   </ul>
                 </div>
               </div>
+            </div><!-- p-home-advantage -->
+          </div>
         </section>
         <section>
           <div class="p-home__section">
@@ -381,6 +391,66 @@
                 </div>
               </div>
             </div><!-- p-home-news -->
+          </div>
+        </section>
+        <section>
+          <div class="p-home__section">
+            <div class="p-home-recruit">
+              <div class="p-home-recruit__container">
+                <div class="p-home-recruit__main">
+                  <div class="p-home-recruit__title">
+                    <h2 class="c-title c-title--black" data-ja="採用情報">
+                      RECRUIT
+                    </h2>
+                  </div>
+                  <div class="p-home-recruit__desc">
+                    <p>
+                      歯科技工はカッコイイ職業と言われたい。
+                    </p>
+                    <p>
+                      社会で、匠、職人、と呼ばれた方々も技術の裏付けとマーケティング、プレゼン、セールスのスキルが必要になっている。マーケットを分析、求められる技術と知識構築しセールス出来ることが歯科技工業界でも求められています。
+                    </p>
+                    <p>
+                      歯科技工職であっても。営業職であっても。事務職であっても。ビジネスパーソンとして、社会に認められるようになってほしい。
+                    </p>
+                    <p>
+                      ベルデンタルラボラトリーは、一緒に働く歯科技工士を募集しています。
+                    </p>
+                  </div>
+                  <div class="p-home-recruit__btn c-button">
+                    <a href="<?php echo esc_url(home_url('/recruit/')); ?>" class="p-home-recruit__link">
+                      <span class="c-button__pageLink c-button__pageLink--blakc en">View&nbsp;More</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="p-home-recruit__images">
+                  <div class="p-home-recruit__image-01">
+                    <picture>
+                      <source srcset="<?php echo get_theme_file_uri('assets/images/home_recruit-01.webp'); ?>" type="image/webp" />
+                      <img src="<?php echo get_theme_file_uri('assets/images/home_recruit-01.jpg'); ?>" alt="デンタル便ロゴ" />
+                    </picture>
+                  </div>
+                  <div class="p-home-recruit__image-02">
+                    <picture>
+                      <source srcset="<?php echo get_theme_file_uri('assets/images/home_recruit-02.webp'); ?>" type="image/webp" />
+                      <img src="<?php echo get_theme_file_uri('assets/images/home_recruit-02.jpg'); ?>" alt="デンタル便ロゴ" />
+                    </picture>
+                  </div>
+                  <div class="p-home-recruit__image-03">
+                    <picture>
+                      <source srcset="<?php echo get_theme_file_uri('assets/images/home_recruit-03.webp'); ?>" type="image/webp" />
+                      <img src="<?php echo get_theme_file_uri('assets/images/home_recruit-03.jpg'); ?>" alt="デンタル便ロゴ" />
+                    </picture>
+                  </div>
+                  <div class="p-home-recruit__image-04">
+                    <picture>
+                      <source srcset="<?php echo get_theme_file_uri('assets/images/home_recruit-04.webp'); ?>" type="image/webp" />
+                      <img src="<?php echo get_theme_file_uri('assets/images/home_recruit-04.jpg'); ?>" alt="デンタル便ロゴ" />
+                    </picture>
+                  </div>
+                </div>
+              </div>
+            </div><!-- p-home-recruit -->
           </div>
         </section>
       </div>

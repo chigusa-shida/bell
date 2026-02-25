@@ -98,6 +98,10 @@ body {
   position: relative;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 .swiper-button-next:after,
 .swiper-button-prev:after {
   text-rendering: initial;
@@ -125,7 +129,7 @@ body {
 // Project
 // ==========================================================================*/
 .p-header__top {
-  background-color: #000;
+  background-color: #1a1a1a;
 }
 .p-header__tel {
   display: none;
@@ -136,13 +140,13 @@ body {
 .p-header__logo--inner {
   width: min(150px, 36vw);
 }
-.p-header[data-scroll=true] .p-header__bottom {
+.p-header .p-header__bottom {
   background: rgba(0, 0, 0, 0.8);
 }
-.p-header[data-scroll=true] .p-header__catch--text {
+.p-header .p-header__catch--text {
   font-size: clamp(0.875rem, 1.3333333333vw, 1rem);
 }
-.p-header[data-scroll=true] .p-header__tel {
+.p-header .p-header__tel {
   font-size: clamp(1rem, 1.5vw, 1.125rem);
 }
 .p-header__bar {
@@ -163,6 +167,7 @@ body {
 }
 .p-header__bar--bottom {
   bottom: 10px;
+  background-color: #1C1C1C;
 }
 
 .p-heading {
@@ -194,6 +199,7 @@ body {
   display: flex;
   flex-direction: column;
   flex: 2;
+  align-items: center;
 }
 .p-heading__detail {
   display: flex;
@@ -237,6 +243,7 @@ body {
 
 .p-about .p-about-top {
   border-bottom: solid 1px #393939;
+  text-align: center;
 }
 .p-about .p-about-title {
   display: flex;
@@ -249,6 +256,9 @@ body {
 }
 .p-about .p-about-section__content {
     margin-top: 4%;
+  }
+  .p-about .p-about-section__content p + p {
+    margin-top: 10px;
   }
 .p-about .p-about-title__detail {
   display: flex;
@@ -3036,7 +3046,7 @@ br.u-br-sp {
 
 @media screen and (max-width: 1559px){
   .l-main {
-    padding: 5% 6.941% 0;
+    padding: 0 6.941% 0;
   }
 }
 
@@ -3460,7 +3470,7 @@ br.u-br-sp {
     gap: 18px;
   }
   .p-shop-comparison__title {
-    line-height: 2;
+    line-height: 1.5;
   }
   .p-shop-merit {
     padding: 13% 6.941% 14%;
@@ -3530,6 +3540,7 @@ br.u-br-sp {
   }
   .p-about .p-about-top {
     padding-bottom: 30px;
+    text-align: center;
   }
   .p-about .p-about-title__text {
     margin-top: 8%;
@@ -4178,18 +4189,19 @@ br.u-br-sp {
     gap: 20px;
   }
   .p-heading__detail {
-    line-height: 2;
+    line-height: 1.5;
     gap: 18px;
   }
   .p-about .p-about-top {
     padding-bottom: 50px;
+    text-align: center;
   }
   .p-about .p-about-title__text {
     margin-top: 5%;
     gap: 20px;
   }
   .p-about .p-about-title__detail {
-    line-height: 2;
+    line-height: 1.5;
     gap: 18px;
   }
   .p-about .p-about-advantage__content {
@@ -4379,7 +4391,7 @@ br.u-br-sp {
     gap: 50px;
   }
   .p-recruit-message__detail {
-    line-height: 2;
+    line-height: 1.5;
     gap: 18px;
   }
   .p-recruit-numbers__content {
@@ -5138,7 +5150,7 @@ br.u-br-sp {
 }
 
 .l-main {
-  padding: 5% 6.941% 0;
+  padding: 0 6.941% 0;
 }
 
 
@@ -6253,4 +6265,378 @@ button.swiper-pagination-bullet {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   overflow: hidden;
+}
+
+/* ページヘッダー */
+.p-page__heading {
+  position: relative;
+  height: 300px;
+
+  /* l-main の padding を無視して画面いっぱい */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .p-page__heading {
+    height: 240px;
+  }
+}
+
+/* 画像を少し暗くするオーバーレイ */
+.p-page__heading::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.50); /* ← ここで暗さ調整 */
+}
+
+/* タイトル */
+.p-page__heading .p-heading__title {
+  position: relative; /* overlayより前面に */
+  z-index: 1;
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* snap */
+.snap {
+  position: relative;
+}
+
+.slider-part { 
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+ }
+
+ .snap__viewport{
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 黒幕 */
+.snap__viewport::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:#1C1C1C;
+  opacity:0;
+  pointer-events:none;
+  z-index: 20;
+}
+
+.snap__viewport.is-fading::before{
+  opacity: 1;
+  transition: opacity .12s ease;
+}
+.snap__viewport.is-fadeout::before{
+  opacity: 0;
+  transition: opacity .55s ease;
+}
+/* paginationは黒幕より上 */
+.snap__pagination{
+  z-index: 30;
+}
+
+/* panelは重ねて1枚だけ表示 */
+.snap__panel{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transform: translateY(12px);
+  filter: blur(3px);
+
+  transition:
+    opacity .45s ease,
+    transform .7s cubic-bezier(.22,.61,.36,1),
+    filter .7s ease;
+}
+
+.snap__panel.is-active{
+  opacity: 1;
+  pointer-events: auto;
+
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* 前のパネルは動かさない */
+.snap__panel:not(.is-active){
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* pagination */
+.snap__pagination{
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  gap: 10px;
+  z-index: 10;
+}
+.snap__dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 0;
+  background: #bbb;
+  cursor: pointer;
+}
+.snap__dot.is-active{ background: #e60012; }
+
+@media (max-width: 950px) {
+   /* snap枠：通常表示へ */
+   .snap__viewport {
+    height: auto;
+    overflow: visible;   /* hidden解除 */
+  }
+
+  /* 黒幕を無効化（これ大事） */
+  .snap__viewport::before {
+    content: none;
+  }
+
+  /* パネル：全部表示 */
+  .snap__panel {
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+
+    /* PC演出を完全リセット */
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+
+  /* 念のため active 依存も無効化 */
+  .snap__panel.is-active {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  /* ドットは非表示でOK（そのままでOK） */
+  .snap__pagination {
+    display: none;
+  }
+}
+
+
+/* ===== section base ===== */
+.p-career {
+  color: #fff;
+  padding: 65px 0;
+  width: calc(100% - 70px);
+}
+
+.p-career__inner {
+  width: min(1200px, 100% - 48px);
+  margin: 0 auto;
+  display: flex;
+  gap: clamp(20px, 4vw, 56px);
+  align-items: center;
+}
+
+/* ===== left text ===== */
+.p-career__content {
+  flex: 1 1 46%;
+  min-width: 280px;
+}
+
+.p-career__title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 18px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: solid  1px #d61f2c;
+}
+
+.p-career__content p {
+  margin: 0 0 10px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ===== right collage ===== */
+.p-career__media {
+  flex: 1 1 54%;
+  min-width: 300px;
+}
+
+.p-career__collage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.p-career__img {
+  position: absolute;
+  display: block;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* 上の大きい写真（背景） */
+.p-career__img--top {
+  top: 0;
+  right: 0;
+  width: 65%;
+  height: 70%;
+}
+
+/* 下の小さめ写真（手前に重ねる） */
+.p-career__img--bottom {
+  left: 8%;
+  bottom: 0;
+  width: 40%;
+  height: 46%;
+  z-index: 2;
+  border-radius: 12px;
+}
+
+/* ===== responsive：スマホは画像をテキストの下に ===== */
+@media (max-width: 950px) {
+
+  .snap__viewport {
+    margin-top: 40px;
+  }
+
+  .p-career {
+    padding: 28px 0;
+    width: 100%;
+  }
+  
+  .p-career__inner {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .p-career__content {
+    order: 1;
+  }
+
+  .p-career__media {
+    order: 2;
+    margin-top: 16px;
+  }
+
+  .p-career__collage {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+
+
+  .p-career__img--top{
+    width: 80%;
+    height: 65%;   
+  }
+ 
+  .p-career__img--bottom{
+    left: 0;
+    bottom: 0;  
+    width: 50%;
+    height: 45%;  
+  }
+}
+
+
+@media (max-width: 520px) {
+  .snap__viewport {
+    margin-top: 30px;
+  }
+  .p-career {
+    padding: 0;
+  }
+  .p-career__img--top {
+    width: 76%;
+    height: 60%;
+  }
+
+  .p-career__img--bottom {
+    left: 0;
+    width: 50%;
+    height: 46%;
+    bottom: 20%;
+  }
+}
+
+/* セクション */
+.p-flow{
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+/* 画面幅いっぱいより広く */
+.p-flow__track{
+  display: flex;
+  width: max-content;
+  transform: translateX(0);
+}
+
+/* 画像列 */
+.p-flow__row{
+  display: flex;
+}
+
+.p-flow__row img{
+  width: 280px;        /* 好みで */
+  height: 180px;
+  object-fit: cover;
+  margin-right: 16px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* アニメーション（初期は止めておく） */
+.js-flow .p-flow__track{
+  animation: none;
+}
+
+/* 発火後 */
+.js-flow.is-active .p-flow__track{
+  animation: flow-loop 40s linear infinite;
+}
+
+/* 左へ流す */
+@keyframes flow-loop{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+
+/* テキスト */
+.p-flow__text{
+  margin-top: 24px;
+  text-align: center;
+  color: #fff;
 }
