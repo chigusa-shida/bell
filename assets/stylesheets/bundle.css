@@ -336,19 +336,6 @@ html, body {
 .p-about-environme__img {
   flex: 0 0 50%;
 }
-
-.p-about-technicians__images{
-    display: flex;
-  }
-  .p-about-technicians__img{
-    width: 50%;
-    aspect-ratio: 14/9; /* 画像の比率変更したいならここ調整 */
-    overflow: hidden;
-  }
-  .p-about-technicians__img img {
-    object-fit: cover;
-    height: 100%;
-  }
 .p-about-section__text{
   margin-top: 4%;
 }
@@ -6587,56 +6574,238 @@ button.swiper-pagination-bullet {
   }
 }
 
-/* セクション */
-.p-flow{
-  overflow: hidden;
-  padding: 40px 0;
+/* =========================
+   FLOW（横自動スクロール ループ）
+   ========================= */
+
+/* セクション余白（見出し→flow→本文の間） */
+.p-heading .p-flow{
+  margin: 0 0 32px;
 }
 
-/* 画面幅いっぱいより広く */
+/* 親要素からはみ出させて見せたい場合（任意）
+   .p-about-section 等で padding があるなら、左右に広げる */
+.p-flow{
+  position: relative;
+  overflow: hidden;                 /* はみ出しは隠す */
+  width: calc(100% + 140px);        /* 例：左右+70pxずつ（サイトの内側余白に合わせて調整） */
+  margin-left: -70px;
+  margin-right: -70px;
+
+  /* 上下の帯っぽさ（任意） */
+  padding: 10px 0;
+}
+
+/* トラック（2列を横に並べて動かす） */
 .p-flow__track{
   display: flex;
   width: max-content;
+  will-change: transform;
   transform: translateX(0);
 }
 
 /* 画像列 */
 .p-flow__row{
   display: flex;
+  align-items: center;
 }
 
+/* 画像の基本サイズ */
 .p-flow__row img{
-  width: 280px;        /* 好みで */
-  height: 180px;
+  width: 260px;
+  height: 160px;
   object-fit: cover;
-  margin-right: 16px;
-  border-radius: 12px;
   flex-shrink: 0;
+  /* ほんのり影 */
+  /* box-shadow: 0 14px 30px rgba(0,0,0,.25); */
 }
 
-/* アニメーション（初期は止めておく） */
+/* 初期は止める（JSでis-active付与したら動く） */
 .js-flow .p-flow__track{
   animation: none;
 }
 
-/* 発火後 */
+/* 発火後：ループ開始 */
 .js-flow.is-active .p-flow__track{
-  animation: flow-loop 40s linear infinite;
+  animation: flow-loop 45s linear infinite;
 }
 
-/* 左へ流す */
+/* 右→左に流す */
 @keyframes flow-loop{
-  from{
-    transform: translateX(0);
-  }
-  to{
-    transform: translateX(-50%);
+  from{ transform: translateX(0); }
+  to  { transform: translateX(-50%); } /* 2列複製が前提 */
+}
+
+/* 端フェード（任意：画像がスッと消える演出） */
+.p-flow::after,
+.p-flow::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  pointer-events: none;
+  z-index: 2;
+}
+.p-flow::before{
+  left: 0;
+  background: linear-gradient(to right, rgba(0,0,0,.85), rgba(0,0,0,0));
+}
+.p-flow::after{
+  right: 0;
+  background: linear-gradient(to left, rgba(0,0,0,.85), rgba(0,0,0,0));
+}
+
+/* ユーザーがhoverしたら一旦止める（任意） */
+@media (hover: hover){
+  .p-flow:hover .p-flow__track{
+    animation-play-state: paused;
   }
 }
 
-/* テキスト */
-.p-flow__text{
-  margin-top: 24px;
-  text-align: center;
-  color: #fff;
+/* スマホ調整 */
+@media (max-width: 768px){
+  .p-heading .p-flow{
+    margin: 20px 0 16px;
+  }
+
+  .p-flow{
+    width: calc(100% + 56px);
+    margin-left: -28px;
+    margin-right: -28px;
+    padding: 8px 0;
+  }
+
+  .p-flow__row img{
+    width: 220px;
+    height: 150px;
+  }
+
+  .p-flow::before,
+  .p-flow::after{
+    width: 48px;
+  }
+
+  /* 速度ちょい早め（任意） */
+  .js-flow.is-active .p-flow__track{
+    animation-duration: 50s;
+  }
 }
+
+/* 動きを減らす設定のユーザーには停止 */
+@media (prefers-reduced-motion: reduce){
+  .js-flow.is-active .p-flow__track{
+    animation: none;
+  }
+}
+
+.p-about-environment__support {
+  margin-top: 6%;
+}
+
+.p-about-support {
+  margin-top: 5%;
+}
+
+.p-about-support__list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(32px, 5vw, 72px);
+}
+
+/* カード */
+.p-about-support__card{
+  display: grid;
+  gap: 16px;
+}
+
+/* 画像 */
+.p-about-support__img{
+  width: 100%;
+  aspect-ratio: 16 / 10;     /* 添付っぽい比率 */
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* 見出し */
+.p-about-support__title{
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+/* 本文 */
+.p-about-support__body p{
+  margin: 0 0 10px;
+  color: rgba(255,255,255,.85);
+}
+
+/* 最後のpだけ余白なし */
+.p-about-support__body p:last-child{
+  margin-bottom: 0;
+}
+
+/* スマホ：1列 */
+@media (max-width: 950px){
+  .p-about-environment__support {
+    margin-top: 10%;
+  }
+
+  .p-about-support__list{
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .p-about-support__img{
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 520px) { 
+  .p-about-support__title{
+    font-size: 18px;
+  }
+  .p-about-support {
+    margin-top: 7%;
+  }
+}
+
+
+.c-heading-line{
+  display: flex;
+  align-items: center;
+  gap: 20px;                 /* 文字と線の距離 */
+  color: #fff;               /* 文字色 */
+  font-size: 20px;           /* 好みで */
+  letter-spacing: 0.12em;
+  white-space: nowrap;       /* 改行させない */
+}
+
+/* 左右の線 */
+.c-heading-line::before,
+.c-heading-line::after{
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.4); /* 線の色 */
+}
+
+@media (max-width: 520px) { 
+  .c-heading-line{
+    display: flex;
+    align-items: center;
+    gap: 5px;                 /* 文字と線の距離 */
+    color: #fff;               /* 文字色 */
+    font-size: 16px;           /* 好みで */
+    letter-spacing: 0.12em;
+    white-space: nowrap;       /* 改行させない */
+  }
+}
+
+

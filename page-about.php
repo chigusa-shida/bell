@@ -123,66 +123,77 @@
           </div>
         </section>
         <section>
-          <div class="p-about-section p-about-technicians">
+          <div class="p-about-section p-about-environment">
             <div class="p-heading">
               <div class="p-heading__title text-center">
                 <h2 class="c-title" data-ja="品質を支える職場環境"><span class="c-title--red">ENVIRONMENT</span></h2>
               </div>
-                <!-- ★ 横自動スクロール（ここ） -->
-              <div class="p-flow js-flow">
-                <div class="p-flow__track">
-                  <div class="p-flow__row">
-                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_01.webp')); ?>" alt="">
-                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_02.webp')); ?>" alt="">
-                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_03.webp')); ?>" alt="">
-                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/company_office-03.webp')); ?>" alt="">
-                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/company_office-04.webp')); ?>" alt="">
+              <div class="p-about-section__content">
+                  <!-- ★ 横自動スクロール（ここ） -->
+                <div class="p-flow js-flow">
+                  <div class="p-flow__track">
+                    <div class="p-flow__row">
+                      <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_01.webp')); ?>" alt="">
+                      <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_02.webp')); ?>" alt="">
+                      <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_03.webp')); ?>" alt="">
+                      <img src="<?php echo esc_url(get_theme_file_uri('assets/images/company_office-03.webp')); ?>" alt="">
+                      <img src="<?php echo esc_url(get_theme_file_uri('assets/images/company_office-04.webp')); ?>" alt="">
+                    </div>
+                    <div class="p-flow__row">
+                      <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_01.webp')); ?>" alt="">
+                      <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_02.webp')); ?>" alt="">
+                      <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_03.webp')); ?>" alt="">
+                      <img src="<?php echo esc_url(get_theme_file_uri('assets/images/company_office-03.webp')); ?>" alt="">
+                      <img src="<?php echo esc_url(get_theme_file_uri('assets/images/company_office-04.webp')); ?>" alt="">
+                    </div>
                   </div>
-                  <div class="p-flow__row">
-                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_01.webp')); ?>" alt="">
-                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_02.webp')); ?>" alt="">
-                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_03.webp')); ?>" alt="">
-                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/company_office-03.webp')); ?>" alt="">
-                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/company_office-04.webp')); ?>" alt="">
+                </div>
+                <div class="text-center">
+                  <p>
+                    小さな会社だからこそ、私たちは 人と人との距離が近い環境を大切にしています。<br>歯科技工士・営業・事務と役割は違っても、<br> 立場に関係なく意見を交わし、同じゴールに向かって話し合う。<br>そんな日々の対話が、技工の精度を少しずつ高めていきます。
+                  </p>
+                  <p>
+                    ラウンジやカウンター、テラスは、仕事の相談から何気ない会話まで、<br>自然とコミュニケーションが生まれる場所です。
+                  </p>
+                  <p>
+                  気づきや違和感をすぐに共有できることが、<br>一つひとつの技工物に丁寧に向き合う力になります。<br>そして、良いものづくりを支えるのは、会話や空気感だけではありません。
+                  </p>
+                </div>
+                <div class="p-about-environment__support">
+                  <div class="text-center">
+                    <span class="c-title--red">SUPPORTING</span>
+                    <h3 class="c-heading-line">見えない部分まで、技工のために</h3>
+                  </div>
+                  <div class="p-about-support">
+                    <ul class="p-about-support__list">
+                      <li class="p-about-support__item">
+                        <div class="p-about-support__card">
+                          <img class="p-about-support__img"
+                            src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_01.webp')); ?>"
+                            alt="">
+                          <div class="p-about-support__body">
+                            <h4 class="p-about-support__title">健康診断</h4>
+                            <p>当社では、歯科技工士・営業・事務スタッフ全員を対象に、定期的な健康診断を実施しています。</p>
+                            <p>心身のコンディションを整えることが、集中力や判断力を支え、安定した品質の歯科技工へとつながると考えています。</p>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="p-about-support__item">
+                        <div class="p-about-support__card">
+                          <img class="p-about-support__img"
+                            src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_02.webp')); ?>"
+                            alt="">
+                          <div class="p-about-support__body">
+                            <h4 class="p-about-support__title">作業環境測定</h4>
+                            <p>歯科技工士に集中できる環境を保つため、作業環境測定を定期的に行っています。</p>
+                            <p>作業スペースの安全性や快適性を確認し、目に見えない部分にも目を向けることで、安心して技工に向き合える環境を整えています。</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
-              </div>
-              <div class="p-about-section__content text-center">
-                <p>
-                  小さな会社だからこそ、私たちは 人と人との距離が近い環境を大切にしています。<br>歯科技工士・営業・事務と役割は違っても、<br> 立場に関係なく意見を交わし、同じゴールに向かって話し合う。<br>そんな日々の対話が、技工の精度を少しずつ高めていきます。
-                </p>
-                <p>
-                  ラウンジやカウンター、テラスは、仕事の相談から何気ない会話まで、<br>自然とコミュニケーションが生まれる場所です。
-                </p>
-                <p>
-                気づきや違和感をすぐに共有できることが、<br>一つひとつの技工物に丁寧に向き合う力になります。<br>そして、良いものづくりを支えるのは、会話や空気感だけではありません。
-                </p>
-              </div>
-            </div>
-            <div class="p-about-section__content">
-              <div class="p-about-technicians__images">
-                <div class="p-about-technicians__img">
-                  <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_technicians_01.webp')); ?>">
-                </div>
-                <div class="p-about-technicians__img">
-                  <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_technicians_02.webp')); ?>">
-                </div>
-              </div>
-              <div class="p-about-section__text">
-                <p>
-                  わたくしたちは2012年からCAD/CAMを導入、デジタル化による歯科技工製品の製作を充実してまいりました。
-                </p>
-                <p>
-                  CAD/CAMで製作する歯科技工製品であっても、豊富な経験と知識、技術をそなえた歯科技工士が、咬合、形態、適合をそなえた製品を製作します。
-                </p>
-                <p>
-                  わたしたちは一緒に働く歯科技工士を募集しています。
-                </p>
-              </div>
-              <div class="p-about-recruit__btn c-button">
-                <a href="<?php echo esc_url(home_url('/recruit/')); ?>" class="p-home-recruit__link">
-                  <span class="c-button__pageLink">募集要項</span>
-                </a>
               </div>
             </div>
           </div>
