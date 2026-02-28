@@ -155,58 +155,58 @@
       });
     }
 
-    if ($('#js-swiper-home-pickUp').length && typeof Swiper !== 'undefined') {
-      new Swiper('#js-swiper-home-pickUp', {
-        slidesPerView: 2,
-        spaceBetween: 25,
-        breakpoints: {
-          950: { slidesPerView: 5.2 },
-          768: { slidesPerView: 4 },
-          500: { slidesPerView: 3 }
-        },
-        pagination: {
-          el: '#js-swiper-home-pickUp .swiper-pagination',
-          type: 'progressbar'
-        },
-        navigation: {
-          nextEl: '#js-swiper-home-pickUp .swiper-button-next',
-          prevEl: '#js-swiper-home-pickUp .swiper-button-prev'
-        }
-      });
-    }
+    // if ($('#js-swiper-home-pickUp').length && typeof Swiper !== 'undefined') {
+    //   new Swiper('#js-swiper-home-pickUp', {
+    //     slidesPerView: 2,
+    //     spaceBetween: 25,
+    //     breakpoints: {
+    //       950: { slidesPerView: 5.2 },
+    //       768: { slidesPerView: 4 },
+    //       500: { slidesPerView: 3 }
+    //     },
+    //     pagination: {
+    //       el: '#js-swiper-home-pickUp .swiper-pagination',
+    //       type: 'progressbar'
+    //     },
+    //     navigation: {
+    //       nextEl: '#js-swiper-home-pickUp .swiper-button-next',
+    //       prevEl: '#js-swiper-home-pickUp .swiper-button-prev'
+    //     }
+    //   });
+    // }
   }
 
   // ========== 会社（設備） ==========
-  function initCompany() {
-    if ($('#js-company-office-img .swiper-main').length && typeof Swiper !== 'undefined') {
-      new Swiper('#js-company-office-img .swiper-main', {
-        loop: true,
-        slidesPerView: 1,
-        centeredSlides: true,
-        speed: 2000,
-        watchSlidesProgress: true,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-          waitForTransition: false
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 1.5,
-            spaceBetween: 30
-          }
-        },
-        pagination: {
-          el: '#js-company-office-img .swiper-pagination',
-          type: 'progressbar'
-        },
-        navigation: {
-          nextEl: '#js-company-office-img .swiper-button-next',
-          prevEl: '#js-company-office-img .swiper-button-prev'
-        }
-      });
-    }
-  }
+  // function initCompany() {
+  //   if ($('#js-company-office-img .swiper-main').length && typeof Swiper !== 'undefined') {
+  //     new Swiper('#js-company-office-img .swiper-main', {
+  //       loop: true,
+  //       slidesPerView: 1,
+  //       centeredSlides: true,
+  //       speed: 2000,
+  //       watchSlidesProgress: true,
+  //       autoplay: {
+  //         delay: 5000,
+  //         disableOnInteraction: false,
+  //         waitForTransition: false
+  //       },
+  //       breakpoints: {
+  //         768: {
+  //           slidesPerView: 1.5,
+  //           spaceBetween: 30
+  //         }
+  //       },
+  //       pagination: {
+  //         el: '#js-company-office-img .swiper-pagination',
+  //         type: 'progressbar'
+  //       },
+  //       navigation: {
+  //         nextEl: '#js-company-office-img .swiper-button-next',
+  //         prevEl: '#js-company-office-img .swiper-button-prev'
+  //       }
+  //     });
+  //   }
+  // }
 
   // ========== オンラインショップ ==========
   function initOnlineshop() {

@@ -522,22 +522,6 @@ footer a {
   border: solid 1px #da0000;
 }
 
-.p-company-vision {
-  background-color: #da0000;
-  color: #000;
-  text-align: center;
-  position: relative;
-  width: 100vw;
-  margin: 0 calc(50% - 50vw);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 100px 6.941%;
-}
-.p-company-vision__text {
-  max-width: 1200px;
-}
-
 .p-company-history__item {
   text-align: left;
   width: 100%;
@@ -600,55 +584,6 @@ footer a {
   width: 100%;
   height: 100%;
 }
-
-.p-company-office {
-  /* 前へ次への矢印カスタマイズ */
-  /* 前への矢印カスタマイズ */
-  /* 次への矢印カスタマイズ */
-  /* 画像サイズ調整 */
-}
-.p-company-office .swiper-main .slide-img {
-  position: relative;
-  padding-top: 54%;
-  width: 100%;
-}
-.p-company-office .swiper-main .slide-img img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.p-company-office .swiper-button-prev,
-.p-company-office .swiper-button-next {
-  height: 5rem;
-  width: 5rem;
-  background-image: none;
-  background-color: rgba(37, 37, 37, 0.8);
-  border-radius: 50%;
-}
-.p-company-office .swiper-button-prev::after,
-.p-company-office .swiper-button-next::after {
-  font: var(--fa-font-solid);
-  font-size: 1.2em;
-  color: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.p-company-office .swiper-button-prev::after {
-  content: "\f053";
-}
-.p-company-office .swiper-button-next::after {
-  content: "\f054";
-}
-.p-company-office .swiper-slide img {
-  height: auto;
-  width: 100%;
-}
-
 .p-home {
   width: 100%;
   overflow: hidden;
@@ -1236,264 +1171,8 @@ footer a {
   transform: translateY(-8px);
 }
 
-.p-recruit-message {
-  display: flex;
-}
-.p-recruit-message__text {
-  display: flex;
-  flex-direction: column;
-  flex: 2;
-}
-.p-recruit-message__detail {
-  display: flex;
-  flex-direction: column;
-  max-width: 1200px;
-}
-.p-recruit-message__images {
-  overflow: hidden;
-  display: grid;
-  gap: 10px; /* 画像間の余白 */
-  grid-auto-flow: dense; /* 隙間を埋めながら配置 */
-  grid-auto-flow: row dense;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-}
-.p-recruit-message__image-01, .p-recruit-message__image-02, .p-recruit-message__image-03, .p-recruit-message__image-04 {
-  overflow: hidden;
-}
-.p-recruit-message__image-01 img, .p-recruit-message__image-02 img, .p-recruit-message__image-03 img, .p-recruit-message__image-04 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.p-recruit-message__image-01 {
-  grid-row: 1;
-  grid-column: 1/3;
-}
-.p-recruit-message__image-02 {
-  grid-row: 1;
-  grid-column: 3/6;
-}
-.p-recruit-message__image-03 {
-  grid-row: 2;
-  grid-column: 1/4;
-}
-.p-recruit-message__image-04 {
-  grid-row: 2;
-  grid-column: 4/6;
-}
-
-.p-recruit-thought {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  width: 100vw;
-  margin: 0 calc(50% - 50vw);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/company_office-04.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.p-recruit-thought__detail {
-  line-height: 2;
-  max-width: 1260px;
-}
-
-.p-recruit-position__list {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-}
-.p-recruit-position__list a {
-  display: flex;
-  width: calc((100% - 80px) / 3);
-}
-.p-recruit-position__card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #fff;
-  align-items: center;
-  color: #000;
-  padding: 7.82%;
-  position: relative;
-}
-.p-recruit-position__card::before {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 50px 50px 0 0;
-  border-color: #da0000 transparent transparent transparent;
-}
-.p-recruit-position__text {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  flex-grow: 1;
-  text-align: center;
-  font-weight: 400;
-}
-.p-recruit-position__button {
-  width: 190px;
-  margin: auto;
-}
-.p-recruit-position__button span {
-  position: relative;
-  display: inline-block;
-  line-height: 50px;
-  color: #000;
-  text-decoration: none;
-  outline: none;
-  border-radius: 30px;
-  background-color: transparent;
-  border: 1px solid #000;
-  overflow: hidden;
-  transition: 0.3s ease-out;
-  font-size: 14px;
-  font-weight: 400;
-  width: 100%;
-  padding-left: 17%;
-  letter-spacing: 0.2em;
-  transition: 0.2s ease-out;
-  z-index: 1;
-}
-.p-recruit-position__button span::before {
-  content: "";
-  /*絶対配置で丸の位置を決める*/
-  position: absolute;
-  left: 10%;
-  top: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  z-index: 0;
-  /*丸の形状*/
-  width: 13px;
-  height: 13px;
-  background: #da0000;
-  border-radius: 50px;
-  /*アニメーションの指定*/
-  transition: 0.3s ease-out;
-  z-index: 0;
-}
-.p-recruit-position__button span::after {
-  content: "\f054";
-  font: var(--fa-font-solid);
-  right: 8%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-.p-recruit-position__button span--blakc {
-  background-color: #000;
-  border: 1px solid #000;
-}
-.p-recruit-position__button span--blakc::before {
-  background: #fff;
-}
-
 a {
   cursor: pointer;
-}
-
-.p-recruit-numbers__title {
-  text-align: center;
-}
-.p-recruit-numbers__content {
-  background-color: #da0000;
-  position: relative;
-  width: 100vw;
-  margin: 0 calc(50% - 50vw);
-  padding: 100px 6.941%;
-  display: flex;
-  justify-content: center;
-}
-.p-recruit-numbers__list {
-  display: grid;
-  gap: 20px;
-  justify-content: center;
-  width: 100%;
-  max-width: 795px;
-}
-.p-recruit-numbers__item {
-  background-color: #000;
-  padding: 20px;
-  text-align: center;
-}
-.p-recruit-numbers__value {
-  font-weight: 400;
-}
-.p-recruit-numbers__value span {
-  font-weight: 400;
-  font-family: "Roboto Condensed";
-}
-
-.p-recruit-personality {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.p-recruit-personality__text {
-  line-height: 2;
-}
-.p-recruit-personality__images {
-  display: flex;
-  flex-wrap: wrap-reverse;
-  column-gap: 20px;
-  justify-content: center;
-}
-.p-recruit-personality__images.sp {
-  max-width: 400px;
-  align-items: center;
-  margin: max(35px, 6.5vw) auto 0;
-}
-.p-recruit-personality__circle {
-  border: solid 2px #fff;
-  border-radius: 100%;
-  padding: 16px;
-  max-width: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: clamp(1.125rem, 1.6666666667vw, 1.25rem);
-  font-weight: 400;
-  width: calc((100% - 20px) / 2);
-}
-.p-recruit-personality__circle::before {
-  display: block;
-  content: "";
-  padding-top: 100%;
-}
-
-.p-recruit-benefits__list {
-  display: flex;
-  flex-direction: column;
-}
-.p-recruit-benefits__card {
-  display: flex;
-  justify-content: space-between;
-}
-.p-recruit-benefits__text {
-  display: flex;
-  flex-direction: column;
-}
-.p-recruit-benefits__detail {
-  line-height: 2;
-}
-.p-recruit-benefits__img {
-  overflow: hidden;
-  width: 50%;
-}
-.p-recruit-benefits__img img {
-  height: min(400px, 40vw);
-  object-fit: cover;
-  width: 100%;
 }
 .p-equipment__headingText {
   margin: 11.3% auto 0;
@@ -1641,84 +1320,6 @@ a {
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
-}
-
-.p-fis-heading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.p-fis-heading__logo {
-  max-width: 255px;
-}
-.p-fis-heading__main {
-  max-width: 718px;
-  width: 100%;
-}
-.p-fis-heading__detail {
-  line-height: 2;
-}
-
-.p-fis-message {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 100vw;
-  margin: 0 calc(50% - 50vw);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/home_shop.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 80px 6.941%;
-  text-align: center;
-}
-.p-fis-message__lead {
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
-  font-size: 35px;
-  text-align: center;
-}
-.p-fis-message__lead span {
-  color: #375dff;
-}
-.p-fis-message__detail {
-  max-width: 1000px;
-  line-height: 2;
-}
-
-.p-fis-support__head {
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
-  font-size: 35px;
-  text-align: center;
-}
-.p-fis-support__list {
-  display: flex;
-  flex-direction: column;
-}
-.p-fis-support__card {
-  display: flex;
-  justify-content: space-between;
-}
-.p-fis-support__text {
-  display: flex;
-  flex-direction: column;
-}
-.p-fis-support__lead {
-  line-height: 2;
-  border-bottom: 1px solid #375dff;
-}
-.p-fis-support__detail {
-  line-height: 2;
-}
-.p-fis-support__img {
-  overflow: hidden;
-  width: 50%;
-}
-.p-fis-support__img img {
-  height: min(400px, 40vw);
-  object-fit: cover;
-  width: 100%;
 }
 .p-warranty__heading {
   justify-content: center;
@@ -2346,7 +1947,7 @@ a {
 
 .p-recruitment-info {
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 10% auto;
 }
 .p-recruitment-info__title {
   position: relative;
@@ -2390,7 +1991,7 @@ a {
 .p-recruitment-info__list {
   display: flex;
   flex-direction: column;
-  gap: 200px;
+  gap: 130px;
 }
 .p-recruitment-info__button {
   margin: 50px auto 0;
@@ -2925,10 +2526,6 @@ br.u-br-sp {
   .p-home-recruit__title {
     text-align: center;
   }
-  .p-recruit-message__images {
-    width: 100%;
-    grid-template-rows: repeat(2, min(200px, 31.25vw));
-  }
 }
 
 @media screen and (max-width: 1200px){
@@ -3220,73 +2817,8 @@ br.u-br-sp {
   .p-faq__content {
     margin: 15% auto 0;
   }
-  .p-recruit-message {
-    flex-direction: column-reverse;
-    gap: 30px;
-  }
-  .p-recruit-thought {
-    gap: 13px;
-    line-height: 1.8;
-    padding: 4.26% 7%;
-  }
-  .p-recruit-position__list {
-    flex-direction: column;
-  }
-  .p-recruit-position__list a {
-    width: 100%;
-  }
-  .p-recruit-position__card {
-    padding: 25px;
-  }
-  .p-recruit-position__text {
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-  .p-recruit-personality__text {
-    text-align: center;
-  }
-  .p-recruit-personality__images.pc {
-    display: none;
-  }
-  .p-recruit-personality__circle {
-    font-size: clamp(1rem, 1.5vw, 1.125rem);
-  }
-  .p-recruit-benefits__list {
-    gap: 16vw;
-  }
-  .p-recruit-benefits__card {
-    flex-direction: column-reverse;
-    gap: 4vw;
-  }
-  .p-recruit-benefits__main {
-    width: 100%;
-  }
-  .p-recruit-benefits__text {
-    gap: 13px;
-    line-height: 1.8;
-  }
-  .p-recruit-benefits__img {
-    width: 100%;
-  }
   .p-works__content {
     margin: 15% auto 0;
-  }
-  .p-fis-support__list {
-    gap: 16vw;
-  }
-  .p-fis-support__card {
-    flex-direction: column-reverse;
-    gap: 4vw;
-  }
-  .p-fis-support__main {
-    width: 100%;
-  }
-  .p-fis-support__text {
-    gap: 13px;
-    line-height: 1.8;
-  }
-  .p-fis-support__img {
-    width: 100%;
   }
   .p-privacy__content {
     margin: 15% auto 0;
@@ -3489,11 +3021,11 @@ br.u-br-sp {
   .p-page-button {
     display: none;
   }
-  .p-page-section {
+  /* .p-page-section {
     margin-top: max(50px, 13vw);
-  }
+  } */
   .p-page-section__content {
-    margin-top: max(35px, 6.5vw);
+    margin-top: 4%;
   }
   .p-page-article-nav {
     font-size: 12px;
@@ -3501,13 +3033,6 @@ br.u-br-sp {
   }
   .p-page-article-nav span {
     padding: 5px;
-  }
-  .p-company {
-    padding-bottom: 13.04%;
-  }
-  .p-company-vision {
-    padding: 60px 6.941%;
-    gap: 50px;
   }
   .p-company-history__item {
     flex-direction: column;
@@ -3527,17 +3052,6 @@ br.u-br-sp {
   .p-company-history__item dd {
     padding-top: 0;
     flex-shrink: 2;
-  }
-  .p-company-access__map {
-    padding-top: 60%;
-  }
-  .p-company-office .swiper-main .slide-img {
-    padding-top: 70%;
-  }
-  .p-company-office .swiper-button-prev,
-  .p-company-office .swiper-button-next {
-    height: 3rem;
-    width: 3rem;
   }
   .p-home .p-home-top__container {
     height: 360px;
@@ -3668,31 +3182,6 @@ br.u-br-sp {
   .p-recruit {
     margin-bottom: 13.04%;
   }
-  .p-recruit-message {
-    margin-top: 12%;
-  }
-  .p-recruit-message__text {
-    gap: 18px;
-  }
-  .p-recruit-message__detail {
-    gap: 15px;
-  }
-  .p-recruit-numbers__content {
-    padding: 60px 6.941%;
-    margin-top: max(35px, 6.5vw);
-  }
-  .p-recruit-numbers__list {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
-  .p-recruit-numbers__title {
-    font-size: 16px;
-  }
-  .p-recruit-numbers__value span {
-    font-size: clamp(1.5625rem, 4.5632333768vw, 2.1875rem);
-  }
-  .p-recruit-personality__text {
-    margin-top: 12%;
-  }
   .p-equipment {
     margin-bottom: 13.04%;
   }
@@ -3747,25 +3236,6 @@ br.u-br-sp {
   }
   .p-works-article__button {
     margin-top: 25px;
-  }
-  .p-fis {
-    margin-bottom: 13.04%;
-  }
-  .p-fis-heading {
-    flex-direction: column;
-    gap: 30px;
-  }
-  .p-fis-heading__logo {
-    width: 58%;
-  }
-  .p-fis-message {
-    gap: 20px;
-  }
-  .p-fis-message__lead {
-    font-size: clamp(1.4375rem, 4.5632333768vw, 2.1875rem);
-  }
-  .p-fis-support__head {
-    font-size: clamp(1.4375rem, 4.5632333768vw, 2.1875rem);
   }
   .p-warranty {
     margin-bottom: 13.04%;
@@ -3897,6 +3367,7 @@ br.u-br-sp {
     display: block;
     padding: 30px 0;
     border: 0;
+    text-align: left;
   }
   .p-recruitment-info__table td {
     padding-top: 0;
@@ -4078,7 +3549,7 @@ br.u-br-sp {
     font-size: 20px;
   }
   .p-page-button {
-    margin: 11.3% auto 0;
+    /* margin: 11.3% auto 0; */
     max-width: 1240px;
   }
   .p-page-button__list {
@@ -4087,9 +3558,9 @@ br.u-br-sp {
     grid-gap: 20px;
     justify-content: center;
   }
-  .p-page-section {
-    margin-top: max(100px, 11.7vw);
-  }
+  /* .p-page-section {
+    margin-top: 4%;
+  } */
   .p-page-section__content {
     margin-top:4%;
   }
@@ -4099,16 +3570,6 @@ br.u-br-sp {
   }
   .p-page-article-nav span {
     padding: 30px;
-  }
-  .p-company {
-    padding-bottom: 10.64%;
-  }
-  .p-company-message {
-    gap: 80px;
-  }
-  .p-company-vision {
-    padding: 100px 6.941%;
-    gap: 80px;
   }
   .p-company-history__item {
     flex-direction: row;
@@ -4123,15 +3584,6 @@ br.u-br-sp {
   }
   .p-company-history__item dt span {
     font-size: 45px;
-  }
-  .p-company-office .swiper-main {
-    overflow: visible;
-  }
-  .p-company-office .swiper-button-prev {
-    left: 219px;
-  }
-  .p-company-office .swiper-button-next {
-    right: 219px;
   }
   .p-home .p-home-top__label-item {
     width: max(200px, 12.2vw);
@@ -4202,32 +3654,6 @@ br.u-br-sp {
   .p-recruit {
     margin-bottom: 10.64%;
   }
-  .p-recruit-message {
-    margin-top: 8%;
-  }
-  .p-recruit-message__text {
-    gap: 50px;
-  }
-  .p-recruit-message__detail {
-    line-height: 1.5;
-    gap: 18px;
-  }
-  .p-recruit-numbers__content {
-    padding: 100px 6.941%;
-    margin-top: max(50px, 4.8vw);
-  }
-  .p-recruit-numbers__list {
-    grid-template-columns: repeat(3, minmax(100px, 1fr));
-  }
-  .p-recruit-numbers__title {
-    font-size: 18px;
-  }
-  .p-recruit-numbers__value span {
-    font-size: 45px;
-  }
-  .p-recruit-personality__text {
-    margin-top: 8%;
-  }
   .p-equipment {
     margin-bottom: 10.64%;
   }
@@ -4256,22 +3682,6 @@ br.u-br-sp {
   }
   .p-works-article__button {
     margin-top: 30px;
-  }
-  .p-fis {
-    margin-bottom: 10.64%;
-  }
-  .p-fis-heading {
-    flex-direction: row;
-    gap: 70px;
-  }
-  .p-fis-message {
-    gap: 40px;
-  }
-  .p-fis-message__lead {
-    font-size: 35px;
-  }
-  .p-fis-support__head {
-    font-size: 35px;
   }
   .p-warranty {
     margin-bottom: 10.64%;
@@ -4776,76 +4186,8 @@ br.u-br-sp {
   .p-faq__content {
     margin: 10% auto 0;
   }
-  .p-recruit-message {
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-    gap: 6%;
-    flex: 1;
-  }
-  .p-recruit-message__text {
-    width: 50%;
-  }
-  .p-recruit-message__img {
-    max-width: 650px;
-    width: 43%;
-  }
-  .p-recruit-thought {
-    gap: 20px;
-    text-shadow: 0px 0px 14px rgb(0, 0, 0);
-    padding: 10.26% 7.941%;
-  }
-  .p-recruit-personality__textBox {
-    width: 55%;
-  }
-  .p-recruit-personality__images {
-    width: 35%;
-  }
-  .p-recruit-personality__images.sp {
-    display: none;
-  }
-  .p-recruit-benefits__list {
-    gap: 13.7vw;
-  }
-  .p-recruit-benefits__card.reverse {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-  .p-recruit-benefits__card {
-    flex-direction: row;
-    gap: 70px;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .p-recruit-benefits__main {
-    width: 50%;
-    max-width: 700px;
-  }
-  .p-recruit-benefits__text {
-    gap: 20px;
-  }
   .p-works__content {
     margin: 10% auto 0;
-  }
-  .p-fis-support__list {
-    gap: 13.7vw;
-  }
-  .p-fis-support__card.reverse {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-  .p-fis-support__card {
-    flex-direction: row;
-    gap: 70px;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .p-fis-support__main {
-    width: 50%;
-    max-width: 700px;
-  }
-  .p-fis-support__text {
-    gap: 20px;
   }
   .p-privacy__content {
     margin: 10% auto 0;
@@ -4932,9 +4274,9 @@ br.u-br-sp {
 }
 
 @media screen and (min-width: 1280px){
-  .p-page-section {
-    margin-top: 160px;
-  }
+  /* .p-page-section {
+    margin-top: 4%;
+  } */
   .p-page-section__content {
     margin-top: 4%;
   }
@@ -4961,9 +4303,6 @@ br.u-br-sp {
     width: 50%;
     flex-direction: column;
     gap: 80px;
-  }
-  .p-recruit-message__images {
-    grid-template-rows: 1fr 1fr;
   }
 }
 
@@ -5035,28 +4374,6 @@ br.u-br-sp {
   .p-mews-article__item a:hover {
     opacity: 0.8;
     transition: all 0.3s;
-  }
-  a:hover .p-recruit-position__button span {
-    border-color: #da0000;
-    text-align: start;
-    padding-left: 10%;
-    z-index: 1;
-  }
-  a:hover .p-recruit-position__button span--blakc {
-    border: 1px solid #fff;
-    color: #000;
-  }
-  a:hover .p-recruit-position__button span::before {
-    width: 200%;
-    left: 50%;
-    height: 200%;
-    top: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    z-index: -1;
-  }
-  a:hover .p-recruit-position__button span::after {
-    right: 5%;
-    opacity: 1;
   }
   .p-form__button:hover input[type=submit] {
     border-color: #da0000;
@@ -5153,28 +4470,6 @@ br.u-br-sp {
   .p-mews-article__item a:active {
     opacity: 0.8;
     transition: all 0.3s;
-  }
-  a:active .p-recruit-position__button span {
-    border-color: #da0000;
-    text-align: start;
-    padding-left: 10%;
-    z-index: 1;
-  }
-  a:active .p-recruit-position__button span--blakc {
-    border: 1px solid #fff;
-    color: #000;
-  }
-  a:active .p-recruit-position__button span::before {
-    width: 200%;
-    left: 50%;
-    height: 200%;
-    top: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    z-index: -1;
-  }
-  a:active .p-recruit-position__button span::after {
-    right: 5%;
-    opacity: 1;
   }
   .p-form__button:active input[type=submit] {
     border-color: #da0000;
@@ -6730,6 +6025,25 @@ button.swiper-pagination-bullet {
 }  
 @media (max-width: 520px) { 
   .p-company-history {
+    margin: 0 0 55px 0;
+  }
+}
+
+.p-page-section {
+  margin: 130px 0;
+}
+
+.p-page-section__content p + p {
+  margin-top: 10px;
+}
+
+@media (max-width: 950px){
+  .p-page-section {
+    margin: 105px 0;
+  }
+}  
+@media (max-width: 520px) { 
+  .p-page-section {
     margin: 0 0 55px 0;
   }
 }
