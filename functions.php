@@ -167,25 +167,6 @@ function create_post_type()
   );
 
   register_post_type(
-    'equipment',
-    array(
-      'label' => '設備情報',
-      'has_archive' => true,
-      'public' => true,
-      'pages' => false,
-      'show_in_rest' => true,
-      'menu_position' => 5,
-      'menu_icon' => 'dashicons-info-outline',
-      'supports' => array(
-        'title',
-        'editor',
-        'thumbnail',
-        'revisions',
-      ),
-    )
-  );
-
-  register_post_type(
     'works',
     array(
       'label' => '制作事例',
