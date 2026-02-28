@@ -7,51 +7,241 @@ get_header();
 <main>
   <div class="l-main" id="js-main">
     <div class="p-recruit">
-      <div class="p-heading">
+      <div class="p-page__heading" style="background-image:url('<?php echo esc_url( get_theme_file_uri('assets/images/about_fv.webp') ); ?>')">
         <div class="p-heading__title">
-          <h2 class="c-title" data-ja="採用情報"><span class="c-title--red">R</span>ECRUIT</h2>
+            <h2 class="c-title" data-ja="採用情報"><span class="c-title--red">R</span>ECRUIT</h2>
         </div>
       </div>
       <section>
-        <div class="p-recruit-message">
-          <div class="p-recruit-message__text">
-            <h2 class="c-title" data-ja="メッセージ"><span class="c-title--red">Message</span></h2>
-            <div class="p-recruit-message__detail">
-              <p>かつて「匠」や「職人」と呼ばれた人々にも、今や技術力だけでなく、マーケティング・プレゼンテーション・セールスといったビジネススキルが求められる時代になりました。市場を分析し、ニーズに応じた技術と知識を構築し、価値を“伝え、届ける力”が、歯科技工業界においても必要とされています。それは歯科技工士であっても、営業職であっても、事務職であっても同じです。</p>
-              <p>どの職種であっても「ビジネスパーソン」として、社会に信頼され、認められる存在になってほしいと私たちは考えています。ベルデンタルラボラトリーでは、そんな想いを共有し、ともに成長していける仲間を募集しています。</p>
+        <div class="p-page-section">
+          <div class="p-company-outline" id="outline">
+            <div class="p-company-outline__title text-center">
+              <h2 class="c-title" data-ja="メッセージ"><span class="c-title--red">Message</span></h2>
             </div>
-          </div>
-          <div class="p-recruit-message__img">
-            <div class="p-recruit-message__images">
-              <div class="p-recruit-message__image-01">
-                <picture>
-                  <source srcset="<?php echo get_theme_file_uri('assets/images/home_recruit-01.webp'); ?>" type="image/webp" />
-                  <img src="<?php echo get_theme_file_uri('assets/images/home_recruit-01.jpg'); ?>" alt="採用情報イメージ画像" />
-                </picture>
-              </div>
-              <div class="p-recruit-message__image-02">
-                <picture>
-                  <source srcset="<?php echo get_theme_file_uri('assets/images/home_recruit-02.webp'); ?>" type="image/webp" />
-                  <img src="<?php echo get_theme_file_uri('assets/images/home_recruit-02.jpg'); ?>" alt="採用情報イメージ画像" />
-                </picture>
-              </div>
-              <div class="p-recruit-message__image-03">
-                <picture>
-                  <source srcset="<?php echo get_theme_file_uri('assets/images/home_recruit-03.webp'); ?>" type="image/webp" />
-                  <img src="<?php echo get_theme_file_uri('assets/images/home_recruit-03.jpg'); ?>" alt="採用情報イメージ画像" />
-                </picture>
-              </div>
-              <div class="p-recruit-message__image-04">
-                <picture>
-                  <source srcset="<?php echo get_theme_file_uri('assets/images/home_recruit-04.webp'); ?>" type="image/webp" />
-                  <img src="<?php echo get_theme_file_uri('assets/images/home_recruit-04.jpg'); ?>" alt="採用情報イメージ画像" />
-                </picture>
-              </div>
+            <div class="p-page-section__content text-center">
+              <p>離職率が高いと言われる歯科技工業界において、当社では入社後に家族を持ち、<br>長く働き続けている社員が多く在籍しています。</p>
+              <p>それは、一人ひとりの考えやライフステージを尊重し、<br>時代に合わせて働き方や経営方針を見直してきた結果だと考えています。</p>
+              <p>現在は全社員の定時退社を目標に、朝会で業務内容を共有し、チームで業務量の偏りをなくす取り組みを行っています。</p>
+              <p>また私たちは、技術力だけでなく、価値を理解し、伝え、届ける力が<br>これからの歯科技工には必要だと考えています。歯科技工士、営業、事務と職種を問わず、<br>同じ想いを共有しながら、ともに成長していける仲間を募集しています。</p>
             </div>
           </div>
         </div>
       </section>
-      <div class="p-page-button">
+      <section>
+        <div class="p-recruitment p-page-section">
+          <div class="p-recruitment__heading">
+            <h2 class="c-title" data-ja="募集要項">
+              <span class="c-title--red">Recruitment</span>
+            </h2>
+          </div>
+          <div class="p-page-section__content">
+            <div class="p-page-button">
+              <ul class="p-page-button__list">
+                <li class="p-page-button__list--item">
+                  <div class="c-button">
+                    <a href="#technician">
+                      <span class="c-button__anchorLink">歯科技工士</span>
+                    </a>
+                  </div>
+                </li>
+                <li class="p-page-button__list--item">
+                  <div class="c-button">
+                    <a href="#sales">
+                      <span class="c-button__anchorLink">営業</span>
+                    </a>
+                  </div>
+                </li>
+                <li class="p-page-button__list--item">
+                  <div class="c-button">
+                    <a href="#clerical">
+                      <span class="c-button__anchorLink">事務</span>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="p-recruitment-info">
+              <ul class="p-recruitment-info__list">
+                <li id="technician">
+                  <div class="p-recruitment-info__title">
+                    <h3>歯科技工士</h3>
+                  </div>
+                  <table class="p-recruitment-info__table">
+                    <tr>
+                      <th>仕事内容</th>
+                      <td>インプラント、ジルコニア、ハイブリッド、CAD/CAMなど架工系。3Dデンチャー 等を製作</td>
+                    </tr>
+                    <tr>
+                      <th>雇用形態</th>
+                      <td>（1）正社員（常勤） （2）アルバイト</td>
+                    </tr>
+                    <tr>
+                      <th>給与</th>
+                      <td>（1）月給22万円～47万円 （2）時給1200円～<br>昇給： 有 （年1回 4月）賞与&colon;有（年2回）<br>※給与は前職、経験などを考慮し、優遇します。</td>
+                    </tr>
+                    <tr>
+                      <th>諸手当の内訳</th>
+                      <td>家族手当、住宅手当、調整手当（能力に応じて要相談）交通費35000円迄支給</td>
+                    </tr>
+                    <tr>
+                      <th>試用期間</th>
+                      <td>3ヶ月</td>
+                    </tr>
+                    <tr>
+                      <th>勤務地</th>
+                      <td>東京都大田区西六郷2-44-6</td>
+                    </tr>
+                    <tr>
+                      <th>勤務時間・休憩</th>
+                      <td>9&colon;00〜18&colon;30<br>お昼休み60分、その他午前15分午後15分休憩</td>
+                    </tr>
+                    <tr>
+                      <th>休日・休暇</th>
+                      <td>長期休暇・特別休暇／夏季休暇／年末年始休暇／慶弔休暇／有給休暇（入社と同時に付与）／産休制度（実績あり）／育休制度（実績あり）／時短勤務（実績あり）／時間有給・半日休暇制度あり</td>
+                    </tr>
+                    <tr>
+                      <th>休日・休暇</th>
+                      <td>長期休暇・特別休暇／夏季休暇／年末年始休暇／慶弔休暇／有給休暇（入社と同時に付与）／産休制度（実績あり）／育休制度（実績あり）／時短勤務（実績あり）／時間有給・半日休暇制度あり</td>
+                    </tr>
+                    <tr>
+                      <th>福利厚生・その他</th>
+                      <td>
+                        研修参加費補助あり、社員旅行（海外・国内）、カーシェアリング制度あり、IDS（2011年～）2年毎社員参加あり、家族手当、住宅手当、調整手当（能力に応じて要相談）交通費35000円迄支給
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>社会保険</th>
+                      <td>健康保険、厚生年金、雇用保険、労災保険</td>
+                    </tr>
+                  </table>
+                  <a href="<?php echo esc_url(home_url('/entry/')); ?>">
+                    <div class="c-button p-recruitment-info__button">
+                      <span class="c-button__pageLink">エントリー</span>
+                    </div>
+                  </a>
+                </li>
+                <li id="sales">
+                  <div class="p-recruitment-info__title">
+                    <h3>営業</h3>
+                  </div>
+                  <table class="p-recruitment-info__table">
+                    <tr>
+                      <th>仕事内容</th>
+                      <td>インプラント、ジルコニア、ハイブリッド、CAD/CAMなど架工系。3Dデンチャー 等を製作</td>
+                    </tr>
+                    <tr>
+                      <th>雇用形態</th>
+                      <td>（1）正社員（常勤） （2）アルバイト</td>
+                    </tr>
+                    <tr>
+                      <th>給与</th>
+                      <td>（1）月給22万円～47万円 （2）時給1200円～<br>昇給： 有 （年1回 4月）賞与&colon;有（年2回）<br>※給与は前職、経験などを考慮し、優遇します。</td>
+                    </tr>
+                    <tr>
+                      <th>諸手当の内訳</th>
+                      <td>家族手当、住宅手当、調整手当（能力に応じて要相談）交通費35000円迄支給</td>
+                    </tr>
+                    <tr>
+                      <th>試用期間</th>
+                      <td>3ヶ月</td>
+                    </tr>
+                    <tr>
+                      <th>勤務地</th>
+                      <td>東京都大田区西六郷2-44-6</td>
+                    </tr>
+                    <tr>
+                      <th>勤務時間・休憩</th>
+                      <td>9&colon;00〜18&colon;30<br>お昼休み60分、その他午前15分午後15分休憩</td>
+                    </tr>
+                    <tr>
+                      <th>休日・休暇</th>
+                      <td>長期休暇・特別休暇／夏季休暇／年末年始休暇／慶弔休暇／有給休暇（入社と同時に付与）／産休制度（実績あり）／育休制度（実績あり）／時短勤務（実績あり）／時間有給・半日休暇制度あり</td>
+                    </tr>
+                    <tr>
+                      <th>休日・休暇</th>
+                      <td>長期休暇・特別休暇／夏季休暇／年末年始休暇／慶弔休暇／有給休暇（入社と同時に付与）／産休制度（実績あり）／育休制度（実績あり）／時短勤務（実績あり）／時間有給・半日休暇制度あり</td>
+                    </tr>
+                    <tr>
+                      <th>福利厚生・その他</th>
+                      <td>
+                        研修参加費補助あり、社員旅行（海外・国内）、カーシェアリング制度あり、IDS（2011年～）2年毎社員参加あり、家族手当、住宅手当、調整手当（能力に応じて要相談）交通費35000円迄支給
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>社会保険</th>
+                      <td>健康保険、厚生年金、雇用保険、労災保険</td>
+                    </tr>
+                  </table>
+                  <a href="<?php echo esc_url(home_url('/entry/')); ?>">
+                    <div class="c-button p-recruitment-info__button">
+                      <span class="c-button__pageLink">エントリー</span>
+                    </div>
+                  </a>
+                </li>
+                <li id="clerical">
+                  <div class="p-recruitment-info__title">
+                    <h3>事務</h3>
+                  </div>
+                  <table class="p-recruitment-info__table">
+                    <tr>
+                      <th>仕事内容</th>
+                      <td>インプラント、ジルコニア、ハイブリッド、CAD/CAMなど架工系。3Dデンチャー 等を製作</td>
+                    </tr>
+                    <tr>
+                      <th>雇用形態</th>
+                      <td>（1）正社員（常勤） （2）アルバイト</td>
+                    </tr>
+                    <tr>
+                      <th>給与</th>
+                      <td>（1）月給22万円～47万円 （2）時給1200円～<br>昇給： 有 （年1回 4月）賞与&colon;有（年2回）<br>※給与は前職、経験などを考慮し、優遇します。</td>
+                    </tr>
+                    <tr>
+                      <th>諸手当の内訳</th>
+                      <td>家族手当、住宅手当、調整手当（能力に応じて要相談）交通費35000円迄支給</td>
+                    </tr>
+                    <tr>
+                      <th>試用期間</th>
+                      <td>3ヶ月</td>
+                    </tr>
+                    <tr>
+                      <th>勤務地</th>
+                      <td>東京都大田区西六郷2-44-6</td>
+                    </tr>
+                    <tr>
+                      <th>勤務時間・休憩</th>
+                      <td>9&colon;00〜18&colon;30<br>お昼休み60分、その他午前15分午後15分休憩</td>
+                    </tr>
+                    <tr>
+                      <th>休日・休暇</th>
+                      <td>長期休暇・特別休暇／夏季休暇／年末年始休暇／慶弔休暇／有給休暇（入社と同時に付与）／産休制度（実績あり）／育休制度（実績あり）／時短勤務（実績あり）／時間有給・半日休暇制度あり</td>
+                    </tr>
+                    <tr>
+                      <th>休日・休暇</th>
+                      <td>長期休暇・特別休暇／夏季休暇／年末年始休暇／慶弔休暇／有給休暇（入社と同時に付与）／産休制度（実績あり）／育休制度（実績あり）／時短勤務（実績あり）／時間有給・半日休暇制度あり</td>
+                    </tr>
+                    <tr>
+                      <th>福利厚生・その他</th>
+                      <td>
+                        研修参加費補助あり、社員旅行（海外・国内）、カーシェアリング制度あり、IDS（2011年～）2年毎社員参加あり、家族手当、住宅手当、調整手当（能力に応じて要相談）交通費35000円迄支給
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>社会保険</th>
+                      <td>健康保険、厚生年金、雇用保険、労災保険</td>
+                    </tr>
+                  </table>
+                  <a href="<?php echo esc_url(home_url('/entry/')); ?>">
+                    <div class="c-button p-recruitment-info__button">
+                      <span class="c-button__pageLink">エントリー</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- <div class="p-page-button">
         <ul class="p-page-button__list">
           <li class="p-page-button__list--item">
             <div class="c-button">
@@ -88,13 +278,6 @@ get_header();
               </a>
             </div>
           </li>
-          <!-- <li class="p-page-button__list--item">
-            <div class="c-button">
-              <a href="#access">
-                <span class="c-button__anchorLink">働く環境</span>
-              </a>
-            </div>
-          </li> -->
           <li class="p-page-button__list--item">
             <div class="c-button">
               <a href="<?php echo esc_url(home_url('/entry/')); ?>">
@@ -103,195 +286,7 @@ get_header();
             </div>
           </li>
         </ul>
-      </div>
-      <section>
-        <div class="p-page-section" id="thought">
-          <div class="p-recruit-thought">
-            <p class="p-recruit-thought__lead c-lead">私たちの考える歯科技工所</p>
-            <div class="p-recruit-thought__detail">
-              歯科技工士がその知識と技術を発揮するには、お得意様より受注する模型、現在では口腔内や模型のデータが無ければなりません。お得意様からの信頼に知識と技術で応える歯科技工職。それを伝えお届けする営業職。お得意様、歯科技工職、営業職をスムースに繋ぐ事務職。歯科技工所は、歯科技工職、営業職、事務職、が必要です。
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="p-page-section" id="position">
-          <div class="p-recruit-position">
-            <div class="p-position__title">
-              <h2 class="c-title" data-ja="募集職種"><span class="c-title--red">Position</span></h2>
-            </div>
-            <div class="p-page-section__content">
-              <ul class="p-recruit-position__list">
-                <a href="<?php echo esc_url(home_url('/recruitment/#technician')); ?>">
-                  <li class="p-recruit-position__card">
-                    <h3 class="p-recruit-position__title">技工士</h3>
-                    <p class="p-recruit-position__text">様々な歯科補綴物を製作することができます。機能的かつ美しい治療を提供する役割を担っています。</p>
-                    <div class="p-recruit-position__button">
-                      <span class="">募集要項</span>
-                    </div>
-                  </li>
-                </a>
-                <a href="<?php echo esc_url(home_url('/recruitment/#sales')); ?>">
-                  <li class="p-recruit-position__card">
-                    <h3 class="p-recruit-position__title">営業職</h3>
-                    <p class="p-recruit-position__text">製品の特徴や利点を理解し得意先のニーズに合わせた提案をしていただきます。</p>
-                    <div class="p-recruit-position__button">
-                      <span class="">募集要項</span>
-                    </div>
-                  </li>
-                </a>
-                <a href="<?php echo esc_url(home_url('/recruitment/#clerical')); ?>">
-                  <li class="p-recruit-position__card">
-                    <h3 class="p-recruit-position__title">事務職</h3>
-                    <p class="p-recruit-position__text">営業の全面的なバックアップをしていただきます。PCを利用しデータを入力したり、電話対応をしていただきます。</p>
-                    <div class="p-recruit-position__button">
-                      <span class="">募集要項</span>
-                    </div>
-                  </li>
-                </a>
-              </ul>
-            </div>
-          </div>
-      </section>
-      <section>
-        <div class="p-page-section" id="numbers">
-          <div class="p-recruit-numbers">
-            <div class="p-recruit-numbers__title">
-              <h2 class="c-title" data-ja="数字で見るベルデンタル"><span class="c-title--red">Numbers</span></h2>
-            </div>
-            <div class="p-recruit-numbers__content">
-              <ul class="p-recruit-numbers__list">
-                <li class="p-recruit-numbers__item">
-                  <h3 class="p-recruit-numbers__title">
-                    創設
-                  </h3>
-                  <p class="p-recruit-numbers__value">
-                    <span>1981</span>年
-                  </p>
-                </li>
-                <li class="p-recruit-numbers__item">
-                  <h3 class="p-recruit-numbers__title">
-                    従業員数
-                  </h3>
-                  <p class="p-recruit-numbers__value">
-                    <span>75</span>人
-                  </p>
-                </li>
-                <li class="p-recruit-numbers__item">
-                  <h3 class="p-recruit-numbers__title">
-                    男女比
-                  </h3>
-                  <p class="p-recruit-numbers__value">
-                    <span>7：3</span>
-                  </p>
-                </li>
-                <li class="p-recruit-numbers__item">
-                  <h3 class="p-recruit-numbers__title">
-                    年間休日
-                  </h3>
-                  <p class="p-recruit-numbers__value">
-                    <span>113</span>日
-                  </p>
-                </li>
-                <li class="p-recruit-numbers__item">
-                  <h3 class="p-recruit-numbers__title">
-                    有給休暇取得率
-                  </h3>
-                  <p class="p-recruit-numbers__value">
-                    <span>100</span>％
-                  </p>
-                </li>
-                <li class="p-recruit-numbers__item">
-                  <h3 class="p-recruit-numbers__title">
-                    住宅手当
-                  </h3>
-                  <p class="p-recruit-numbers__value">
-                    <span>25</span>％
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </div>
-      </section>
-      <section>
-        <div class="p-page-section" id="personality">
-          <div class="p-recruit-personality">
-            <div class="p-recruit-personality__textBox">
-              <div class="p-recruit-personality__title">
-                <h2 class="c-title" data-ja="求める人物像"><span class="c-title--red">Personality</span></h2>
-              </div>
-              <div class="p-recruit-personality__images sp">
-                <div class="p-recruit-personality__circle">
-                  チームで<br>働く力
-                </div>
-                <div class="p-recruit-personality__circle">
-                  チャレンジ<br>精神
-                </div>
-                <div class="p-recruit-personality__circle">
-                  やる気
-                </div>
-              </div>
-              <p class="p-recruit-personality__text">
-                ベルデンタルでは何よりもチームワークを大切にしています。<br>同じ方向を見て働ける上司や先輩と、信頼関係を築きながら仕事ができる。<br>そんな環境だからこそ、自分の力を存分に発揮できると考えています。>もちろん、入社された方にいきなり成果を求めることはありません。会社には、あなたが成長できるように経験を積ませ、育てる責任があります。だからこそ大切なのは、相性とコミュニケーション。良いチームには、上司や先輩の「聴く姿勢」と、あなたの「伝える力」が欠かせません。一人では届かない場所も、チームならきっとたどり着ける。そんな職場を、私たちは一緒に築いていきたいと思っています。
-              </p>
-            </div>
-            <div class="p-recruit-personality__images pc">
-              <div class="p-recruit-personality__circle">
-                チームで<br>働く力
-              </div>
-              <div class="p-recruit-personality__circle">
-                チャレンジ<br>精神
-              </div>
-              <div class="p-recruit-personality__circle">
-                やる気
-              </div>
-            </div>
-          </div>
-      </section>
-      <section>
-        <div class="p-page-section" id="benefits">
-          <div class="p-recruit-benefits">
-            <div class="p-recruit-benefits__title">
-              <h2 class="c-title" data-ja="働く魅力"><span class="c-title--red">Benefits</span></h2>
-            </div>
-            <div class="p-page-section__content">
-              <ul class="p-recruit-benefits__list">
-                <li class="p-recruit-benefits__card">
-                  <div class="p-recruit-benefits__main">
-                    <div class="p-recruit-benefits__text">
-                      <p class="p-recruit-benefits__lead c-lead">一人一人の考えを尊重。末長く働ける職場環境</p>
-                      <div class="p-recruit-benefits__detail">
-                        ベルデンタルラボラトリーの社員のほとんどは、学校を卒業後、新卒で入社してからそのまま働き続けてきた人たちです。離職率が高いといわれるこの業界において、これだけ勤続年数の長い社員が多いのは、一人一人の考えを尊重しながら時代に合わせて経営方針を見直してきたから。昨今は残業を減らすべく、チームによる業務量の偏りをなくすことが課題。日々の業務量を把握して全員が一緒に退社できるよう、毎日の朝会で各班のリーダーがその日に進めるべき案件を共有し、必要に応じて人員を振り分けます。
-                      </div>
-                    </div>
-                  </div>
-                  <div class="p-recruit-benefits__img">
-                    <picture>
-                      <source srcset="<?php echo get_theme_file_uri('assets/images/home_recruit-02.webp'); ?>" type="image/webp" />
-                      <img src="<?php echo get_theme_file_uri('assets/images/home_recruit-02.jpg'); ?>" alt="" />
-                    </picture>
-                  </div>
-                </li>
-                <li class="p-recruit-benefits__card reverse">
-                  <div class="p-recruit-benefits__main">
-                    <div class="p-recruit-benefits__text">
-                      <p class="p-recruit-benefits__lead c-lead">ベテラン層の知識を受け継ぎ<br>次代を担う人材へ</p>
-                      <div class="p-recruit-benefits__detail">
-                        当社は、ベテラン層の活躍に支えられながら、着実に成長を続けています。しかし、次代を見据えた人材育成も今後の成長に欠かせません。私たちは、セミナー参加や研修など、あなたの成長を全力でサポートします。会社として、あなたが一歩一歩成長できる環境を提供し、共に未来を築いていきたいと考えています。
-                      </div>
-                    </div>
-                  </div>
-                  <div class="p-recruit-benefits__img">
-                    <picture>
-                      <source srcset="<?php echo get_theme_file_uri('assets/images/home_recruit-02.webp'); ?>" type="image/webp" />
-                      <img src="<?php echo get_theme_file_uri('assets/images/home_recruit-02.jpg'); ?>" alt="" />
-                    </picture>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-      </section>
+      </div> -->
     </div>
   </div>
 </main>
