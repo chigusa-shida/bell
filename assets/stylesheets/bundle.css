@@ -265,132 +265,11 @@ html, body {
   flex-direction: column;
 }
 .p-about .p-about-recruit__btn{
-    margin-top: 5%;
-}
-
-.p-about-planning__img {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 3 / 2; /* 横長比率、好みで調整OK */
-}
-
-.p-about-planning__img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* PCレイアウト（3枚横並び & 1枚目広め） */
-.p-about-planning__images {
-  display: flex;
-}
-
-.p-about-planning__img:nth-child(1) {
-  flex: 0 0 50%; /* 1枚目を広めに */
-}
-
-.p-about-planning__img:nth-child(2),
-.p-about-planning__img:nth-child(3) {
-  flex: 0 0 25%; /* 残り2枚で合わせて50% */
-}
-.p-about-communication__img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-/* PCレイアウト（3枚横並び & 1枚目広め） */
-.p-about-communication__images {
-  display: flex;
-}
-
-.p-about-communication__img {
-  flex: 0 0 33.333%;
-}
-.p-about-health__img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-/* PCレイアウト（3枚横並び & 1枚目広め） */
-.p-about-health__images {
-  display: flex;
-}
-
-.p-about-health__img {
-  flex: 0 0 33.333%;
-}
-.p-about-environme__img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-/* PCレイアウト（3枚横並び & 1枚目広め） */
-.p-about-environme__images {
-  display: flex;
-}
-
-.p-about-environme__img {
-  flex: 0 0 50%;
+  text-align: left;
+    margin: 5% auto 0;
 }
 .p-about-section__text{
   margin-top: 4%;
-}
-.p-about-sales__images{
-    display: flex;
-  }
-  .p-about-sales__img{
-    width: 50%;
-    aspect-ratio: 13/9; /* 画像の比率変更したいならここ調整 */
-    overflow: hidden;
-  }
-  .p-about-sales__img img {
-    object-fit: cover;
-    height: 100%;
-  }
-.p-about .p-about-advantage__list {
-  display: flex;
-  flex-direction: column;
-}
-.p-advantage .p-advantage-card {
-  display: flex;
-  position: relative;
-}
-.p-advantage .p-advantage-card__img {
-  opacity: 0.7;
-}
-.p-advantage .p-advantage-card__img::after {
-  content: "";
-  display: block;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 0;
-}
-.p-advantage .p-advantage-card__label {
-  text-align: center;
-  color: black;
-  font-family: "Quicksand";
-  font-weight: 500;
-  background-color: #da0000;
-}
-.p-advantage .p-advantage-card__text {
-  display: flex;
-  flex-direction: column;
-}
-.p-advantage .p-advantage-card__text--detail {
-  line-height: 2;
-}
-.p-advantage .p-advantage-card__imgwrap {
-  height: 100%;
-}
-.p-advantage-card--link {
-  color: #FFF;
 }
 
 footer a {
@@ -641,16 +520,6 @@ footer a {
 .p-page-nav li > a:hover {
   color: #da0000;
   border: solid 1px #da0000;
-}
-
-.p-company-message {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.p-company-message__title {
-  text-align: center;
 }
 
 .p-company-vision {
@@ -3539,42 +3408,6 @@ br.u-br-sp {
   .p-about .p-about-advantage__content {
     margin-top: max(35px, 6.5vw);
   }
-  .p-about .p-about-planning__images {
-    flex-wrap: wrap;
-  }
-
-  .p-about .p-about-planning__img:nth-child(1) {
-    flex: 0 0 100%; /* 上段1枚 */
-  }
-
-  .p-about .p-about-planning__img:nth-child(2),
-  .p-about .p-about-planning__img:nth-child(3) {
-    flex: 0 0 50%;  /* 下段2枚横並び */
-  }
-  .p-about .p-about-communication__images {
-    flex-wrap: wrap;
-  }
-
-  .p-about .p-about-communication__img:nth-child(1) {
-    flex: 0 0 100%; /* 上段1枚 */
-  }
-
-  .p-about .p-about-communication__img:nth-child(2),
-  .p-about .p-about-communication__img:nth-child(3) {
-    flex: 0 0 50%;  /* 下段2枚横並び */
-  }
-  .p-about .p-about-health__images {
-    flex-wrap: wrap;
-  }
-
-  .p-about .p-about-health__img:nth-child(1) {
-    flex: 0 0 100%; /* 上段1枚 */
-  }
-
-  .p-about .p-about-health__img:nth-child(2),
-  .p-about .p-about-health__img:nth-child(3) {
-    flex: 0 0 50%;  /* 下段2枚横並び */
-  }
   
   .p-advantage {
     padding-bottom: 13.04%;
@@ -3672,16 +3505,14 @@ br.u-br-sp {
   .p-company {
     padding-bottom: 13.04%;
   }
-  .p-company-message {
-    gap: 50px;
-  }
   .p-company-vision {
     padding: 60px 6.941%;
     gap: 50px;
   }
   .p-company-history__item {
     flex-direction: column;
-    gap: 20px;
+    gap: 3px;
+    padding-bottom: 35px;
   }
   .p-company-history__item::after {
     bottom: -30px;
@@ -4260,7 +4091,7 @@ br.u-br-sp {
     margin-top: max(100px, 11.7vw);
   }
   .p-page-section__content {
-    margin-top: max(50px, 7.8vw);
+    margin-top:4%;
   }
   .p-page-article-nav {
     font-size: 15px;
@@ -5105,7 +4936,7 @@ br.u-br-sp {
     margin-top: 160px;
   }
   .p-page-section__content {
-    margin-top: 100px;
+    margin-top: 4%;
   }
   .p-home__section {
     margin-top: 100px;
@@ -6765,6 +6596,11 @@ button.swiper-pagination-bullet {
   .p-about-support__img{
     aspect-ratio: 16 / 9;
   }
+
+  .p-about-support__card{
+    gap: 30px;
+  }
+  
 }
 
 @media (max-width: 520px) { 
@@ -6809,3 +6645,91 @@ button.swiper-pagination-bullet {
 }
 
 
+/* 親セクション */
+.p-recruit-cta{
+  position: relative;
+  margin: 80px 0; /* 前後のセクションとの間 */
+  color: #fff;
+}
+
+/* 背景をフルブリードさせる */
+.p-recruit-cta::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* 画面幅いっぱいにする */
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-image: url('../images/about_fv.webp'); /* ←差し替え */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: 0;
+}
+
+/* うっすら暗くするオーバーレイ（任意） */
+.p-about-recruit .p-recruit-cta::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,.50);
+  z-index: 1;
+}
+
+/* 中身 */
+.p-about-recruit .p-recruit-cta__inner{
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 24px;
+  text-align: center;
+}
+
+/* 細かいテキスト調整 */
+.p-about-recruit .p-recruit-cta__eyebrow{
+  color: #da0000;
+  letter-spacing: .12em;
+  margin-bottom: 12px;
+}
+
+.p-about-recruit .p-recruit-cta__title{
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.p-about-recruit .p-recruit-cta__text{
+  margin-bottom: 32px;
+}
+@media (max-width: 950px){
+  .p-recruit-cta{
+    margin: 55px 0;
+  }
+}
+@media (max-width: 520px) { 
+  .p-recruit-cta{
+    margin: 0;
+  }
+}
+
+.p-company-history {
+  margin: 80px 0;
+}
+
+@media (max-width: 950px){
+  .p-company-history {
+    margin: 55px 0;
+  }
+}  
+@media (max-width: 520px) { 
+  .p-company-history {
+    margin: 0 0 55px 0;
+  }
+}
