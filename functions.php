@@ -36,9 +36,12 @@ add_action('init', function () {
 });
 
 //外観にメニュー
+// 外観にメニューを登録
 add_action('after_setup_theme', function () {
   register_nav_menus(array(
-    'primary' => 'メインメニュー',
+    'top_menu'    => 'ヘッダー上部メニュー',
+    'primary'     => 'ヘッダー下部（メイン）メニュー',
+    'footer_menu' => 'フッターメニュー',
   ));
 });
 

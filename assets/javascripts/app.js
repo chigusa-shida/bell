@@ -73,29 +73,29 @@
     });
 
     // トップへ戻るボタン
-    var pageTop = $('#page-top');
-    pageTop.hide();
-    $(window).scroll(function () {
-      if ($(this).scrollTop() > 100) {
-        pageTop.fadeIn();
-      } else {
-        pageTop.fadeOut();
-      }
-    });
-    pageTop.click(function () {
-      $('body,html').animate({ scrollTop: 0 }, 500);
-      return false;
-    });
-    $(window).on('scroll', function () {
-      var scrollHeight = $(document).height();
-      var scrollPosition = $(window).height() + $(window).scrollTop();
-      var footHeight = $('.p-footer__bottom').outerHeight() + 60;
-      if (scrollHeight - scrollPosition <= footHeight) {
-        $('#page-top').css({ position: 'absolute', bottom: footHeight, width: '100%' });
-      } else {
-        $('#page-top').css({ position: 'fixed', bottom: '60px', width: '' });
-      }
-    });
+    // var pageTop = $('#page-top');
+    // pageTop.hide();
+    // $(window).scroll(function () {
+    //   if ($(this).scrollTop() > 100) {
+    //     pageTop.fadeIn();
+    //   } else {
+    //     pageTop.fadeOut();
+    //   }
+    // });
+    // pageTop.click(function () {
+    //   $('body,html').animate({ scrollTop: 0 }, 500);
+    //   return false;
+    // });
+    // $(window).on('scroll', function () {
+    //   var scrollHeight = $(document).height();
+    //   var scrollPosition = $(window).height() + $(window).scrollTop();
+    //   var footHeight = $('.p-footer__bottom').outerHeight() + 60;
+    //   if (scrollHeight - scrollPosition <= footHeight) {
+    //     $('#page-top').css({ position: 'absolute', bottom: footHeight, width: '100%' });
+    //   } else {
+    //     $('#page-top').css({ position: 'fixed', bottom: '60px', width: '' });
+    //   }
+    // });
   }
 
   // ========== スムーススクロール（#リンク） ==========
