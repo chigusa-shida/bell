@@ -119,10 +119,12 @@ html, body {
 }
 
 .l-main {
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 100%;
   height: 100%;
   position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 /*// ==========================================================================
@@ -211,17 +213,7 @@ html, body {
   height: 100%;
   overflow-y: auto;
 }
-.p-gnav__wrap {
-  display: flex;
-  flex-direction: column-reverse;
-}
 
-/* グローバルナビ上 */
-.p-gnav__top li a {
-  color: #fff;
-}
-
-/* グローバルナビ下 */
 /* .p-gnav__bottomMenu--btn.is-open::before {
   transform: rotate(90deg);
 } */
@@ -2439,77 +2431,55 @@ br.u-br-sp {
   .p-heading__content.col .p-heading__img {
     padding-top: 50%;
   }
+    /* グローバルナビ */
+    .p-gnav__wrap {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 1em;
+      font-size: clamp(0.8125rem, 1.25vw, 0.9375rem);
+      font-weight: 400;
+    }
+  /* グローバルナビ上 */
+  /* .p-gnav__top {
+    display: flex;
+    justify-content: flex-end;
+    gap: 26px;
+  }
   .p-gnav__top li {
-    line-height: 2.5em;
-  }
-  /* .p-gnav__bottomMenu {
-    border-top: solid 1px #393939;
-  }
-  .p-gnav__bottomMenu:first-child {
-    border: none;
-  }
-  .p-gnav__bottomMenu--link {
     position: relative;
+  }
+  .p-gnav__top li a {
+    display: flex;
     text-decoration: none;
-    color: #dbdbdb;
-    font-size: 12px;
-    padding-left: 3px;
-    padding-top: 20px;
-    display: block;
-    padding-bottom: 20px;
+    transition: 0.2s;
+    font-weight: 400;
   }
-  .p-gnav__bottomMenu--link::after {
-    content: attr(title);
-    display: block;
-    color: #da0000;
-    font-size: 35px;
-    font-family: "Quicksand";
-    font-weight: 300;
-    left: 0;
-    line-height: 1;
-  }
-  .p-gnav__bottomMenu--btn {
-    position: absolute;
-    display: block;
-    width: 60px;
-    height: 100%;
-    top: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    text-indent: -9999px;
-    border: 0 none;
-    background-color: transparent;
-    cursor: pointer;
-    outline: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    transition: background-color 0.2s linear;
-  }
-  .p-gnav__bottomMenu--btn::before {
+  .p-gnav__top li:not(:last-child)::before {
     content: "";
     position: absolute;
-    display: block;
+    left: calc(100% + 13px);
+    top: 20%;
+    background: #ffffff;
     width: 1px;
-    height: 20px;
-    top: calc(50% - 8px);
-    left: calc(50% - 1px);
-    background-color: #ffffff;
-    transition: transform 0.2s ease-out;
+    height: 60%;
   }
-  .p-gnav__bottomMenu--btn::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 20px;
-    height: 1px;
-    top: calc(50% + 1px);
-    left: calc(50% - 10px);
-    background-color: #ffffff;
-  }
-  .p-gnav__bottomMenu--contact {
-    line-height: 2.5em;
+  .p-gnav__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2.5em;
+  } */
+  /* グローバルナビ下 */
+  /* .p-gnav__bottom li a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    transition: 0.2s;
+    font-weight: 400;
+    color: #fff;
+    text-decoration: none;
   } */
   .p-dropmenu {
     position: relative;
@@ -3188,6 +3158,9 @@ br.u-br-sp {
   .c-lead {
     font-size: clamp(1.25rem, 3.259452412vw, 1.5625rem);
   }
+  .c-title-ja {
+    font-size: clamp(1.375rem, 4.8vw, 1.75rem);
+  }
   .c-post-cat {
     font-size: 12px;
   }
@@ -3521,6 +3494,9 @@ br.u-br-sp {
   .c-title::after {
     font-size: 16px;
   }
+  .c-title-ja {
+    font-size: clamp(1.5rem, 2.2vw, 1.75rem);
+  }
   .c-lead {
     font-size: clamp(1.5625rem, 2.25vw, 1.6875rem);
   }
@@ -3612,6 +3588,7 @@ br.u-br-sp {
     margin-left: -14.5%;
     padding-top: 40%;
   }
+    /* グローバルナビ */
   .p-gnav__wrap {
     letter-spacing: 0.08em;
     width: 100%;
@@ -3621,6 +3598,8 @@ br.u-br-sp {
     font-size: clamp(0.8125rem, 1.25vw, 0.9375rem);
     font-weight: 400;
   }
+  
+  /* グローバルナビ上 */
   .p-gnav__top {
     display: flex;
     justify-content: flex-end;
@@ -3644,18 +3623,14 @@ br.u-br-sp {
     width: 1px;
     height: 60%;
   }
-  /* .p-gnav__bottom {
+  .p-gnav__bottom {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 2.5em;
-  } */
-  /* .p-gnav__bottomMenu {
-    height: 60px;
-    display: flex;
-    align-items: center;
-  } */
-  /* .p-gnav__bottomMenu--link {
+  }
+  /* グローバルナビ下 */
+  .p-gnav__bottom li a {
     position: relative;
     display: flex;
     align-items: center;
@@ -3664,21 +3639,9 @@ br.u-br-sp {
     transition: 0.2s;
     font-weight: 400;
     color: #fff;
-    font-size: clamp(0.8125rem, 1.25vw, 0.9375rem);
+    /* font-size: clamp(0.8125rem, 1.25vw, 0.9375rem); */
     text-decoration: none;
-  } */
-  /* .p-gnav__bottomMenu--link::after {
-    position: absolute;
-    display: block;
-    left: 50%;
-    transform: translateX(-50%);
-    content: "";
-    width: 0;
-    height: 2px;
-    background: #da0000;
-    bottom: 0;
-    transition: all 0.4s;
-  } */
+  }
   .p-gnav__bottomMenu--contact a {
     display: block;
     transition: 0.3s;
@@ -3897,12 +3860,6 @@ br.u-br-sp {
   .p-home-advantage-card__desc {
     max-width: 400px;
   }
-  /* .p-home-advantage-card__lead {
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  } */
   .p-home-product {
     justify-content: space-between;
     gap: 70px;
@@ -5353,10 +5310,13 @@ button.swiper-pagination-bullet {
 }
 
 .p-career__content p {
-  margin: 0 0 10px;
   font-size: 18px;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.9);
+}
+
+.p-career__content p + p {
+  margin-top: 10px;
 }
 
 /* ===== right collage ===== */
@@ -5476,8 +5436,7 @@ button.swiper-pagination-bullet {
 /* 親要素からはみ出させて見せたい場合（任意）
    .p-about-section 等で padding があるなら、左右に広げる */
 .p-flow{
-  position: relative;
-  overflow: hidden;                 /* はみ出しは隠す */
+  position: relative;              /* はみ出しは隠す */
   width: calc(100% + 140px);        /* 例：左右+70pxずつ（サイトの内側余白に合わせて調整） */
   margin-left: -70px;
   margin-right: -70px;
@@ -5537,14 +5496,14 @@ button.swiper-pagination-bullet {
   pointer-events: none;
   z-index: 2;
 }
-.p-flow::before{
+/* .p-flow::before{
   left: 0;
   background: linear-gradient(to right, rgba(0,0,0,.85), rgba(0,0,0,0));
 }
 .p-flow::after{
   right: 0;
   background: linear-gradient(to left, rgba(0,0,0,.85), rgba(0,0,0,0));
-}
+} */
 
 /* ユーザーがhoverしたら一旦止める（任意） */
 @media (hover: hover){
@@ -5671,7 +5630,24 @@ button.swiper-pagination-bullet {
   }
 }
 
+.p-page-section__heading {
+  border-bottom: solid 1px #fff;
+  padding-bottom: 10px;
+}
 
+.c-heading{              /* 文字色 */
+  font-size: 20px;           /* 好みで */
+  letter-spacing: 0.12em;
+  white-space: nowrap;       /* 改行させない */
+}
+
+@media (max-width: 767px) { 
+  .c-heading{            /* 文字色 */
+    font-size: 16px;           /* 好みで */
+    letter-spacing: 0.12em;
+    white-space: nowrap;       /* 改行させない */
+  }
+}
 .c-heading-line{
   display: flex;
   align-items: center;
@@ -5691,7 +5667,7 @@ button.swiper-pagination-bullet {
   background: rgba(255,255,255,0.4); /* 線の色 */
 }
 
-@media (max-width: 520px) { 
+@media (max-width: 767px) { 
   .c-heading-line{
     display: flex;
     align-items: center;
@@ -5806,28 +5782,174 @@ button.swiper-pagination-bullet {
     margin: 105px 0;
   }
 }  
-@media (max-width: 520px) { 
+@media (max-width: 767px) { 
   .p-page-section {
-    margin: 0 0 55px 0;
+    margin: 55px 0;
+  }
+  .p-recruitment-info__list {
+    gap: 50px;
   }
 }
 
-.p-gnav__bottom {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 2.5em;
+.p-transaction p + p {
+  margin-top: 10px;
 }
 
-.p-gnav__bottom li a {
+.p-transaction__content{
+  display: grid;
+
+  /* 右列を“割合優先”にする：最大420px、でも画面が狭いほど縮む */
+  grid-template-columns: 1fr minmax(220px, min(420px, 38%));
+
+  gap: clamp(36px, 6.5vw, 96px);
+  align-items: start;
+  padding: 5% 0 0;
+}
+
+/* グリッドの子が縮めない事故を防ぐ（超重要） */
+.p-transaction__text,
+.p-transaction__media{
+  min-width: 0;
+}
+
+/* 右：画像2枚にも対応 */
+.p-transaction__media{
+  display: grid;
+  gap: 16px;
   position: relative;
-  display: flex;
+}
+
+.p-transaction__media.is-one {
   align-items: center;
-  height: 100%;
+}
+
+.p-transaction__media.is-one .p-transaction__img{
+  aspect-ratio: 0;
+}
+
+
+/* 画像そのもの */
+.p-transaction__img{
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  /* border-radius: 10px; */
+}
+.p-transaction__actions {
   display: flex;
-  transition: 0.2s;
-  font-weight: 400;
-  color: #fff;
-  font-size: clamp(0.8125rem, 1.25vw, 0.9375rem);
+  gap: 16px;
+  justify-content: center;
+  margin-top: 7%;
+  flex-wrap: wrap;
+}
+
+.p-transaction__img--right {
+  right: 0;
+  position: absolute;
+  max-width: 300px;
+}
+.p-transaction__img--left {
+  right: 50%;
+  top: 150px;
+  position: absolute;
+  max-width: 200px;
+}
+
+.p-transaction__note {
+padding: 15px;
+border: solid 1px #fff;
+margin-top: 30px;
+font-size: 16px;
+}
+
+@media (max-width: 890px) {
+  .p-transaction__img--right,
+  .p-transaction__img--left{
+    position: static;
+    right: auto;
+    top: auto;
+
+    width: 100%;
+    max-width: 100%;   /* ←必須 */
+    height: auto;
+  }
+
+  .p-transaction__media{
+    display: grid;
+    grid-template-columns: 1fr;  /* まずは縦並び */
+    gap: 16px;
+    position: static;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .p-transaction__content{
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px 0 0;
+  }
+
+  /* 画像を上に */
+  .p-transaction__media{
+    order: -1;
+  }
+
+    /* デフォは1列（画像1枚なら100%） */
+    .p-transaction__media{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  
+    /* 2枚以上の時だけ2列 */
+    .p-transaction__media:has(.p-transaction__img:nth-child(2)){
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+  .p-transaction__img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 6 / 3;
+  }
+  .p-transaction__actions {
+    margin-top: 13%;
+  }
+
+  /* ←ここ重要：SPで max-width:300px を絶対に書かない */
+}
+
+.c-button-red {
+  width: 300px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 22px;
+  border-radius: 999px;
   text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .06em;
+  white-space: nowrap;
+  background-color: #da0000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* box-shadow: 0 4px 12px rgba(218, 0, 0, 0.3); */
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+.c-button-red:hover {
+  background-color: #FFFF;
+  color: #da0000;
 }
