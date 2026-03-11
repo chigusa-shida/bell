@@ -94,6 +94,53 @@ get_header();
                          <a class="c-button-red" href="#">デンタル便24で注文する</a>
                     </div>
                 </div>
+                <div class="p-transaction__container">
+                    <div class="p-page-section__heading">
+                        <span class="c-title--red">DIGITAL</span>
+                        <h3 class="c-heading">IOS</h3>
+                    </div>
+                    <div class="p-transaction__content">
+                        <div class="p-transaction__text">
+                            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+
+                        </div>
+                        <div class="p-transaction__media">
+                            <img class="p-transaction__img" src="<?php echo esc_url(get_theme_file_uri('assets/images/dummy_img.webp')); ?>" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="p-transaction__container">
+                    <div class="p-page-section__heading">
+                        <span class="c-title--red">TERMS</span>
+                        <h3 class="c-heading">お支払いについて</h3>
+                    </div>
+                    <div class="p-transaction__content">
+                        <div class="p-transaction__text">
+                            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+
+                        </div>
+                        <div class="p-transaction__media">
+                            <img class="p-transaction__img" src="<?php echo esc_url(get_theme_file_uri('assets/images/dummy_img.webp')); ?>" alt="">
+                        </div>
+                    </div>
+                </div>                <div class="p-transaction__container">
+                    <div class="p-page-section__heading">
+                        <span class="c-title--red">DENTAL&nbsp;METAL&nbsp;HANDLING</span>
+                        <h3 class="c-heading">歯科用金属のお取り扱いについて</h3>
+                    </div>
+                    <div class="p-transaction__content">
+                        <div class="p-transaction__text">
+                            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+
+                        </div>
+                        <div class="p-transaction__media">
+                            <img class="p-transaction__img" src="<?php echo esc_url(get_theme_file_uri('assets/images/dummy_img.webp')); ?>" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>  
         </div>
     </div>
