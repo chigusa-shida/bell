@@ -22,37 +22,24 @@
       $('#js-main').css('margin-top', height + 10);
     });
 
-    // PC: ドロップダウン
-    if ($(window).innerWidth() > 949) {
-      $('.js-dropdown_link').hover(
-        function () {
-          $(this).children('.js-dropdown_contents').stop().slideDown();
-        },
-        function () {
-          $(this).children('.js-dropdown_contents').stop().slideUp();
-        }
-      );
-    } else {
-      var $megamenu = $('.js-dropdown_contents');
-      var btnSubmenu = '<button type="button" class="p-gnav__bottomMenu--btn"></button>';
-      $megamenu.prev('a').append(btnSubmenu);
-      $('.p-gnav__bottomMenu--btn').on('click', function (e) {
-        e.preventDefault();
-        var $this = $(this).closest('li');
-        var menu = $this.children('.js-dropdown_contents');
-        menu.slideToggle();
-        $(this).toggleClass('is-open');
-      });
-    }
+    document.querySelectorAll('.p-gnav__bottom .menu-item-has-children > a')
+    .forEach(link => {
 
-    // スクロールでヘッダー
-    // $(window).on('scroll', function () {
-    //   if (2 < $(this).scrollTop()) {
-    //     $('.p-header').attr('data-scroll', 'true');
-    //   } else {
-    //     $('.p-header').attr('data-scroll', '');
-    //   }
-    // });
+      link.addEventListener('click', function(e){
+
+        if(window.innerWidth <= 949){
+
+          e.preventDefault();
+
+          const parent = this.parentElement;
+          parent.classList.toggle('open');
+
+        }
+
+      });
+
+    });
+
 
     // ハンバーガーメニュー
     $('.p-header__btn').on('click', function () {
