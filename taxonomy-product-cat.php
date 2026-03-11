@@ -27,6 +27,11 @@ if ($is_parent) {
   if (is_wp_error($child_terms)) {
     $child_terms = [];
   }
+
+  // 子カテゴリが1件もない親カテゴリなら、自分自身を表示対象にする
+  if (empty($child_terms)) {
+    $child_terms = [$term];
+  }
 } else {
   // 子カテゴリページ → 自分自身を1セクションとして表示
   $child_terms = [$term];
@@ -87,7 +92,6 @@ if ($is_parent) {
                     ]
                 ]);
                 ?>
-
                 <?php if ($product_query->have_posts()) : ?>
                     <section class="p-product-category__section" id="term-<?php echo esc_attr($child->slug); ?>">
                     <div class="p-product-category__sectionTitle">
