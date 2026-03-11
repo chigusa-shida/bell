@@ -148,42 +148,6 @@ function create_post_type()
       'show_in_rest' => true,
     )
   );
-
-  register_post_type(
-    'faq',
-    array(
-      'label' => 'よくある質問',
-      'show_in_rest' => true,
-      'has_archive' => true,
-      'public' => true,
-      'pages' => false,
-      'menu_position' => 5,
-      'menu_icon' => 'dashicons-info-outline',
-      'supports' => array(
-        'title',
-        'editor',
-      ),
-    )
-  );
-
-  register_post_type(
-    'works',
-    array(
-      'label' => '制作事例',
-      'public' => true,
-      'has_archive' => true,
-      'show_in_rest' => true,
-      'menu_position' => 5,
-      'menu_icon' => 'dashicons-info-outline',
-      'supports' => array(
-        'title',
-        'editor',
-        'revisions',
-        'custom-fields',
-        'excerpt',
-      ),
-    )
-  );
 }
 
 /**
@@ -369,16 +333,25 @@ add_action('admin_head', 'custom_admin_styles');
 // 'product_order' に基づいて投稿を並び替える
 function sort_posts_by_product_order($query)
 {
-  // 管理画面の投稿一覧ページでのみ適用
   if (!is_admin() || !$query->is_main_query()) {
     return;
   }
 
-  // 'post' タイプ（またはカスタム投稿タイプ 'product'）の投稿一覧で並び替え
-  if ('product' == $query->get('post_type')) {
-    $query->set('meta_key', 'product_order');  // 並び替えに使用するカスタムフィールド
-    $query->set('orderby', 'meta_value_num');  // 数値として並び替える
-    $query->set('order', 'ASC');  // 昇順（昇順を変更したい場合は 'DESC' に変更）
+  global $pagenow;
+
+  if ($pagenow !== 'edit.php') {
+    return;
+  }
+
+  if ($query->get('post_type') !== 'product') {
+    return;
+  }
+
+  // 並び順カラムをクリックした時だけ有効にする
+  if ($query->get('orderby') === 'product_order') {
+    $query->set('meta_key', 'product_order');
+    $query->set('orderby', 'meta_value_num');
+    $query->set('order', 'ASC');
   }
 }
 add_action('pre_get_posts', 'sort_posts_by_product_order');
@@ -463,13 +436,41 @@ function custom_breadcrumb()
 
   // カスタム投稿タイプのアーカイブページ
   if (is_post_type_archive()) {
-    $post_type = get_post_type_object(get_post_type());
-    echo '<li><a href="' . esc_url(get_post_type_archive_link(get_post_type())) . '">' . esc_html($post_type->labels->name) . '</a></li>';
+    $post_type = get_query_var('post_type');
+  
+    if (is_array($post_type)) {
+      $post_type = reset($post_type);
+    }
+  
+    $post_type_obj = get_post_type_object($post_type);
+  
+    if ($post_type_obj) {
+      echo '<li><a href="' . esc_url(get_post_type_archive_link($post_type)) . '">' . esc_html($post_type_obj->labels->name) . '</a></li>';
+    }
   }
   // カスタムタクソノミー（カテゴリやタグではないカスタム分類）
+  // カスタムタクソノミー
   elseif (is_tax()) {
-    $taxonomy = get_queried_object();
-    echo '<li><a href="' . esc_url(get_term_link($taxonomy)) . '">' . esc_html($taxonomy->name) . '</a></li>';
+    $term = get_queried_object();
+
+    // product-cat のとき
+    if ($term->taxonomy === 'product-cat') {
+      // 製品情報アーカイブ
+      echo '<li><a href="' . esc_url(get_post_type_archive_link('product')) . '">製品情報</a></li>';
+
+      // 親タームがあるとき
+      if ($term->parent) {
+        $parent = get_term($term->parent, 'product-cat');
+        if ($parent && !is_wp_error($parent)) {
+          echo '<li><a href="' . esc_url(get_term_link($parent)) . '">' . esc_html($parent->name) . '</a></li>';
+        }
+      }
+
+      // 今のターム
+      echo '<li>' . esc_html($term->name) . '</li>';
+    } else {
+      echo '<li><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></li>';
+    }
   }
   // カテゴリーページの場合
   elseif (is_category()) {
@@ -487,12 +488,13 @@ function custom_breadcrumb()
   }
   // シングル投稿ページの場合（シングル投稿）
   elseif (is_single()) {
-    $post_type = get_post_type_object(get_post_type());
-
-    // カスタム投稿タイプのアーカイブページへのリンクを表示
-    echo '<li><a href="' . esc_url(get_post_type_archive_link(get_post_type())) . '">' . esc_html($post_type->labels->name) . '</a></li>';
-
-    // 投稿タイトルを表示
+    $post_type = get_post_type();
+    $post_type_obj = get_post_type_object($post_type);
+  
+    if ($post_type_obj && get_post_type_archive_link($post_type)) {
+      echo '<li><a href="' . esc_url(get_post_type_archive_link($post_type)) . '">' . esc_html($post_type_obj->labels->name) . '</a></li>';
+    }
+  
     the_title('<li>', '</li>');
   }
   // 固定ページの場合
