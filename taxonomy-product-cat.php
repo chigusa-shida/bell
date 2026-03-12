@@ -95,11 +95,11 @@ if ($is_parent) {
                 <?php if ($product_query->have_posts()) : ?>
                     <section class="p-product-category__section" id="term-<?php echo esc_attr($child->slug); ?>">
                     <div class="p-product-category__sectionTitle">
-                        <h2>
-                        <?php echo esc_html($child->name); ?>
                         <?php if ($child_en) : ?>
                             <span><?php echo esc_html($child_en); ?></span>
                         <?php endif; ?>
+                        <h2>
+                        <?php echo esc_html($child->name); ?>
                         </h2>
                     </div>
 

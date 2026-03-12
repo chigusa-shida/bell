@@ -110,29 +110,31 @@
                 <div class="p-home-advantage__listWrap">
                   <ul class="p-home-advantage__list">
                     <li class="p-home-advantage__item">
-                      <div class="p-home-advantage-card">
-                        <div class="p-home-advantage-card__title">
-                          <h3 class="p-home-advantage-card__label">OUR&nbsp;TEAMS</h3>
-                          <p class="p-home-advantage-card__lead">私たちのチーム</p>
+                      <a href="<?php echo esc_url(home_url('/about#teams')); ?>">
+                        <div class="p-home-advantage-card">
+                          <div class="p-home-advantage-card__title">
+                            <h3 class="p-home-advantage-card__label">OUR&nbsp;TEAMS</h3>
+                            <p class="p-home-advantage-card__lead">私たちのチーム</p>
+                          </div>
+                          <div class="p-home-advantage-card__desc">
+                            <p class="p-home-advantage-card__detail">
+                            自費、インプラントに特化した技工所だからこそできる技術力で最高の技工物をご提供します。
+                            </p>
+                          </div>
+                          <div class="p-home-advantage-card__btn c-button">
+                            <span class="c-button__pageLink en">View&nbsp;More</span>
+                          </div>
+                          <div class="p-home-advantage-card__img">
+                            <picture>
+                              <source srcset="<?php echo get_theme_file_uri('assets/images/reason_1.webp'); ?>" type="image/webp" />
+                              <img src="<?php echo get_theme_file_uri('assets/images/reason_1.jpg'); ?>" alt="制作事例" />
+                            </picture>
+                          </div>
                         </div>
-                        <div class="p-home-advantage-card__desc">
-                          <p class="p-home-advantage-card__detail">
-                          自費、インプラントに特化した技工所だからこそできる技術力で最高の技工物をご提供します。
-                          </p>
-                        </div>
-                        <div class="p-home-advantage-card__btn c-button">
-                          <span class="c-button__pageLink en">View&nbsp;More</span>
-                        </div>
-                        <div class="p-home-advantage-card__img">
-                          <picture>
-                            <source srcset="<?php echo get_theme_file_uri('assets/images/reason_1.webp'); ?>" type="image/webp" />
-                            <img src="<?php echo get_theme_file_uri('assets/images/reason_1.jpg'); ?>" alt="制作事例" />
-                          </picture>
-                        </div>
-                      </div>
+                      </a>
                     </li>
                     <li class="p-home-advantage__item">
-                      <a href="<?php echo esc_url(home_url('/equipment/')); ?>" class="p-home-advantage-card">
+                      <a href="<?php echo esc_url(home_url('/about#environment')); ?>" class="p-home-advantage-card">
                         <div class="p-home-advantage-card__title">
                           <h3 class="p-home-advantage-card__label">ENVIRONMENT</h3>
                           <p class="p-home-advantage-card__lead">品質を支える職場環境</p>
@@ -154,7 +156,7 @@
                       </a>
                     </li>
                     <li class="p-home-advantage__item">
-                      <a href="<?php echo esc_url(home_url('/fis/')); ?>" class="p-home-advantage-card">
+                      <a href="<?php echo esc_url(home_url('/about#history')); ?>" class="p-home-advantage-card">
                         <div class="p-home-advantage-card__title">
                           <h3 class="p-home-advantage-card__label">HISTORY</h3>
                           <p class="p-home-advantage-card__lead">私たちの歴史</p>

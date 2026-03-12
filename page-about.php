@@ -28,7 +28,7 @@
           </div>
         </section>
         <section>
-          <div class="p-about-section p-about-teams">
+          <div id="teams" class="p-about-section p-about-teams">
             <div class="p-heading">
               <div class="p-heading__title text-center">
                 <h2 class="c-title" data-ja="私たちのチーム"><span class="c-title--red">OUR&nbsp;TEAMS</span></h2>
@@ -123,7 +123,7 @@
           </div>
         </section>
         <section>
-          <div class="p-about-section p-about-environment">
+          <div id="environment" class="p-about-section p-about-environment">
             <div class="p-heading">
               <div class="p-heading__title text-center">
                 <h2 class="c-title" data-ja="品質を支える職場環境"><span class="c-title--red">ENVIRONMENT</span></h2>
@@ -231,7 +231,7 @@
         </section>
         <section>
           <div class="p-about-section">
-            <div class="p-company-history" id="history">
+            <div id="history" class="p-company-history">
               <div class="p-company-history__title text-center">
                 <h2 class="c-title" data-ja="沿 革"><span class="c-title--red">History</span></h2>
               </div>

@@ -169,7 +169,7 @@ html, body {
 }
 .p-header__bar--bottom {
   bottom: 10px;
-  background-color: #1C1C1C;
+  background-color: #ffffff;
 }
 
 .p-heading {
@@ -2426,58 +2426,78 @@ br.u-br-sp {
   .p-heading__content.col .p-heading__img {
     padding-top: 50%;
   }
-    /* グローバルナビ */
-    .p-gnav__wrap {
-      display: flex;
-      flex-direction: column-reverse;
-      gap: 1em;
-      /* font-size: clamp(0.8125rem, 1.25vw, 0.9375rem); */
-      padding: 30px;
-      font-weight: 400;
-    }
-    /* PC dropdown解除 */
-    .p-gnav__bottom .sub-menu{
-      position: static;
-      background: none;
-    }
-  
-    /* 2階層は常に表示 */
-    .p-gnav__bottom > li > .sub-menu{
-      display:block;
-      padding-left:20px;
-      margin-top:6px;
-    }
-  
-    /* 3階層は閉じておく */
-    .p-gnav__bottom .sub-menu .sub-menu{
-      display:none;
-      padding-left:20px;
-      margin-top:6px;
-    }
-  
-    /* 開いたとき */
-    .p-gnav__bottom .sub-menu li.open > .sub-menu{
-      display:block;
-    }
-      /* 矢印共通 */
-    .p-gnav__bottom .menu-item-has-children > a{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-    }
+  /* グローバルナビ */
+  .p-gnav__wrap {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 30px;
+    font-weight: 400;
+  }
 
-    /* 1階層の矢印は消す */
-    .p-gnav__bottom > li.menu-item-has-children > a::after{
-      content:none;
-    }
+  .p-gnav__wrap > ul > li{
+    padding: 10px 0;
+    border-bottom: solid 1px #8a8a8a;
+  }
 
-    /* 2階層だけ矢印 */
-    .p-gnav__bottom .sub-menu .menu-item-has-children > a::after{
-      content:"\f107";
-      font-family:"Font Awesome 6 Free";
-      font-weight:900;
-      font-size:14px;
-    }
+     /* PC dropdown解除 */
+  .p-gnav__bottom .sub-menu{
+    position: static;
+    background: none;
+    left: auto;
+    top: auto;
+  }
+
+  /* 2階層は常に表示 */
+  .p-gnav__bottom > li > .sub-menu{
+    display: block;
+    padding-left: 20px;
+    margin-top: 6px;
+  }
+
+  .sub-menu > li {
+    padding: 10px 0;
+    border-bottom: solid 1px #8a8a8a;
+  }
+  
+  /* 最後のli：paddingなし + borderなし */
+  .sub-menu > li:last-child {
+    padding: 10px 0 0 0;
+    border-bottom: none;
+  }
+
+  /* 3階層は閉じる */
+  .p-gnav__bottom .sub-menu .sub-menu{
+    display: none;
+    padding-left: 20px;
+    margin-top: 6px;
+  }
+
+  /* 開いたら表示 */
+  .p-gnav__bottom .sub-menu li.open > .sub-menu{
+    display: block;
+  }
+
+  /* 1階層の矢印は消す */
+  .p-gnav__bottom > li.menu-item-has-children > a::after{
+    content: none;
+  }
+
+  /* 2階層だけ矢印 */
+  .p-gnav__bottom .sub-menu .menu-item-has-children > a::after{
+    content: "\f107";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 14px;
+    transition: transform .25s ease;
+    margin-left: 10px;
+  }
+
+  /* 開いたら回転 */
+  .p-gnav__bottom .sub-menu li.open > a::after{
+    transform: rotate(180deg);
+  }
+
+    
   .p-about .p-about-advantage__list {
     gap: 16vw;
   }
@@ -3743,6 +3763,11 @@ br.u-br-sp {
   .p-gnav__bottom .sub-menu li:hover > a::after{
     transform:translateX(3px);
   }
+
+  .js-submenu-toggle{
+    display:none;
+  }
+  
   
   .p-about .p-about-section {
     padding-top: 50px;
@@ -4147,7 +4172,9 @@ br.u-br-sp {
     text-align: start;
     background-color: #fffdfd;
   }
-}@media (hover: hover) and (pointer: fine) {
+}
+
+@media (hover: hover) and (pointer: fine) {
   .p-header__logo:hover {
     opacity: 0.5;
     transition: all 0.3s;
@@ -4268,18 +4295,6 @@ br.u-br-sp {
   .p-gnav__top li:active {
     color: #da0000;
   }
-/*   
-  .p-dropmenu__conts--title a:active {
-    color: #da0000;
-    transition: all 0.3s;
-  }
-  .p-dropmenu__item a:active {
-    color: #da0000;
-  }
-  .p-dropmenu__item a:active::after {
-    right: 0;
-    color: #da0000;
-  } */
   footer a:active {
     opacity: 0.7;
   }
@@ -4354,20 +4369,7 @@ br.u-br-sp {
     scroll-behavior: auto !important;
   }
 }
-/*!**************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./node_modules/swiper/swiper-bundle.css ***!
-  \**************************************************************************************************************************************************************************************************************************************************************/
-/**
- * Swiper 11.1.4
- * Most modern mobile touch slider and framework with hardware accelerated transitions
- * https://swiperjs.com
- *
- * Copyright 2014-2024 Vladimir Kharlampidi
- *
- * Released under the MIT License
- *
- * Released on: May 30, 2024
- */
+
 /* FONT_START */
 @font-face {
   font-family: "swiper-icons";
@@ -5747,14 +5749,15 @@ button.swiper-pagination-bullet {
 }
 
 .p-page-section__heading {
-  border-bottom: solid 1px #fff;
+  border-bottom: solid 1px #8a8a8a;
   padding-bottom: 10px;
 }
 
 .c-heading{              /* 文字色 */
   font-size: 20px;           /* 好みで */
   letter-spacing: 0.12em;
-  white-space: nowrap;       /* 改行させない */
+  white-space: nowrap; 
+  font-weight: 500;      
 }
 
 @media (max-width: 767px) { 
@@ -5859,14 +5862,10 @@ button.swiper-pagination-bullet {
 .p-about-recruit .p-recruit-cta__text{
   margin-bottom: 32px;
 }
-@media (max-width: 950px){
+
+@media (max-width: 949px){
   .p-recruit-cta{
     margin: 55px 0;
-  }
-}
-@media (max-width: 520px) { 
-  .p-recruit-cta{
-    margin: 0;
   }
 }
 
@@ -5874,16 +5873,11 @@ button.swiper-pagination-bullet {
   margin: 80px 0;
 }
 
-@media (max-width: 950px){
+@media (max-width: 949px){
   .p-company-history {
     margin: 55px 0;
   }
 }  
-@media (max-width: 520px) { 
-  .p-company-history {
-    margin: 0 0 55px 0;
-  }
-}
 
 .p-page-section {
   margin: 130px 0;
@@ -6171,29 +6165,30 @@ font-size: 16px;
 
 .p-product-category__main {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
 }
 
 .p-product-category__sectionTitle{
   font-size: 20px;
   padding-bottom: 10px;
-  border-bottom: solid 1px #FFFF;
+  border-bottom: solid 1px #8a8a8a;
 }
 .p-product-category__sectionTitle h2{
   font-size: 20px;
+  font-weight: 500;
 }
 
-.p-product-category__item{
-  list-style:none;
+.p-product-category__sectionTitle span{
+  font-size: 18px;
+  color: #da0000;
+  font-weight: 300;
 }
 
-.p-product-category__card{
-  height:100%;
-  display:flex;
-  flex-direction:column;
-}
 
 .p-product-category__sectionContent {
-  padding: 50px 0;
+  padding-top: 25px;
 }
 
 .p-product-category__list{
@@ -6206,6 +6201,7 @@ font-size: 16px;
 
 .p-product-category__item{
   height: 100%;
+  list-style:none;
 }
 
 .p-product-category__card{
@@ -6231,12 +6227,18 @@ font-size: 16px;
   min-height: 3.2em;
 }
 
+.p-product-category__cardTitle h3{
+  font-size: 18px;
+  font-weight: 400;
+}
+
 .p-product-category__text{
   flex: 1;
 }
 
 .p-product-category__text p{
   margin: 0;
+  font-size: 16px;
 }
 
 .p-product-category__footer{
@@ -6253,6 +6255,7 @@ font-size: 16px;
 
 .p-product-category__prostheses p{
   margin: 0;
+  font-size: 16px;
 }
 
 .p-product-category__button{
