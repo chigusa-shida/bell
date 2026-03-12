@@ -23,6 +23,16 @@
   <meta name="description" content="<?php echo esc_html(meta_description()); ?>">
   <meta name="twitter:image" content="" /><!--絶対パスで記述-->
 
+  <script>
+    (function () {
+      if (location.hash) {
+        sessionStorage.setItem('initialHash', location.hash);
+        if (history.replaceState) {
+          history.replaceState(null, '', location.pathname + location.search);
+        }
+      }
+    })();
+  </script>
   <?php wp_head(); ?>
 </head>
 
