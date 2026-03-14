@@ -148,6 +148,61 @@ function create_post_type()
       'show_in_rest' => true,
     )
   );
+
+  register_post_type(
+    'product',
+    array(
+      'label' => '製品情報',
+      'public' => true,
+      'has_archive' => true,
+      'show_in_rest' => true,
+      'menu_position' => 5,
+      'menu_icon' => 'dashicons-info-outline',
+      'supports' => array(
+        'title',
+        'editor',
+        'thumbnail',
+        'revisions',
+      ),
+    )
+  );
+  
+  register_taxonomy(
+    'product-cat',
+    'product',
+    array(
+      'label' => '製品情報カテゴリー',
+      'hierarchical' => true,
+      'public' => true,
+      'show_in_rest' => true,
+    )
+  );
+  
+  register_taxonomy(
+    'product-prosthesis',
+    'product',
+    array(
+      'label'             => '対応補綴',
+      'labels'            => array(
+        'name'              => '対応補綴',
+        'singular_name'     => '対応補綴',
+        'search_items'      => '対応補綴を検索',
+        'all_items'         => '対応補綴一覧',
+        'edit_item'         => '対応補綴を編集',
+        'update_item'       => '対応補綴を更新',
+        'add_new_item'      => '対応補綴を追加',
+        'new_item_name'     => '新しい対応補綴名',
+        'menu_name'         => '対応補綴',
+      ),
+      'hierarchical'      => true,
+      'public'            => true,
+      'show_in_rest'      => true,
+      'show_admin_column' => true,
+      'rewrite'           => array(
+        'slug' => 'product-prosthesis',
+      ),
+    )
+  );
 }
 
 /**
@@ -157,11 +212,6 @@ add_action('admin_menu', 'create_custom_fields');
 function create_custom_fields()
 {
   add_meta_box('pick_up', 'ピックアップ記事', 'pick_up_field', 'news', 'normal');
-  add_meta_box('works_subtitle', 'サブタイトルの入力', 'works_subtitle_field', 'works', 'normal');
-  add_meta_box('product_subtitle', 'サブタイトルの入力', 'product_subtitle_field', 'product', 'normal');
-  add_meta_box('product_description', '説明文の入力', 'product_description_field', 'product', 'normal');
-  add_meta_box('product_order', '並び順', 'product_order_field', 'product', 'normal');
-  add_meta_box('product_id', 'ID', 'product_id_field', 'product', 'normal');
 }
 
 /**
@@ -174,46 +224,6 @@ function pick_up_field($post)
   $pick_up_check = ($pick_up == "is-on") ? "checked" : ''; ?>
   <label for="pick_up_check">ピックアップ</label>
   <input id="pick_up_check" type="checkbox" name="pick_up" value="is-on" <?php echo $pick_up_check; ?>>
-<?php }
-
-function works_subtitle_field($post)
-{
-  wp_nonce_field('custom_field_save_meta_box_data', 'custom_field_meta_box_nonce');
-  $works_subtitle = get_post_meta($post->ID, 'works_subtitle', true); ?>
-  <label for="works_subtitle">サブタイトル</label>
-  <input id="works_subtitle" type="text" name="works_subtitle" value="<?php echo esc_attr($works_subtitle); ?>">
-<?php }
-
-function product_subtitle_field($post)
-{
-  wp_nonce_field('custom_field_save_meta_box_data', 'custom_field_meta_box_nonce');
-  $product_subtitle = get_post_meta($post->ID, 'product_subtitle', true); ?>
-  <label for="product_subtitle">サブタイトル</label>
-  <input id="product_subtitle" type="text" name="product_subtitle" value="<?php echo esc_attr($product_subtitle); ?>">
-<?php }
-
-function product_description_field($post)
-{
-  wp_nonce_field('custom_field_save_meta_box_data', 'custom_field_meta_box_nonce');
-  $product_description = get_post_meta($post->ID, 'product_description', true); ?>
-  <label for="product_description">説明文</label>
-  <textarea id="product_description" name="product_description" rows="5" style="width:100%;"><?php echo esc_textarea($product_description); ?></textarea>
-<?php }
-
-function product_order_field($post)
-{
-  wp_nonce_field('custom_field_save_meta_box_data', 'custom_field_meta_box_nonce');
-  $product_order = get_post_meta($post->ID, 'product_order', true); ?>
-  <label for="product_order">並び順</label>
-  <input id="product_order" type="text" name="product_order" value="<?php echo esc_attr($product_order); ?>">
-<?php }
-
-function product_id_field($post)
-{
-  wp_nonce_field('custom_field_save_meta_box_data', 'custom_field_meta_box_nonce');
-  $product_id = get_post_meta($post->ID, 'product_id', true); ?>
-  <label for="product_id">ID</label>
-  <input id="product_id" type="text" name="product_id" value="<?php echo esc_attr($product_id); ?>">
 <?php }
 
 /**
@@ -249,112 +259,11 @@ function save_custom_fields($post_id)
     delete_post_meta($post_id, 'pick_up');
   }
 
-  if (!empty($_POST['works_subtitle'])) {
-    update_post_meta($post_id, 'works_subtitle', sanitize_text_field($_POST['works_subtitle']));
-  } else {
-    delete_post_meta($post_id, 'works_subtitle');
-  }
-
-  if (!empty($_POST['product_subtitle'])) {
-    update_post_meta($post_id, 'product_subtitle', sanitize_text_field($_POST['product_subtitle']));
-  } else {
-    delete_post_meta($post_id, 'product_subtitle');
-  }
-
-  if (!empty($_POST['product_description'])) {
-    update_post_meta($post_id, 'product_description', sanitize_textarea_field($_POST['product_description']));
-  } else {
-    delete_post_meta($post_id, 'product_description');
-  }
-
-  if (!empty($_POST['product_order'])) {
-    update_post_meta($post_id, 'product_order', sanitize_text_field($_POST['product_order']));
-  } else {
-    delete_post_meta($post_id, 'product_order');
-  }
-
-  if (!empty($_POST['product_id'])) {
-    update_post_meta($post_id, 'product_id', sanitize_text_field($_POST['product_id']));
-  } else {
-    delete_post_meta($post_id, 'product_id');
-  }
-
   return $post_id;
 }
 
 add_action('save_post', 'save_custom_fields');
 
-
-/**
- * カスタム投稿タイプ 'product' の投稿一覧に 'product_order' カラムを追加
- */
-function add_product_order_column($columns)
-{
-  $columns['product_order'] = '並び順'; // '並び順' カラム名を追加
-  return $columns;
-}
-add_filter('manage_edit-product_columns', 'add_product_order_column');
-
-// 'product_order' カラムにカスタムフィールドの値を表示
-function show_product_order_column_data($column, $post_id)
-{
-  if ($column == 'product_order') {
-    // 'product_order' のカスタムフィールドの値を取得
-    $product_order = get_post_meta($post_id, 'product_order', true);
-
-    if ($product_order) {
-      echo esc_html($product_order); // カスタムフィールドの値を表示
-    } else {
-      echo '未設定'; // 値がない場合は '未設定' と表示
-    }
-  }
-}
-add_action('manage_product_posts_custom_column', 'show_product_order_column_data', 10, 2);
-
-// 'product_order' カラムをソート可能にする
-function sortable_product_order_column($columns)
-{
-  $columns['product_order'] = 'product_order'; // 'product_order' カラムをソート可能に設定
-  return $columns;
-}
-add_filter('manage_edit-product_sortable_columns', 'sortable_product_order_column');
-
-function custom_admin_styles()
-{
-  echo '<style>
-      /* 投稿一覧ページで product_order カラムの幅を調整 */
-      .column-product_order {
-          width: 100px !important; /* 幅を100pxに設定 */
-      }
-  </style>';
-}
-add_action('admin_head', 'custom_admin_styles');
-
-// 'product_order' に基づいて投稿を並び替える
-function sort_posts_by_product_order($query)
-{
-  if (!is_admin() || !$query->is_main_query()) {
-    return;
-  }
-
-  global $pagenow;
-
-  if ($pagenow !== 'edit.php') {
-    return;
-  }
-
-  if ($query->get('post_type') !== 'product') {
-    return;
-  }
-
-  // 並び順カラムをクリックした時だけ有効にする
-  if ($query->get('orderby') === 'product_order') {
-    $query->set('meta_key', 'product_order');
-    $query->set('orderby', 'meta_value_num');
-    $query->set('order', 'ASC');
-  }
-}
-add_action('pre_get_posts', 'sort_posts_by_product_order');
 
 /**
  * カスタムブロックパターンのカテゴリ登録

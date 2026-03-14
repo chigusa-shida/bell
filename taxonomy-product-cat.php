@@ -116,41 +116,91 @@ if ($is_parent) {
                                 </div>
 
                                 <div class="p-product-category__body">
-                                <div class="p-product-category__cardTitle">
-                                    <h3><?php the_title(); ?></h3>
-                                </div>
+                                    <div class="p-product-category__cardTitle">
+                                        <h3><?php the_title(); ?></h3>
+                                    </div>
 
-                                <div class="p-product-category__text">
                                     <?php
-                                    $content = apply_filters('the_content', get_the_content());
-                                    $content = preg_replace('/<figure class="wp-block-image.*?<\/figure>/is', '', $content);
-
-                                    if (preg_match('/<p>(.*?)<\/p>/is', $content, $matches)) {
-                                    echo wp_kses_post($matches[0]);
-                                    } else {
-                                    echo '<p>' . esc_html(wp_trim_words(wp_strip_all_tags(get_the_content()), 40, '...')) . '</p>';
-                                    }
+                                    $product_catch      = function_exists('get_field') ? get_field('product_catch', get_the_ID()) : '';
+                                    $product_usage      = function_exists('get_field') ? get_field('product_usage', get_the_ID()) : '';
+                                    $product_feature    = function_exists('get_field') ? get_field('product_feature', get_the_ID()) : '';
+                                    $product_fix_method = function_exists('get_field') ? get_field('product_fix_method', get_the_ID()) : '';
+                                    $product_material   = function_exists('get_field') ? get_field('product_material', get_the_ID()) : '';
+                                    $product_prostheses = get_the_terms(get_the_ID(), 'product-prosthesis');
                                     ?>
-                                </div>
+
+                                    <div class="p-product-category__text">
+                                        <p><?php echo nl2br(esc_html($product_catch)); ?></p>
+                                    </div>
                                 </div>
 
                                 <div class="p-product-category__footer">
-                                <?php
-                                $product_prostheses = function_exists('get_field') ? get_field('product_prostheses') : '';
-                                ?>
-                                <?php if (!empty($product_prostheses)) : ?>
-                                    <div class="p-product-category__prostheses">
-                                    <p><span>対象補綴</span><?php echo wp_kses_post($product_prostheses); ?></p>
-                                    </div>
-                                <?php endif; ?>
+                                    <div class="p-product-category__spec">
+                                        <div class="p-product-category__specRow">
+                                            <span class="p-product-category__specLabel">用途</span>
+                                            <p class="p-product-category__specContent">
+                                                <?php echo esc_html($product_usage); ?>
+                                            </p>
+                                        </div>
 
-                                <div class="p-product-category__button">
-                                    <div class="c-button">
-                                    <a href="<?php the_permalink(); ?>">
-                                        <span class="c-button__pageLink en">LEARN MORE</span>
-                                    </a>
+                                        <div class="p-product-category__specRow">
+                                            <span class="p-product-category__specLabel">特徴</span>
+                                            <p class="p-product-category__specContent">
+                                                <?php echo esc_html($product_feature); ?>
+                                            </p>
+                                        </div>
+
+                                        <div class="p-product-category__specRow">
+                                            <span class="p-product-category__specLabel">固定方法</span>
+                                            <p class="p-product-category__specContent">
+                                                <?php echo esc_html($product_fix_method); ?>
+                                            </p>
+                                        </div>
+
+                                        <div class="p-product-category__specRow">
+                                            <span class="p-product-category__specLabel">素材</span>
+                                            <p class="p-product-category__specContent">
+                                                <?php echo esc_html($product_material); ?>
+                                            </p>
+                                        </div>
+
+                                        <div class="p-product-category__specRow p-product-category__specRow--tags">
+                                            <span class="p-product-category__specLabel">対応補綴</span>
+                                            <ul class="p-product-category__tagList">
+                                                <?php if (!empty($product_prostheses) && !is_wp_error($product_prostheses)) : ?>
+                                                    <?php foreach ($product_prostheses as $prosthesis) : ?>
+                                                        <li class="p-product-category__tagItem">
+                                                            <?php echo esc_html($prosthesis->name); ?>
+                                                        </li>
+                                                    <?php endforeach; ?>
+                                                <?php endif; ?>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
+                                <?php
+                                $product_dentalbin = function_exists('get_field') ? get_field('product_dentalbin', get_the_ID()) : false;
+                                ?>
+
+                                <div class="p-product-category__order">
+                                <?php if ($product_dentalbin) : ?>
+
+                                    <a 
+                                    href="https://www.dentalbin24.net/" 
+                                    class="p-product-category__orderBtn"
+                                    target="_blank"
+                                    rel="noopener"
+                                    >
+                                    デンタル便で注文
+                                    </a>
+
+                                <?php else : ?>
+
+                                    <p class="p-product-category__orderNote">
+                                    ※デンタル便では注文できません。
+                                    </p>
+
+                                <?php endif; ?>
                                 </div>
 
                             </div>
