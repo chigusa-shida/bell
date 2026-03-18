@@ -52,7 +52,7 @@
                 </li>
               </ul>
               <ul class="p-footer__list">
-                <li><a href="<?php echo get_post_type_archive_link('news'); ?>">ニュース</a></li>
+                <!-- <li><a href="<?php echo get_post_type_archive_link('news'); ?>">ニュース</a></li> -->
                 <li><a href="https://dentalbin24.belldl.com/">オンラインショップ</a></li>
                 <li><a href="<?php echo esc_url(home_url('/deadline/')); ?>">納期カレンダー</a></li>
                 <li><a href="<?php echo esc_url(home_url('/catalog/')); ?>">カタログ</a></li>

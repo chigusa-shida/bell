@@ -10,61 +10,50 @@
         <div class="p-home-top__notice">
           <div class="p-home-top__notice-title">Notice</div>
           <div class="p-home-top__notice-swiper swiper" id="js-swiper-home-notice">
-            <ul class="p-home-top__notice-list swiper-wrapper">
-              <?php
-              $args = array(
-                'post_type' => 'news',
-                'posts_per_page' => 3,
-                'paged' => $paged,
-                'tax_query' => array(
-                  array(
-                    'taxonomy' => 'news-cat', //タクソノミーを指定
-                    'field' => 'slug', //ターム名をスラッグで指定する
-                    'terms' => 'notice', //表示したいタームをスラッグで指定
-                    'operator' => 'IN'
-                  ),
-                )
-              );
-              $my_query = new WP_Query($args);
-              $max_num_pages = $my_query->max_num_pages;
-              ?>
-              <?php
-              if ($my_query->have_posts()) :
-                while ($my_query->have_posts()) : $my_query->the_post();
-              ?>
-                  <li class="p-home-top__notice-item swiper-slide">
-                    <a href="<?php the_permalink() ?>">
-                      <div>
-                        <div class="c-post-date">
-                          <?php echo get_the_date(); ?>
-                        </div>
+          <ul class="p-home-top__notice-list swiper-wrapper">
+            <?php
+            $args = array(
+              'post_type'      => 'post',     // 通常投稿
+              'posts_per_page' => 3,
+              'category_name'  => 'notice',   // カテゴリスラッグ
+              'post_status'    => 'publish',
+            );
+
+            $my_query = new WP_Query($args);
+            ?>
+            
+            <?php if ($my_query->have_posts()) : ?>
+              <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+                <li class="p-home-top__notice-item swiper-slide">
+                  <a href="<?php the_permalink(); ?>">
+                    <div>
+                      <div class="c-post-date">
+                        <?php echo get_the_date(); ?>
                       </div>
-                      <div>
-                        <p class="postttl">
-                          <?php
-                          if (mb_strlen($post->post_title) > 10) {
-                            $title = mb_substr($post->post_title, 0, 10);
-                            echo $title . '...';
-                          } else {
-                            echo $post->post_title;
-                          }
-                          ?>
-                        </p>
-                      </div>
-                    </a>
-                  </li>
-                <?php
-                endwhile;
-                ?>
-              <?php else : //記事が無い場合 
-              ?>
-                <li>
-                  <p>記事はまだありません。</p>
+                    </div>
+                    <div>
+                      <p class="postttl">
+                        <?php
+                        $title = get_the_title();
+                        if (mb_strlen($title) > 10) {
+                          echo mb_substr($title, 0, 10) . '...';
+                        } else {
+                          echo $title;
+                        }
+                        ?>
+                      </p>
+                    </div>
+                  </a>
                 </li>
-              <?php endif;
-              wp_reset_postdata(); //クエリのリセット 
-              ?>
-            </ul>
+              <?php endwhile; ?>
+            <?php else : ?>
+              <li>
+                <p>記事はまだありません。</p>
+              </li>
+            <?php endif; ?>
+
+            <?php wp_reset_postdata(); ?>
+          </ul>
           </div>
         </div>
       </div><!-- p-home-top__container -->
@@ -244,14 +233,17 @@
                   <ul class="p-news__cats">
                     <li class="u-tab_btn active">すべて</li>
                     <?php
-                    $terms = get_terms('news-cat', [
+                    $terms = get_terms([
+                      'taxonomy'   => 'category',
                       'hide_empty' => false,
                     ]);
+
                     foreach ($terms as $term) {
                       echo '<li class="u-tab_btn">' . esc_html($term->name) . '</li>';
                     }
                     ?>
                   </ul>
+
                   <div class="p-news__main panel_area">
                     <div class="u-tab_panel active">
                       <article>
@@ -259,24 +251,27 @@
                           <ul class="p-mews-article__list">
                             <?php
                             $args = array(
-                              'post_type' => 'news',
+                              'post_type'      => 'post',
                               'posts_per_page' => 3,
+                              'post_status'    => 'publish',
                             );
                             $the_query = new WP_Query($args);
+
                             if ($the_query->have_posts()) :
                               while ($the_query->have_posts()) : $the_query->the_post();
                             ?>
                                 <li class="p-mews-article__item">
-                                  <a href="<?php the_permalink() ?>">
+                                  <a href="<?php the_permalink(); ?>">
                                     <div class="p-mews-article__meta">
                                       <div class="c-post-date">
                                         <?php echo get_the_date(); ?>
                                       </div>
                                       <?php
-                                      if ($terms = get_the_terms($post->ID, 'news-cat')) {
+                                      $post_terms = get_the_terms(get_the_ID(), 'category');
+                                      if ($post_terms && !is_wp_error($post_terms)) {
                                         echo '<ul class="p-mews-article__cat">';
-                                        foreach ($terms as $term) {
-                                          echo '<li class="c-post-cat">' . $term->name . '</li>';
+                                        foreach ($post_terms as $term) {
+                                          echo '<li class="c-post-cat">' . esc_html($term->name) . '</li>';
                                         }
                                         echo '</ul>';
                                       }
@@ -285,58 +280,61 @@
                                     <div class="p-mews-article__text">
                                       <p>
                                         <?php
-                                        if (mb_strlen($title = get_the_title()) > 40) {
-                                          $title = mb_substr($title, 0, 25);
-                                          echo $title . '...';
+                                        $title = get_the_title();
+                                        if (mb_strlen($title) > 40) {
+                                          echo esc_html(mb_substr($title, 0, 25)) . '...';
                                         } else {
-                                          echo $title;
+                                          echo esc_html($title);
                                         }
                                         ?>
                                       </p>
                                     </div>
                                   </a>
                                 </li>
-                            <?php endwhile;
-                            endif; ?>
-                            <?php wp_reset_postdata(); ?>
+                            <?php
+                              endwhile;
+                            endif;
+                            wp_reset_postdata();
+                            ?>
                           </ul>
                         </div>
                       </article>
                     </div>
+
                     <?php
-                    $terms = get_terms('news-cat', [
+                    $terms = get_terms([
+                      'taxonomy'   => 'category',
                       'hide_empty' => false,
                     ]);
+
                     foreach ($terms as $term) :
                     ?>
                       <div class="u-tab_panel">
                         <ul class="p-news__list">
                           <?php
                           $args = array(
-                            'post_type' => 'news',
+                            'post_type'      => 'post',
                             'posts_per_page' => 3,
-                            'tax_query' => array(
-                              array(
-                                'taxonomy' => 'news-cat',
-                                'field' => 'slug',
-                                'terms' => $term->slug,
-                              ),
-                            ),
+                            'post_status'    => 'publish',
+                            'category_name'  => $term->slug,
                           );
                           $my_posts = get_posts($args);
                           ?>
-                          <?php if ($my_posts) : foreach ($my_posts as $post) : setup_postdata($post); ?>
+
+                          <?php if ($my_posts) : ?>
+                            <?php foreach ($my_posts as $post) : setup_postdata($post); ?>
                               <li class="p-mews-article__item">
-                                <a href="<?php the_permalink() ?>">
+                                <a href="<?php the_permalink(); ?>">
                                   <div class="p-mews-article__meta">
                                     <div class="c-post-date">
                                       <?php echo get_the_date(); ?>
                                     </div>
                                     <?php
-                                    if ($terms = get_the_terms($post->ID, 'news-cat')) {
+                                    $post_terms = get_the_terms(get_the_ID(), 'category');
+                                    if ($post_terms && !is_wp_error($post_terms)) {
                                       echo '<ul class="p-mews-article__cat">';
-                                      foreach ($terms as $term) {
-                                        echo '<li class="c-post-cat">' . $term->name . '</li>';
+                                      foreach ($post_terms as $cat_term) {
+                                        echo '<li class="c-post-cat">' . esc_html($cat_term->name) . '</li>';
                                       }
                                       echo '</ul>';
                                     }
@@ -345,38 +343,32 @@
                                   <div class="p-mews-article__text">
                                     <p class="postttl">
                                       <?php
-                                      if (mb_strlen($title = get_the_title()) > 40) {
-                                        $title = mb_substr($title, 0, 25);
-                                        echo $title . '...';
+                                      $title = get_the_title();
+                                      if (mb_strlen($title) > 40) {
+                                        echo esc_html(mb_substr($title, 0, 25)) . '...';
                                       } else {
-                                        echo $title;
+                                        echo esc_html($title);
                                       }
                                       ?>
                                     </p>
                                   </div>
                                 </a>
                               </li>
-                            <?php
-                            endforeach;
-                            ?>
-                          <?php else :
-                          ?>
+                            <?php endforeach; ?>
+                          <?php else : ?>
                             <li>
                               <p>記事はまだありません。</p>
                             </li>
-                          <?php endif;
-                          wp_reset_postdata();
-                          ?>
+                          <?php endif; wp_reset_postdata(); ?>
                         </ul>
                       </div>
-                    <?php
-                    endforeach;
-                    ?>
+                    <?php endforeach; ?>
                   </div>
                 </div>
+
                 <div class="p-home-news__btn">
                   <div class="c-button">
-                    <a href="<?php echo esc_url(get_post_type_archive_link('news')); ?>">
+                    <a href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>">
                       <span class="c-button__pageLink en">View&nbsp;More</span>
                     </a>
                   </div>

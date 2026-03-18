@@ -6,6 +6,7 @@
     $(window).on('load resize', function () {
       var height = $('#header').height();
       $('#js-main').css('margin-top', height + 10);
+      document.documentElement.style.setProperty('--header-height', height + 10 + 'px');
     });
 
     // SPだけ：2階層で3階層を持つ項目は開閉だけにする
@@ -188,6 +189,66 @@
     });
   }
 
+  function initProductCategoryNav() {
+    const navItems = document.querySelectorAll('.p-product-category__navItem');
+    const sections = document.querySelectorAll('.p-product-category__section[id]');
+    const header = document.querySelector('#header');
+  
+    if (!navItems.length || !sections.length) return;
+  
+    let isJumping = false;
+    let jumpTimer = null;
+  
+    function setActiveNav(id) {
+      navItems.forEach((item) => {
+        const link = item.querySelector('a');
+        if (!link) return;
+        item.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+      });
+    }
+  
+    function updateActiveNav() {
+      if (isJumping) return;
+  
+      const headerHeight = header ? header.offsetHeight : 0;
+      const targetLine = headerHeight + 80;
+  
+      let currentId = sections[0].id;
+  
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= targetLine) {
+          currentId = section.id;
+        }
+      });
+  
+      setActiveNav(currentId);
+    }
+  
+    navItems.forEach((item) => {
+      const link = item.querySelector('a');
+      if (!link) return;
+  
+      link.addEventListener('click', function () {
+        const targetId = this.getAttribute('href').replace('#', '');
+        if (!targetId) return;
+  
+        isJumping = true;
+        setActiveNav(targetId);
+  
+        clearTimeout(jumpTimer);
+        jumpTimer = setTimeout(() => {
+          isJumping = false;
+          updateActiveNav();
+        }, 700);
+      });
+    });
+  
+    window.addEventListener('load', updateActiveNav);
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    window.addEventListener('resize', updateActiveNav);
+  }
+
   // function initAccordion() {
   //   $('#js-accordion .u-accordion-question').click(function () {
   //     $(this).toggleClass('open');
@@ -202,8 +263,8 @@
     var path = location.pathname.replace(/\/$/, '') || '/';
 
     initCommon();
+    initProductCategoryNav();
     initScroll(); // ← 全ページで実行
-
     initPostSwiper();
     initTeamsSnap();
 

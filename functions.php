@@ -1,4 +1,5 @@
 <?php
+
 function my_script_init()
 {
   // google fonts CSS
@@ -91,34 +92,6 @@ add_filter('faq_rewrite_rules', '__return_empty_array');
 add_filter('equipment_rewrite_rules', '__return_empty_array');
 function create_post_type()
 {
-  register_post_type(
-    'news',
-    array(
-      'label' => 'ニュース',
-      'public' => true,
-      'has_archive' => true,
-      'show_in_rest' => true,
-      'menu_position' => 5,
-      'menu_icon' => 'dashicons-info-outline',
-      'supports' => array(
-        'title',
-        'editor',
-        'thumbnail',
-        'revisions',
-      ),
-    )
-  );
-
-  register_taxonomy(
-    'news-cat',
-    'news',
-    array(
-      'label' => 'ニュースカテゴリー',
-      'hierarchical' => true,
-      'public' => true,
-      'show_in_rest' => true,
-    )
-  );
 
   register_post_type(
     'product',
@@ -206,27 +179,6 @@ function create_post_type()
 }
 
 /**
- * カスタムフィールドを追加
- */
-add_action('admin_menu', 'create_custom_fields');
-function create_custom_fields()
-{
-  add_meta_box('pick_up', 'ピックアップ記事', 'pick_up_field', 'news', 'normal');
-}
-
-/**
- * カスタムフィールドの入力形式の設定
- */
-function pick_up_field($post)
-{
-  wp_nonce_field('custom_field_save_meta_box_data', 'custom_field_meta_box_nonce');
-  $pick_up = get_post_meta($post->ID, 'pick_up', true);
-  $pick_up_check = ($pick_up == "is-on") ? "checked" : ''; ?>
-  <label for="pick_up_check">ピックアップ</label>
-  <input id="pick_up_check" type="checkbox" name="pick_up" value="is-on" <?php echo $pick_up_check; ?>>
-<?php }
-
-/**
  * カスタムフィールドデータを保存
  */
 function save_custom_fields($post_id)
@@ -246,17 +198,10 @@ function save_custom_fields($post_id)
     return $post_id;
   }
 
-  // 投稿タイプをチェック（'product', 'news', 'works' の投稿タイプのみ）
-  $post_types = ['product', 'news', 'works'];
+  // 投稿タイプをチェック（'product' の投稿タイプのみ）
+  $post_types = ['product'];
   if (!in_array(get_post_type($post_id), $post_types)) {
     return $post_id;
-  }
-
-  // 各カスタムフィールドを保存
-  if (!empty($_POST['pick_up'])) {
-    update_post_meta($post_id, 'pick_up', $_POST['pick_up']);
-  } else {
-    delete_post_meta($post_id, 'pick_up');
   }
 
   return $post_id;
@@ -312,25 +257,24 @@ function catch_that_image()
 }
 
 
-function display_content_without_images()
-{
-  // 投稿のコンテンツを取得
-  $content = get_the_content();
+// function display_content_without_images()
+// {
+//   $content = get_the_content();
 
-  // 画像タグを削除
-  $content_without_images = preg_replace('/<img[^>]+>/i', '', $content);
 
-  // 画像以外のコンテンツを表示
-  echo $content_without_images;
-}
+//   $content_without_images = preg_replace('/<img[^>]+>/i', '', $content);
 
-function remove_wp_block_image_html($content)
-{
-  // wp-block-imageクラスを持つ<figure>タグ全体を削除
-  $content = preg_replace('/<figure class="wp-block-image.*?<\/figure>/is', '', $content);
-  return $content;
-}
-add_filter('the_content', 'remove_wp_block_image_html');
+ 
+//   echo $content_without_images;
+// }
+
+// function remove_wp_block_image_html($content)
+// {
+//   // wp-block-imageクラスを持つ<figure>タグ全体を削除
+//   $content = preg_replace('/<figure class="wp-block-image.*?<\/figure>/is', '', $content);
+//   return $content;
+// }
+
 
 // Contact Form 7で自動挿入されるPタグ、brタグを削除
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');

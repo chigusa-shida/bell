@@ -1,11 +1,4 @@
-<?php 
-get_header(); 
-
-echo 'INDEX-FILE';
-exit;
-?>
-
-
+<?php get_header(); ?>
 <main>
   <div class="l-main" id="js-main">
     <div class="p-news">
@@ -113,5 +106,5 @@ exit;
   </div>
 </main>
 
-<!-- <?php get_template_part('template-parts/footer-top'); ?> -->
-<!-- <?php get_footer(); ?> -->
+<?php get_template_part('template-parts/footer-top'); ?>
+<?php get_footer(); ?>

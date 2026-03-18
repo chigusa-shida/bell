@@ -38,6 +38,34 @@ if ($is_parent) {
 }
 ?>
 
+<?php
+$display_terms = [];
+
+if (!empty($child_terms)) {
+  foreach ($child_terms as $child) {
+    $check_query = new WP_Query([
+      'post_type'      => 'product',
+      'posts_per_page' => 1,
+      'post_status'    => 'publish',
+      'tax_query'      => [
+        [
+          'taxonomy'         => 'product-cat',
+          'field'            => 'term_id',
+          'terms'            => [$child->term_id],
+          'include_children' => false,
+        ]
+      ]
+    ]);
+
+    if ($check_query->have_posts()) {
+      $display_terms[] = $child;
+    }
+
+    wp_reset_postdata();
+  }
+}
+?>
+
 <main>
   <div class="l-main" id="js-main">
     <div class="p-product-category">
@@ -57,11 +85,7 @@ if ($is_parent) {
             <div class="p-product-category__nav">
                 <p class="p-product-category__navTitle">カテゴリー</p>
                 <ul class="p-product-category__navList">
-                <li class="p-product-category__navItem">
-                    <a href="#all">すべてを見る</a>
-                </li>
-
-                <?php foreach ($child_terms as $child) : ?>
+                <?php foreach ($display_terms as $child) : ?>
                     <li class="p-product-category__navItem">
                     <a href="#term-<?php echo esc_attr($child->slug); ?>">
                         <?php echo esc_html($child->name); ?>
@@ -72,8 +96,8 @@ if ($is_parent) {
             </div>
         </aside>
         <div class="p-product-category__main" id="all">
-            <?php if (!empty($child_terms)) : ?>
-                <?php foreach ($child_terms as $child) : ?>
+        <?php if (!empty($display_terms)) : ?>
+            <?php foreach ($display_terms as $child) : ?>
 
                 <?php
                 $child_en = function_exists('get_field') ? get_field('cat_en', $child) : '';
