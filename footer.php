@@ -17,50 +17,14 @@
           </div>
         </div>
         <div class="p-footer__navWrap">
-          <ul class="p-footer__nav">
-            <li class="p-footer__nav--top"><a href="<?php echo esc_url(home_url('/')); ?>" class="p-footer__list--title">トップページ</a></li>
-            <li class="p-footer__nav--pageList">
-              <ul class="p-footer__list">
-                <li>
-                  <a href="<?php echo esc_url(home_url('/about/')); ?>" class="p-footer__list--title">私たちについて</a>
-                  <ul class="p-footer__list--child">
-                    <li><a href="<?php echo esc_url(home_url('/')); ?>/about#advantage">&minus;&nbsp;私たちの強み</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/equipment/')); ?>">&minus;&nbsp;設備情報</a></li>
-                    <li><a href="<?php echo get_post_type_archive_link('works'); ?>">&minus;&nbsp;制作事例</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/fis/')); ?>">&minus;&nbsp;営業サポート</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <ul class="p-footer__list">
-                <li><a href="<?php echo get_post_type_archive_link('product'); ?>" class="p-footer__list--title">製品情報</a></li>
-                <li>
-                  <a href="<?php echo esc_url(home_url('/company/')); ?>" class="p-footer__list--title has-child">会社概要</a>
-                  <ul class="p-footer__list--child">
-                    <li><a href="<?php echo esc_url(home_url('/company/')); ?>">&minus;&nbsp;会社概要</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/')); ?>/company#access">&minus;&nbsp;アクセス</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/')); ?>/company#office">&minus;&nbsp;オフィス紹介</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <ul class="p-footer__list">
-                <li>
-                  <a href="<?php echo esc_url(home_url('/recruit/')); ?>" class="p-footer__list--title">採用情報</a>
-                  <ul class="p-footer__list--child">
-                    <li><a href="<?php echo esc_url(home_url('/recruitment/')); ?>">&minus;&nbsp;募集要項</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/entry/')); ?>">&minus;&nbsp;エントリー</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <ul class="p-footer__list">
-                <!-- <li><a href="<?php echo get_post_type_archive_link('news'); ?>">ニュース</a></li> -->
-                <li><a href="https://dentalbin24.belldl.com/">オンラインショップ</a></li>
-                <li><a href="<?php echo esc_url(home_url('/deadline/')); ?>">納期カレンダー</a></li>
-                <li><a href="<?php echo esc_url(home_url('/catalog/')); ?>">カタログ</a></li>
-                <li><a href="<?php echo esc_url(home_url('/faq/')); ?>">よくある質問</a></li>
-                <li><a href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a></li>
-              </ul>
-            </li>
-          </ul>
+        <?php
+          wp_nav_menu(array(
+            'theme_location' => 'footer_menu',
+            'container'      => false,
+            'menu_class'     => 'p-footer__nav',
+            'fallback_cb'    => false,
+          ));
+          ?>
         </div>
       </div>
       <div class="p-footer__social p-social">
@@ -104,7 +68,7 @@
   </div>
 </footer>
 <div id="page-top">
-  <a href="javascript:void(0)" role="button">PAGE TOP</a>
+  <a href="#" role="button">PAGE TOP</a>
 </div>
 <?php wp_footer(); ?>
 

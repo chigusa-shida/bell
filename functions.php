@@ -74,53 +74,25 @@ function meta_description()
 }
 
 
-/**
- * カスタム投稿タイプを追加
- */
+
 add_theme_support('post-thumbnails');
-add_filter('image_send_to_editor', 'remove_image_attribute', 10);
-add_filter('post_thumbnail_html', 'remove_image_attribute', 10);
+
 function remove_image_attribute($html)
 {
   $html = preg_replace('/(width|height)="\d*"\s/', '', $html);
-  $html = preg_replace('/class=[\'"]([^\'"]+)[\'"]/i', '', $html);
   return $html;
 }
 
+add_filter('image_send_to_editor', 'remove_image_attribute', 10);
+add_filter('post_thumbnail_html', 'remove_image_attribute', 10);
+
+/**
+ * カスタム投稿タイプ（製品情報）追加
+ */
+
 add_action('init', 'create_post_type');
-add_filter('faq_rewrite_rules', '__return_empty_array');
-add_filter('equipment_rewrite_rules', '__return_empty_array');
 function create_post_type()
 {
-
-  register_post_type(
-    'product',
-    array(
-      'label' => '製品情報',
-      'public' => true,
-      'has_archive' => true,
-      'show_in_rest' => true,
-      'menu_position' => 5,
-      'menu_icon' => 'dashicons-info-outline',
-      'supports' => array(
-        'title',
-        'editor',
-        'thumbnail',
-        'revisions',
-      ),
-    )
-  );
-
-  register_taxonomy(
-    'product-cat',
-    'product',
-    array(
-      'label' => '製品情報カテゴリー',
-      'hierarchical' => true,
-      'public' => true,
-      'show_in_rest' => true,
-    )
-  );
 
   register_post_type(
     'product',
@@ -178,36 +150,7 @@ function create_post_type()
   );
 }
 
-/**
- * カスタムフィールドデータを保存
- */
-function save_custom_fields($post_id)
-{
-  // 自動保存やリビジョンに関して保存をスキップ
-  if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-    return $post_id;
-  }
 
-  // 管理画面でのみ保存処理を実行
-  if (!is_admin()) {
-    return $post_id;
-  }
-
-  // 投稿が保存される際、カスタムフィールドを保存する
-  if (!isset($_POST['custom_field_meta_box_nonce']) || !wp_verify_nonce($_POST['custom_field_meta_box_nonce'], 'custom_field_save_meta_box_data')) {
-    return $post_id;
-  }
-
-  // 投稿タイプをチェック（'product' の投稿タイプのみ）
-  $post_types = ['product'];
-  if (!in_array(get_post_type($post_id), $post_types)) {
-    return $post_id;
-  }
-
-  return $post_id;
-}
-
-add_action('save_post', 'save_custom_fields');
 
 
 /**
@@ -255,25 +198,6 @@ function catch_that_image()
 
   return $first_img;
 }
-
-
-// function display_content_without_images()
-// {
-//   $content = get_the_content();
-
-
-//   $content_without_images = preg_replace('/<img[^>]+>/i', '', $content);
-
- 
-//   echo $content_without_images;
-// }
-
-// function remove_wp_block_image_html($content)
-// {
-//   // wp-block-imageクラスを持つ<figure>タグ全体を削除
-//   $content = preg_replace('/<figure class="wp-block-image.*?<\/figure>/is', '', $content);
-//   return $content;
-// }
 
 
 // Contact Form 7で自動挿入されるPタグ、brタグを削除

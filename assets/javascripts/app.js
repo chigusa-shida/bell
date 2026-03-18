@@ -53,10 +53,7 @@
       }
     }
   
-    function scrollToHash(hash, shouldCleanUrl) {
-      if (!hash || hash === '#') return;
-  
-      var $target = $(hash);
+    function scrollToTarget($target, shouldCleanUrl) {
       if (!$target.length) return;
   
       var position = $target.offset().top - getHeaderHeight();
@@ -73,26 +70,72 @@
       );
     }
   
-    // 同一ページ内リンク
+    function scrollToHash(hash, shouldCleanUrl) {
+      if (!hash) return;
+  
+      if (hash === '#') {
+        $('html, body').stop().animate(
+          { scrollTop: 0 },
+          speed,
+          'swing',
+          function () {
+            if (shouldCleanUrl) {
+              cleanUrl();
+            }
+          }
+        );
+        return;
+      }
+  
+      var $target = $(hash);
+      if (!$target.length) return;
+  
+      scrollToTarget($target, shouldCleanUrl);
+    }
+  
+    // PAGE TOP
+    $(document)
+      .off('click.pageTop')
+      .on('click.pageTop', '#page-top a[href="#"], .js-page-top[href="#"]', function (e) {
+        e.preventDefault();
+        scrollToHash('#', true);
+      });
+  
+    // ハッシュリンク全般
     $(document)
       .off('click.smoothScroll')
       .on('click.smoothScroll', 'a[href*="#"]', function (e) {
         var href = $(this).attr('href');
         if (!href) return;
   
-        // ここが重要
         var url = new URL(href, location.href);
-  
         var currentPath = location.pathname.replace(/\/$/, '') || '/';
         var linkPath = url.pathname.replace(/\/$/, '') || '/';
   
+        // href="#"
+        if (url.hash === '#') {
+          e.preventDefault();
+          scrollToHash('#', true);
+          return;
+        }
+  
+        // 同一ページ内
         if (url.hash && currentPath === linkPath) {
+          var $target = $(url.hash);
+          if (!$target.length) return;
+  
           e.preventDefault();
           scrollToHash(url.hash, true);
+          return;
+        }
+  
+        // 別ページ + ハッシュ
+        if (url.hash && currentPath !== linkPath) {
+          sessionStorage.setItem('initialHash', url.hash);
         }
       });
   
-    // 他ページから来たハッシュ
+    // 別ページから来たハッシュを処理
     var initialHash = sessionStorage.getItem('initialHash');
   
     if (initialHash) {
@@ -102,24 +145,23 @@
         history.scrollRestoration = 'manual';
       }
   
-      window.scrollTo(0, 0);
-  
       $(window).on('load', function () {
         setTimeout(function () {
-          scrollToHash(initialHash, false);
+          window.scrollTo(0, 0);
+          scrollToHash(initialHash, true);
         }, 150);
       });
-    } else if (location.hash) {
+    } else if (location.hash && location.hash !== '#') {
+      // 直接URLに /page/#access で来た場合
       var hash = location.hash;
   
       if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
       }
   
-      window.scrollTo(0, 0);
-  
       $(window).on('load', function () {
         setTimeout(function () {
+          window.scrollTo(0, 0);
           scrollToHash(hash, true);
         }, 150);
       });
@@ -228,15 +270,6 @@
     window.addEventListener('scroll', updateActiveNav, { passive: true });
     window.addEventListener('resize', updateActiveNav);
   }
-
-  // function initAccordion() {
-  //   $('#js-accordion .u-accordion-question').click(function () {
-  //     $(this).toggleClass('open');
-  //     $(this).next().slideToggle();
-  //     $('#js-accordion .u-accordion-question').not($(this)).next().slideUp();
-  //     $('#js-accordion .u-accordion-question').not($(this)).removeClass('open');
-  //   });
-  // }
 
   // ========== ルーティング ==========
   function initRouter() {

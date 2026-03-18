@@ -265,9 +265,12 @@ footer a {
 }
 .p-footer__main {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .p-footer__info {
   display: flex;
+  gap: 50px;
 }
 .p-footer__detail dl dt {
   font-weight: 500;
@@ -276,6 +279,16 @@ footer a {
 .p-footer__detail dl dd {
   margin-top: 10px;
   font-size: 14px;
+}
+.p-footer__nav > li {
+  position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.p-footer__nav > li + li::before {
+  content: "|";
 }
 .p-footer__nav--pageList {
   display: flex;
@@ -406,11 +419,10 @@ footer a {
 }
 
 #page-top {
-  bottom: 0;
   position: fixed;
   right: -12px;
   z-index: 100;
-  bottom: 0;
+  bottom: 110px;
   height: 50px;
   text-decoration: none;
   font-weight: 400;
@@ -442,6 +454,7 @@ footer a {
 .p-social__list {
   display: flex;
   gap: 15px;
+  justify-content: center;
 }
 .p-social__list--item a {
   display: flex;
@@ -574,6 +587,10 @@ footer a {
 .p-home {
   width: 100%;
   overflow: hidden;
+}
+
+.p-home {
+  margin-top: var(--header-height);
 }
 .p-home .p-home-top {
   height: 100%;
@@ -2454,8 +2471,7 @@ br.u-br-sp {
   }
   .p-footer__nav {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    gap: 10px;
   }
   .p-footer__nav--pageList {
     flex-wrap: wrap;
@@ -3692,9 +3708,7 @@ br.u-br-sp {
     width: 100%;
   }
   .p-footer__info {
-    flex-direction: column;
     gap: 20px;
-    width: 400px;
   }
   .p-footer__logo {
     max-width: min(200px, 17.8vw);
@@ -3705,8 +3719,7 @@ br.u-br-sp {
   }
   .p-footer__nav {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    gap: 10px;
   }
   .p-footer__nav--pageList {
     justify-content: space-between;
@@ -5090,10 +5103,8 @@ button.swiper-pagination-bullet {
   position: relative;
   height: 300px;
 
-  /* l-main の padding を無視して画面いっぱい */
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  width: calc(100% + (6.941% * 2));
+  margin-left: -6.941%;
 
   background-size: cover;
   background-position: center;
@@ -6040,6 +6051,9 @@ font-size: 16px;
 
 .p-product-category__main{
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
 }
 
 .p-product-category__navList {
@@ -6276,6 +6290,11 @@ font-size: 16px;
     flex-direction: column;
     display: block;
   }
+
+  .p-product-category__main{
+    gap: 50px;
+  }
+  
 
   .p-product-category__nav {
     display: none;
