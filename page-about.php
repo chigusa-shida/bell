@@ -1,13 +1,13 @@
 <?php /* Template Name: 私たちについて */ get_header(); ?>
 <main>
   <div id="js-main">
+    <div class="p-page__heading" style="background-image:url('<?php echo esc_url( get_theme_file_uri('assets/images/about_fv.webp') ); ?>')">
+      <div class="p-heading__title">
+          <h2 class="c-title" data-ja="私たちについて"><span class="c-title--red">A</span>BOUT&nbsp;US</h2>
+      </div>
+    </div>
     <div class="l-main">
       <div class="p-about">
-        <div class="p-page__heading" style="background-image:url('<?php echo esc_url( get_theme_file_uri('assets/images/about_fv.webp') ); ?>')">
-          <div class="p-heading__title">
-              <h2 class="c-title" data-ja="私たちについて"><span class="c-title--red">A</span>BOUT&nbsp;US</h2>
-          </div>
-        </div>
         <section>
           <div class="p-about-top">
             <div class="p-heading">
