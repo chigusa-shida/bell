@@ -126,26 +126,6 @@
     }
   }
 
-  // ========== Swiper: 投稿スライド ==========
-  function initPostSwiper() {
-    if ($('#js-post-slide .swiper-main').length && typeof Swiper !== 'undefined') {
-      new Swiper('#js-post-slide .swiper-main', {
-        loop: true,
-        centeredSlides: true,
-        speed: 2000,
-        watchSlidesProgress: true,
-        pagination: {
-          el: '#js-post-slide .swiper-pagination',
-          type: 'progressbar'
-        },
-        navigation: {
-          nextEl: '#js-post-slide .swiper-button-next',
-          prevEl: '#js-post-slide .swiper-button-prev'
-        }
-      });
-    }
-  }
-
   function initHome() {
     $('#jsi-tab_area .u-tab_btn').click(function () {
       var index = $('#jsi-tab_area .u-tab_btn').index(this);
@@ -265,7 +245,6 @@
     initCommon();
     initProductCategoryNav();
     initScroll(); // ← 全ページで実行
-    initPostSwiper();
     initTeamsSnap();
 
     if (path === '' || path === '/') {
