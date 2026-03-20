@@ -1,9 +1,17 @@
 <?php
 /*
-Template Name:エントリー
+Template Name: Entry Page
 */
 get_header();
+
+$state    = my_contact_get_form_state();
+$errors   = $state['errors'];
+$old      = $state['old'];
+$status   = $state['status'];
+$message  = $state['message'];
+$settings = $state['settings'];
 ?>
+
 <main>
   <div class="l-main" id="js-main">
     <div class="p-entry">
@@ -12,110 +20,145 @@ get_header();
           <span class="c-title--red">ENTRY</span>
         </h2>
       </div>
+
       <div class="p-entry__content">
-        <?php the_content(); ?>
-        <!-- <div class="p-form">
-          <table class="p-form__table">
-            <tr>
-              <th>
-                希望職種<span class="p-form__required">&#42;</span>
-              </th>
-              <td>
-                <div class="p-form__select">
-                  [radio your-position use_label_element "技工士" "営業選" "事務"]
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                雇用形態<span class="p-form__required">&#42;</span>
-              </th>
-              <td>
-                <div class="p-form__select">
-                  [radio your-type use_label_element "正社員" "パート・アルバイト"]
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                お名前<span class="p-form__required">&#42;</span>
-              </th>
-              <td>
-                [text* your-name]
-              </td>
-            </tr>
-            <tr>
-              <th>
-                ふりがな
-              </th>
-              <td>
-                [text your-name]
-              </td>
-            </tr>
-            <tr>
-              <th>
-                住所<span class="p-form__required">&#42;</span>
-              </th>
-              <td>
-                [text* your-addres]
-              </td>
-            </tr>
-            <tr>
-              <th>
-                電話番号<span class="p-form__required">&#42;</span>
-              </th>
-              <td>
-                [tel* your-tel]
-              </td>
-            </tr>
-            <tr>
-              <th>
-                メールアドレス<span class="p-form__required">&#42;</span>
-              </th>
-              <td>
-                [email* your-email]
-              </td>
-            </tr>
-            <tr>
-              <th>
-                性別
-              </th>
-              <td>
-                <div class="p-form__select">
-                  [radio your-position use_label_element "男性" "女性"]
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                現在の状況
-              </th>
-              <td>
-                <div class="p-form__select">
-                  [radio your-position use_label_element "在籍中" "離職中" "新卒・卒業見込"]
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                自己PRなどご記入下さい。<span class="p-form__required">&#42;</span>
-              </th>
-              <td>
-                [textarea* your-message 40x10]
-              </td>
-            </tr>
-          </table>
-          <div class="p-form__privacy">
-            [acceptance acceptance-694 optional]<a href="http://localhost:3000/privacy/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">プライバシーポリシー</a>に同意の上、送信してください。[/acceptance]
+
+        <?php if ($status === 'success') : ?>
+          <div class="p-form__alert p-form__alert--success">
+            <?php echo esc_html($message); ?>
           </div>
-          [response]
-          <div class="c-button p-form__button">
-            [submit "送信する"]
+        <?php endif; ?>
+
+        <?php if (!empty($errors['common'])) : ?>
+          <div class="p-form__alert p-form__alert--error">
+            <?php echo esc_html($errors['common']); ?>
           </div>
-        </div> -->
+        <?php endif; ?>
+
+        <form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post" novalidate>
+          <input type="hidden" name="action" value="my_contact_submit">
+          <input type="hidden" name="form_type" value="entry">
+          <?php wp_nonce_field('my_contact_submit', 'my_contact_nonce'); ?>
+          <input type="hidden" name="form_started" value="<?php echo esc_attr(time()); ?>">
+
+          <div style="position:absolute; left:-9999px;" aria-hidden="true">
+            <input type="text" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="p-form">
+            <table class="p-form__table">
+              <tbody>
+                <tr>
+                  <th>希望職種<span class="p-form__required">*</span></th>
+                  <td>
+                    <?php foreach (['技工士', '営業職', '事務'] as $v) : ?>
+                      <label><input type="radio" name="entry_position" value="<?php echo esc_attr($v); ?>" <?php checked(($old['entry_position'] ?? ''), $v); ?>> <?php echo esc_html($v); ?></label>
+                    <?php endforeach; ?>
+                    <?php if (!empty($errors['entry_position'])) : ?><p class="p-form__error"><?php echo esc_html($errors['entry_position']); ?></p><?php endif; ?>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>雇用形態<span class="p-form__required">*</span></th>
+                  <td>
+                    <?php foreach (['正社員', 'パート・アルバイト'] as $v) : ?>
+                      <label><input type="radio" name="entry_type" value="<?php echo esc_attr($v); ?>" <?php checked(($old['entry_type'] ?? ''), $v); ?>> <?php echo esc_html($v); ?></label>
+                    <?php endforeach; ?>
+                    <?php if (!empty($errors['entry_type'])) : ?><p class="p-form__error"><?php echo esc_html($errors['entry_type']); ?></p><?php endif; ?>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>お名前<span class="p-form__required">*</span></th>
+                  <td>
+                    <input type="text" name="your_name" value="<?php echo esc_attr($old['your_name'] ?? ''); ?>" required>
+                    <?php if (!empty($errors['your_name'])) : ?><p class="p-form__error"><?php echo esc_html($errors['your_name']); ?></p><?php endif; ?>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>ふりがな</th>
+                  <td>
+                    <input type="text" name="your_kana" value="<?php echo esc_attr($old['your_kana'] ?? ''); ?>">
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>住所<span class="p-form__required">*</span></th>
+                  <td>
+                    <input type="text" name="your_address" value="<?php echo esc_attr($old['your_address'] ?? ''); ?>" required>
+                    <?php if (!empty($errors['your_address'])) : ?><p class="p-form__error"><?php echo esc_html($errors['your_address']); ?></p><?php endif; ?>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>電話番号<span class="p-form__required">*</span></th>
+                  <td>
+                    <input type="tel" name="your_tel" value="<?php echo esc_attr($old['your_tel'] ?? ''); ?>" required>
+                    <?php if (!empty($errors['your_tel'])) : ?><p class="p-form__error"><?php echo esc_html($errors['your_tel']); ?></p><?php endif; ?>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>メールアドレス<span class="p-form__required">*</span></th>
+                  <td>
+                    <input type="email" name="your_email" value="<?php echo esc_attr($old['your_email'] ?? ''); ?>" required>
+                    <?php if (!empty($errors['your_email'])) : ?><p class="p-form__error"><?php echo esc_html($errors['your_email']); ?></p><?php endif; ?>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>性別</th>
+                  <td>
+                    <?php foreach (['男性', '女性'] as $v) : ?>
+                      <label><input type="radio" name="entry_gender" value="<?php echo esc_attr($v); ?>" <?php checked(($old['entry_gender'] ?? ''), $v); ?>> <?php echo esc_html($v); ?></label>
+                    <?php endforeach; ?>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>現在の状況</th>
+                  <td>
+                    <?php foreach (['在籍中', '離職中', '新卒・卒業見込'] as $v) : ?>
+                      <label><input type="radio" name="entry_status" value="<?php echo esc_attr($v); ?>" <?php checked(($old['entry_status'] ?? ''), $v); ?>> <?php echo esc_html($v); ?></label>
+                    <?php endforeach; ?>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>自己PRなどご記入下さい。<span class="p-form__required">*</span></th>
+                  <td>
+                    <textarea name="your_message" rows="10" required><?php echo esc_textarea($old['your_message'] ?? ''); ?></textarea>
+                    <?php if (!empty($errors['your_message'])) : ?><p class="p-form__error"><?php echo esc_html($errors['your_message']); ?></p><?php endif; ?>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="p-form__privacy">
+              <label class="custom-checkbox">
+                <input type="checkbox" name="acceptance" value="1" <?php checked(($old['acceptance'] ?? ''), '1'); ?> required>
+                <span class="checkbox-style"></span>
+                <a href="<?php echo esc_url(home_url('/privacy/')); ?>" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">プライバシーポリシー</a>に同意する
+              </label>
+              <?php if (!empty($errors['acceptance'])) : ?><p class="p-form__error"><?php echo esc_html($errors['acceptance']); ?></p><?php endif; ?>
+            </div>
+
+            <?php if (!empty($settings['recaptcha_site_key'])) : ?>
+              <div class="p-form__captcha">
+                <div class="g-recaptcha" data-sitekey="<?php echo esc_attr($settings['recaptcha_site_key']); ?>"></div>
+                <?php if (!empty($errors['recaptcha'])) : ?><p class="p-form__error"><?php echo esc_html($errors['recaptcha']); ?></p><?php endif; ?>
+              </div>
+            <?php endif; ?>
+
+            <div class="c-button p-form__button">
+              <input type="submit" value="送信する">
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </main>
-<?php get_template_part('template-parts/footer-top'); ?>
+
 <?php get_footer(); ?>

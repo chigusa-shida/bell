@@ -4054,6 +4054,7 @@ br.u-br-sp {
 }
 
 @media (hover: hover) and (pointer: fine) {
+  
   .p-header__logo:hover {
     opacity: 0.5;
     transition: all 0.3s;
@@ -6357,5 +6358,67 @@ font-size: 16px;
 @media (hover: hover) and (pointer: fine){ 
   .p-product-category__navItem a:hover{
     color: #da0000;
+  }
+}
+
+.p-form__captcha,
+.cf-turnstile,
+.cf-turnstile iframe {
+  visibility: visible !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+  min-height: 70px !important;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.p-form,
+.p-form__table,
+.p-form__table td {
+  overflow: visible !important;
+}
+
+.l-main__thanks {
+  border-bottom: solid 1px #8a8a8a;
+}
+
+.p-thanks__content {
+  padding: 100px 0;
+  text-align: center;
+}
+.p-thanks__content p {
+  margin-top: 10px;
+}
+
+.p-thanks__button {
+  margin: 0 auto;
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.p-thanks .c-button__top {
+    display: inline-block;
+    line-height: 50px;
+    color: #fffdfd;
+    text-decoration: none;
+    outline: none;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 1px solid #fffdfd;
+    overflow: hidden;
+    transition: 0.3s ease-out;
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    letter-spacing: 0.2em;
+    transition: 0.2s ease-out;
+}
+@media (hover: hover) and (pointer: fine) {
+  .p-thanks .c-button__top:hover {
+    border-color: #da0000;
+    background-color: #da0000;
   }
 }
