@@ -51,9 +51,17 @@
       <div class="p-header__bottom">
         <div class="p-header__bottom--sp">
           <div class="p-header__logo">
-            <a href="<?php echo esc_url(home_url('/')); ?>" class="p-header__logo--inner">
-              <img src="<?php echo get_theme_file_uri('assets/images/logo.png'); ?>" alt="株式会社ベルデンタルラボラトリーロゴ" />
-            </a>
+            <?php if (is_front_page()) : ?>
+              <h1 class="p-header__logo--inner">
+                <a href="<?php echo esc_url(home_url('/')); ?>">
+                  <img src="<?php echo get_theme_file_uri('assets/images/logo.png'); ?>" alt="株式会社ベルデンタルラボラトリーロゴ" />
+                </a>
+              </h1>
+            <?php else : ?>
+              <a href="<?php echo esc_url(home_url('/')); ?>" class="p-header__logo--inner">
+                <img src="<?php echo get_theme_file_uri('assets/images/logo.png'); ?>" alt="株式会社ベルデンタルラボラトリーロゴ" />
+              </a>
+            <?php endif; ?>
           </div>
           <div class="p-header__btn u-header__sp-btn">
             <span class="p-header__bar p-header__bar--top u-bar-top"></span>

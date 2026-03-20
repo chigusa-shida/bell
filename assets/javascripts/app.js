@@ -1,13 +1,7 @@
 (function ($) {
   'use strict';
-
   // ========== 共通（全ページ） ==========
   function initCommon() {
-    $(window).on('load resize', function () {
-      var height = $('#header').height();
-      $('#js-main').css('margin-top', height + 10);
-      document.documentElement.style.setProperty('--header-height', height + 10 + 'px');
-    });
 
     // SPだけ：2階層で3階層を持つ項目は開閉だけにする
     document.querySelectorAll('.p-gnav__bottom .sub-menu .menu-item-has-children > a').forEach(link => {
@@ -291,171 +285,210 @@
   }
 
   function initTeamsSnap() {
-    const MQ = window.matchMedia("(min-width: 950px)");
-    if (!MQ.matches) return;
-
     const section = document.querySelector("#teamsSnap");
     if (!section) return;
-
-    if (window.__teamsSnapInited) return;
-    window.__teamsSnapInited = true;
-
+  
+    const MQ = window.matchMedia("(min-width: 950px)");
     const panels = Array.from(section.querySelectorAll(".snap__panel"));
     const dots = Array.from(section.querySelectorAll(".snap__dot"));
-
-    const header = document.querySelector("#header") || document.querySelector("header");
-    const OFFSET = 20;
-    const headerLine = () => (header ? header.getBoundingClientRect().height : 0) + OFFSET;
-
     const viewport = section.querySelector(".snap__viewport");
-    if (!viewport) return;
-
+  
+    if (!panels.length || !viewport) return;
+  
+    // すでに初期化済みなら一旦止める
+    if (section.__teamsSnapCleanup) {
+      section.__teamsSnapCleanup();
+    }
+  
+    // PC以外は見た目だけ戻して終了
+    if (!MQ.matches) {
+      viewport.style.height = "";
+      viewport.classList.remove("is-fading", "is-fadeout");
+      panels.forEach((p, i) => p.classList.toggle("is-active", i === 0));
+      dots.forEach((d, i) => d.classList.toggle("is-active", i === 0));
+      return;
+    }
+  
     let index = 0;
     let locked = false;
     let lockY = 0;
     let accumulated = 0;
     let lastStepAt = 0;
+    let suppressUntil = 0;
+  
+    const OFFSET = 20;
     const threshold = 80;
     const cooldownMs = 550;
-    let suppressUntil = 0;
     const suppressMs = 700;
-
-    const getLockY = () => {
+  
+    // 固定header高さをCSS変数から取得
+    function getHeaderHeight() {
+      const value = getComputedStyle(document.documentElement)
+        .getPropertyValue("--header-height")
+        .trim();
+  
+      return parseFloat(value) || 150;
+    }
+  
+    function headerLine() {
+      return getHeaderHeight() + OFFSET;
+    }
+  
+    function getLockY() {
       const rect = section.getBoundingClientRect();
       return window.scrollY + rect.top - headerLine();
-    };
-
-    const isAtTrigger = () => {
+    }
+  
+    function isAtTrigger() {
       const rect = section.getBoundingClientRect();
       const trigger = headerLine();
       return rect.top <= trigger && rect.bottom > trigger;
-    };
-
+    }
+  
     function fitSnapViewport() {
       if (!MQ.matches) return;
-
+  
       const activePanel = panels[index];
       if (!activePanel) return;
-
+  
       const career = activePanel.querySelector(".p-career");
       if (!career) return;
-
+  
       const padding = 20;
       const available = window.innerHeight - headerLine() - 40;
       const need = career.getBoundingClientRect().height + padding;
-
+  
       viewport.style.height = `${Math.min(need, available)}px`;
     }
-
-    const setActive = (i) => {
+  
+    function setActive(i) {
       const next = Math.max(0, Math.min(panels.length - 1, i));
-
+  
       viewport.classList.remove("is-fadeout");
       viewport.classList.add("is-fading");
-
+  
       panels.forEach((p) => p.classList.remove("is-active"));
-
+  
       setTimeout(() => {
         index = next;
-
+  
         panels.forEach((p, pi) => p.classList.toggle("is-active", pi === index));
         dots.forEach((d, di) => d.classList.toggle("is-active", di === index));
-
+  
         fitSnapViewport();
-
+  
         viewport.classList.remove("is-fading");
         viewport.classList.add("is-fadeout");
-        setTimeout(() => viewport.classList.remove("is-fadeout"), 1200);
+  
+        setTimeout(() => {
+          viewport.classList.remove("is-fadeout");
+        }, 1200);
       }, 200);
-    };
-
-    const lockPage = () => {
+    }
+  
+    function lockPage() {
       locked = true;
       accumulated = 0;
-
+  
       const y = getLockY();
-      window.scrollTo({ top: y, behavior: "auto" });
       lockY = y;
-    };
-
-    const unlockToDown = () => {
+      window.scrollTo({ top: y, behavior: "auto" });
+    }
+  
+    function unlockToDown() {
       locked = false;
       suppressUntil = Date.now() + suppressMs;
-
+  
       const rect = section.getBoundingClientRect();
       const y = window.scrollY + rect.bottom - headerLine() + 40;
       lockY = y;
       window.scrollTo({ top: y, behavior: "auto" });
-    };
-
-    const unlockToUp = () => {
+    }
+  
+    function unlockToUp() {
       locked = false;
       suppressUntil = Date.now() + suppressMs;
-
+  
       const rect = section.getBoundingClientRect();
       const y = window.scrollY + rect.top - headerLine() - 40;
       lockY = y;
       window.scrollTo({ top: y, behavior: "auto" });
-    };
-
-    const onResize = () => {
-      if (MQ.matches) {
-        fitSnapViewport();
-        return;
-      }
-
-      locked = false;
-      suppressUntil = Date.now() + 2000;
-      window.__teamsSnapInited = false;
-
-      viewport.style.height = "";
-      viewport.style.overflow = "";
-      viewport.classList.remove("is-fading", "is-fadeout");
-    };
-    window.addEventListener("resize", onResize);
-
-    window.addEventListener(
-      "scroll",
-      () => {
-        if (!MQ.matches) return;
-        if (!locked) return;
-        if (Math.abs(window.scrollY - lockY) > 1) window.scrollTo(0, lockY);
-      },
-      { passive: true }
-    );
-
-    const stepOnce = (dir) => {
+    }
+  
+    function stepOnce(dir) {
       if (dir > 0 && index === panels.length - 1) return unlockToDown();
       if (dir < 0 && index === 0) return unlockToUp();
       setActive(index + dir);
+    }
+  
+    const onScroll = () => {
+      if (!MQ.matches) return;
+      if (!locked) return;
+      if (Math.abs(window.scrollY - lockY) > 1) {
+        window.scrollTo(0, lockY);
+      }
     };
-
-    window.addEventListener(
-      "wheel",
-      (e) => {
-        if (!MQ.matches) return;
-        if (Date.now() < suppressUntil) return;
-        if (!locked && !isAtTrigger()) return;
-        if (!locked) lockPage();
-
-        e.preventDefault();
-
-        const now = Date.now();
-        if (now - lastStepAt < cooldownMs) return;
-
-        accumulated += e.deltaY;
-        if (Math.abs(accumulated) >= threshold) {
-          lastStepAt = now;
-          stepOnce(accumulated > 0 ? 1 : -1);
-          accumulated = 0;
+  
+    const onWheel = (e) => {
+      if (!MQ.matches) return;
+      if (Date.now() < suppressUntil) return;
+      if (!locked && !isAtTrigger()) return;
+  
+      if (!locked) lockPage();
+  
+      e.preventDefault();
+  
+      const now = Date.now();
+      if (now - lastStepAt < cooldownMs) return;
+  
+      accumulated += e.deltaY;
+  
+      if (Math.abs(accumulated) >= threshold) {
+        lastStepAt = now;
+        stepOnce(accumulated > 0 ? 1 : -1);
+        accumulated = 0;
+      }
+    };
+  
+    const onResize = () => {
+      if (!MQ.matches) {
+        if (section.__teamsSnapCleanup) {
+          section.__teamsSnapCleanup();
+          section.__teamsSnapCleanup = null;
         }
-      },
-      { passive: false }
-    );
-
-    dots.forEach((dot, i) => dot.addEventListener("click", () => setActive(i)));
-
-    setActive(0);
+        initTeamsSnap();
+        return;
+      }
+  
+      fitSnapViewport();
+    };
+  
+    const onMediaChange = () => {
+      initTeamsSnap();
+    };
+  
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("wheel", onWheel, { passive: false });
+    window.addEventListener("resize", onResize);
+    MQ.addEventListener("change", onMediaChange);
+  
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => setActive(i));
+    });
+  
+    section.__teamsSnapCleanup = () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("resize", onResize);
+      MQ.removeEventListener("change", onMediaChange);
+  
+      viewport.style.height = "";
+      viewport.classList.remove("is-fading", "is-fadeout");
+      locked = false;
+    };
+  
+    panels.forEach((p, i) => p.classList.toggle("is-active", i === 0));
+    dots.forEach((d, i) => d.classList.toggle("is-active", i === 0));
     fitSnapViewport();
   }
 

@@ -7,9 +7,18 @@ get_header();
 <main>
   <div class="l-main" id="js-main">
     <div class="p-catalog">
-      <div class="p-heading__title">
-        <h2 class="c-title" data-ja="カタログ"><span class="c-title--red">C</span>atalog</h2>
-      </div>
+      <div class="p-heading">
+          <div class="p-heading__content">
+              <div class="p-heading__title text-center">
+                <div class="c-title">
+                  <span class="c-title__en">
+                    <span class="c-title--red">C</span>atalog
+                  </span>
+                  <h1 class="c-title__ja">カタログ</h1>
+                </div>
+              </div>
+          </div>
+      </div> 
       <div class="p-catalog__content">
         <?php the_content(); ?>
       </div>

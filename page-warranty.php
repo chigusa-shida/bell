@@ -5,7 +5,18 @@
       <div class="p-warranty">
         <section>
           <div class="p-warranty__heading">
-            <h2 class="c-title" data-ja="保証規約"><span class="c-title--red">WARRANTY</span></h2>
+            <div class="p-heading">
+              <div class="p-heading__content">
+                <div class="p-heading__title text-center">
+                  <div class="c-title">
+                    <span class="c-title__en">
+                      <span class="c-title--red">WARRANTY</span>
+                    </span>
+                    <h1 class="c-title__ja">保証規約</h1>
+                  </div>
+                </div>
+              </div>
+            </div> 
           </div>
         </section>
         <div class="p-warranty__content">

@@ -5,7 +5,12 @@ get_header();
   <div>
     <div class="p-page__heading" style="background-image:url('<?php echo esc_url( get_theme_file_uri('assets/images/about_fv.webp') ); ?>')">
       <div class="p-heading__title">
-          <h2 class="c-title" data-ja="製品情報"><span class="c-title--red">P</span>RODUCT</h2>
+        <div class="c-title">
+          <span class="c-title__en">
+            <span class="c-title--red">P</span>RODUCT
+          </span>
+          <h1 class="c-title__ja">製品情報</h1>
+        </div>
       </div>
     </div>
     <div class="l-main">

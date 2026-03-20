@@ -4,7 +4,7 @@
     <div class="p-home-top">
       <div class="p-home-top__container" style="background-image: url('<?php echo esc_url(get_theme_file_uri('assets/images/home_fv-01.webp')); ?>');">
         <div class="p-home-top__catch">
-          <h1 class="p-home-top__copy">患者様のケースを<br class="u-br-sp">担当させていただく<br>わたくしたち第一の目標は<br>満足と喜びそして笑顔です</h1>
+          <p class="p-home-top__copy">患者様のケースを<br class="u-br-sp">担当させていただく<br>わたくしたち第一の目標は<br>満足と喜びそして笑顔です</p>
           <p class="p-home-top__lead">歯科業界の職人として高性能のデジタル技工に、技工士の技術を乗せて、完全と言えるまで再現した妥協なき技工物を全国の歯科医院様にご提供します。</p>
         </div>
         <div class="p-home-top__notice">
@@ -65,7 +65,12 @@
             <div class="p-home-about__container">
               <div class="p-home-about__main">
                 <div class="p-home-about__title">
-                  <h2 class="c-title" data-ja="私たちについて"><span class="c-title--red">A</span>BOUT&nbsp;US</span></h2>
+                  <div class="c-title">
+                    <span class="c-title__en">
+                      <span class="c-title--red">A</span>BOUT&nbsp;US
+                    </span>
+                    <h2 class="c-title__ja">私たちについて</h2>
+                  </div>
                 </div>
                 <div class="p-home-about__content">
                   <p class="c-lead">お得意様からの信頼に知識と技術で応えします。</p>
@@ -102,8 +107,8 @@
                       <a href="<?php echo esc_url(home_url('/about#teams')); ?>">
                         <div class="p-home-advantage-card">
                           <div class="p-home-advantage-card__title">
-                            <h3 class="p-home-advantage-card__label">OUR&nbsp;TEAMS</h3>
-                            <p class="p-home-advantage-card__lead">私たちのチーム</p>
+                            <p class="p-home-advantage-card__label">OUR&nbsp;TEAMS</p>
+                            <h3 class="p-home-advantage-card__lead">私たちのチーム</h3>
                           </div>
                           <div class="p-home-advantage-card__desc">
                             <p class="p-home-advantage-card__detail">
@@ -125,8 +130,8 @@
                     <li class="p-home-advantage__item">
                       <a href="<?php echo esc_url(home_url('/about#environment')); ?>" class="p-home-advantage-card">
                         <div class="p-home-advantage-card__title">
-                          <h3 class="p-home-advantage-card__label">ENVIRONMENT</h3>
-                          <p class="p-home-advantage-card__lead">品質を支える職場環境</p>
+                          <p class="p-home-advantage-card__label">ENVIRONMENT</p>
+                          <h3 class="p-home-advantage-card__lead">品質を支える職場環境</h3>
                         </div>
                         <div class="p-home-advantage-card__desc">
                           <p class="p-home-advantage-card__detail">
@@ -147,8 +152,8 @@
                     <li class="p-home-advantage__item">
                       <a href="<?php echo esc_url(home_url('/about#history')); ?>" class="p-home-advantage-card">
                         <div class="p-home-advantage-card__title">
-                          <h3 class="p-home-advantage-card__label">HISTORY</h3>
-                          <p class="p-home-advantage-card__lead">私たちの歴史</p>
+                          <p class="p-home-advantage-card__label">HISTORY</p>
+                          <h3 class="p-home-advantage-card__lead">私たちの歴史</h3>
                         </div>
                         <div class="p-home-advantage-card__desc">
                           <p class="p-home-advantage-card__detail">当ラボと併設された、歯科営業がある為歯科医院様と技工士のコミュニケーションがスムーズに行えます。</p>
@@ -173,7 +178,12 @@
             <div class="p-home-product">
               <div class="p-home-product__main">
                 <div class="p-home-product__title">
-                  <h2 class="c-title" data-ja="製品情報"><span class="c-title--red">P</span>RODUCT</span></h2>
+                  <div class="c-title">
+                    <span class="c-title__en">
+                      <span class="c-title--red">P</span>RODUCT
+                    </span>
+                    <h2 class="c-title__ja">製品情報</h2>
+                  </div>
                 </div>
                 <div class="p-home-product__text">
                   <p>
@@ -199,8 +209,8 @@
           <div class="p-home__section">
             <div class="p-home-shop">
               <div class="p-home-shop__title">
-                <span class="p-home-shop__title--sub">ベルデンタル公式オンラインショップ</span>
-                <h2 class="p-home-shop__title--main c-title">OFFICAL&nbsp;ONLINE&nbsp;SHOP</h2>
+                <h2 class="p-home-shop__title--sub">ベルデンタル公式オンラインショップ</h2>
+                <p class="p-home-shop__title--main c-title">OFFICAL&nbsp;ONLINE&nbsp;SHOP</p>
               </div>
               <div class="p-home-shop__main">
                 <div class="p-home-shop__logo">
@@ -227,7 +237,12 @@
         <section>
           <div class="p-home__section">
             <div class="p-home-news p-news">
-              <h2 class="c-title" data-ja="ニュース"><span class="c-title--red">N</span>EWS</h2>
+              <div class="c-title">
+                <span class="c-title__en">
+                  <span class="c-title--red">N</span>EWS
+                </span>
+                <h2 class="c-title__ja">ニュース</h2>
+              </div>
               <div class="p-home-news__content">
                 <div id="jsi-tab_area">
                   <ul class="p-news__cats">

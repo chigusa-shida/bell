@@ -23,7 +23,7 @@ get_header();
                 <div class="p-transaction__container">
                     <div class="p-page-section__heading">
                         <span class="c-title--red">Pich&nbsp;Up&nbsp;&&nbsp;Delivery</span>
-                        <h3 class="c-heading">訪問による受納品</h3>
+                        <h2 class="c-heading">訪問による受納品</h2>
                     </div>
                     <div class="p-transaction__content">
                         <div class="p-transaction__text">
@@ -52,7 +52,7 @@ get_header();
                 <div class="p-transaction__container p-page-section">
                     <div class="p-page-section__heading">
                         <span class="c-title--red">Send&nbsp;Case</span>
-                        <h3 class="c-heading">宅配による受納品</h3>
+                        <h2 class="c-heading">宅配による受納品</h2>
                     </div>
                     <div class="p-transaction__content">
                         <div class="p-transaction__text">
@@ -77,7 +77,7 @@ get_header();
                 <div class="p-transaction__container p-page-section">
                     <div class="p-page-section__heading">
                         <span class="c-title--red">ONLINE&nbsp;SHOP</span>
-                        <h3 class="c-heading">WEBによる受納品</h3>
+                        <h2 class="c-heading">WEBによる受納品</h2>
                     </div>
                     <div class="p-transaction__content">
                         <div class="p-transaction__text">
@@ -97,7 +97,7 @@ get_header();
                 <div class="p-transaction__container p-page-section">
                     <div class="p-page-section__heading">
                         <span class="c-title--red">DIGITAL</span>
-                        <h3 class="c-heading">IOS</h3>
+                        <h2 class="c-heading">IOS</h2>
                     </div>
                     <div class="p-transaction__content">
                         <div class="p-transaction__text">
@@ -113,7 +113,7 @@ get_header();
                 <div class="p-transaction__container p-page-section">
                     <div class="p-page-section__heading">
                         <span class="c-title--red">TERMS</span>
-                        <h3 class="c-heading">お支払いについて</h3>
+                        <h2 class="c-heading">お支払いについて</h2>
                     </div>
                     <div class="p-transaction__content">
                         <div class="p-transaction__text">
@@ -129,7 +129,7 @@ get_header();
                 <div class="p-transaction__container p-page-section">
                     <div class="p-page-section__heading">
                         <span class="c-title--red">DENTAL&nbsp;METAL&nbsp;HANDLING</span>
-                        <h3 class="c-heading">歯科用金属のお取り扱いについて</h3>
+                        <h2 class="c-heading">歯科用金属のお取り扱いについて</h2>
                     </div>
                     <div class="p-transaction__content">
                         <div class="p-transaction__text">

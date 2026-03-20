@@ -15,11 +15,18 @@ $settings = $state['settings'];
 <main>
   <div class="l-main" id="js-main">
     <div class="p-entry">
-      <div class="p-entry__heading">
-        <h2 class="c-title" data-ja="エントリー">
-          <span class="c-title--red">ENTRY</span>
-        </h2>
-      </div>
+      <div class="p-heading">
+        <div class="p-heading__content">
+          <div class="p-heading__title text-center">
+            <div class="c-title">
+              <span class="c-title__en">
+                <span class="c-title--red">E</span>NTRY
+              </span>
+              <h1 class="c-title__ja">エントリー</h1>
+            </div>
+          </div>
+        </div>
+      </div> 
 
       <div class="p-entry__content">
 

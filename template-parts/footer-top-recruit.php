@@ -4,9 +4,9 @@
 <div id="js-footer">
   <ul class="p-footer-top recruit">
     <li class="p-footer-top__item">
-      <a href="<?php echo esc_url(home_url('/company/')); ?>" class="p-footer-top__item--link">
+      <a href="<?php echo esc_url(home_url('/about/')); ?>" class="p-footer-top__item--link">
         <div class="p-footer-top__item--text">
-          <div class="p-footer-top__title c-title" data-ja="会社概要"><span class="c-title--red">C</span>OPANY</div>
+          <div class="p-footer-top__title c-title" data-ja="私たちについて"><span class="c-title--red">A</span>BOUT&nbsp;US</div>
         </div>
         <span class="p-footer-top__item--btn"></span>
         <div class="p-footer-top__item--img">

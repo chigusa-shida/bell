@@ -8,16 +8,26 @@ get_header();
   <div>
     <div class="p-page__heading" style="background-image:url('<?php echo esc_url( get_theme_file_uri('assets/images/about_fv.webp') ); ?>')">
       <div class="p-heading__title">
-          <h2 class="c-title" data-ja="採用情報"><span class="c-title--red">R</span>ECRUIT</h2>
+        <div class="c-title">
+          <span class="c-title__en">
+            <span class="c-title--red">R</span>ECRUIT
+          </span>
+          <h1 class="c-title__ja">採用情報</h1>
+        </div>
       </div>
     </div>
     <div class="l-main">
       <div class="p-recruit">
         <section>
-          <div class="p-page-section">
+          <div>
             <div class="p-company-outline" id="outline">
               <div class="p-company-outline__title text-center">
-                <h2 class="c-title" data-ja="メッセージ"><span class="c-title--red">Message</span></h2>
+              <div class="c-title">
+                <span class="c-title__en">
+                  <span class="c-title--red">Message</span>
+                </span>
+                <h2 class="c-title__ja">メッセージ</h2>
+              </div>
               </div>
               <div class="p-page-section__content text-center">
                 <p>離職率が高いと言われる歯科技工業界において、当社では入社後に家族を持ち、<br>長く働き続けている社員が多く在籍しています。</p>
@@ -31,9 +41,12 @@ get_header();
         <section>
           <div class="p-recruitment p-page-section">
             <div class="p-recruitment__heading">
-              <h2 class="c-title" data-ja="募集要項">
-                <span class="c-title--red">Recruitment</span>
-              </h2>
+              <div class="c-title">
+                <span class="c-title__en">
+                  <span class="c-title--red">Recruitment</span>
+                </span>
+                <h2 class="c-title__ja">募集要項</h2>
+              </div>
             </div>
             <div class="p-page-section__content">
               <div class="p-page-button">

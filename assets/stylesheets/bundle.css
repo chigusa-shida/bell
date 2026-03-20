@@ -110,12 +110,28 @@ body {
 /*// ==========================================================================
 // Layout
 // ==========================================================================*/
+
+:root {
+  --header-height: 150px; /* PC */
+}
+
+@media (max-width: 949px) {
+  :root {
+    --header-height: 83px;
+  }
+}
+
 .l-header {
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 90;
+}
+
+
+main {
+  padding-top: var(--header-height);
 }
 
 .l-main {
@@ -589,9 +605,6 @@ footer a {
   overflow: hidden;
 }
 
-.p-home {
-  margin-top: var(--header-height);
-}
 .p-home .p-home-top {
   height: 100%;
   position: relative;
@@ -648,6 +661,10 @@ footer a {
   font-weight: 500;
   font-family: "Quicksand";
   color: #da0000;
+}
+
+.p-home .p-home-top__copy {
+  font-weight: 600;
 }
 .p-home .p-home-top__notice-swiper {
   height: 30px;
@@ -1002,7 +1019,7 @@ a {
 .p-privacy-block__child:first-child {
   margin-top: 0;
 }
-.p-privacy-block__child h3 {
+.p-privacy-block__child h2 {
   font-weight: 300;
   border-bottom: solid 1px #da0000;
   line-height: 2.5;
@@ -1933,6 +1950,15 @@ a {
   top: 0;
   line-height: 1;
 }
+.c-title__ja {
+  display: block;
+  color: #ffffff;
+  font-weight: 300;
+  margin-left: 3px;
+  top: 0;
+  line-height: 1;
+  font-size: 15px;
+}
 .c-title--center {
   text-align: center;
 }
@@ -2719,6 +2745,7 @@ br.u-br-sp {
   }
   .p-recruit {
     margin-bottom: 13.04%;
+    margin-top: 13.04%;
   }
   .p-post {
     font-size: 16px;
@@ -2751,7 +2778,7 @@ br.u-br-sp {
   .p-privacy {
     margin-bottom: 13.04%;
   }
-  .p-privacy-block__child h3 {
+  .p-privacy-block__child h2 {
     font-size: 20px;
   }
   .p-shop {
@@ -3134,6 +3161,7 @@ br.u-br-sp {
   }
   .p-recruit {
     margin-bottom: 10.64%;
+    margin-top: 10.64%;
   }
   .p-post {
     font-size: 18px;
@@ -3157,7 +3185,7 @@ br.u-br-sp {
   .p-privacy {
     margin-bottom: 10.64%;
   }
-  .p-privacy-block__child h3 {
+  .p-privacy-block__child h2 {
     font-size: 27px;
   }
   .p-shop {
@@ -4947,14 +4975,10 @@ button.swiper-pagination-bullet {
 .p-page__heading {
   position: relative;
   height: 300px;
-
-  width: calc(100% + (6.941% * 2));
-  margin-left: -6.941%;
-
+  width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5199,6 +5223,9 @@ button.swiper-pagination-bullet {
 
 /* ===== responsive：スマホは画像をテキストの下に ===== */
 @media (max-width: 950px) {
+  .p-about .p-about-section {
+    padding-top: 30px;
+  }
 
   .snap__viewport {
     margin-top: 40px;
@@ -5336,6 +5363,10 @@ button.swiper-pagination-bullet {
   pointer-events: none;
   z-index: 2;
 }
+
+.l-about-over {
+  overflow: hidden;
+}
 /* .p-flow::before{
   left: 0;
   background: linear-gradient(to right, rgba(0,0,0,.85), rgba(0,0,0,0));
@@ -5359,9 +5390,9 @@ button.swiper-pagination-bullet {
   }
 
   .p-flow{
-    width: calc(100% + 56px);
-    margin-left: -28px;
-    margin-right: -28px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
     padding: 8px 0;
   }
 
@@ -5889,7 +5920,7 @@ font-size: 16px;
 .p-product-category__side{
   position: -webkit-sticky;
   position: sticky;
-  top: var(--header-height);
+  top: calc( var(--header-height) + 10px );
   align-self: start;
   height: fit-content;
 }

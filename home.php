@@ -3,9 +3,19 @@
   <div class="l-main" id="js-main">
     <div class="p-news">
       <div class="p-news__heading">
-        <h2 class="c-title" data-ja="ニュース"><span class="c-title--red">N</span>EWS</h2>
+        <div class="p-heading">
+          <div class="p-heading__content">
+            <div class="p-heading__title text-center">
+              <div class="c-title">
+                <span class="c-title__en">
+                  <span class="c-title--red">N</span>EWS
+                </span>
+                <h1 class="c-title__ja">ニュース</h1>
+              </div>
+            </div>
+          </div>
+        </div>   
       </div>
-
       <div class="p-news__content">
         <ul class="p-news__cats">
           <li class="u-tab_btn active">
