@@ -705,9 +705,9 @@ footer a {
 .p-home-advantage__list {
   display: grid;
 }
-.p-home-advantage__item {
+/* .p-home-advantage__item {
   display: flex;
-}
+} */
 
 .p-home-advantage-card {
   display: flex;

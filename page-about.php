@@ -46,7 +46,7 @@
                 </div>
                 <div class="p-about-section__content">
                   <p class="text-center">
-                    私たちは、歯科技工士、歯科技工営業、歯科技工販売企画で構成され<br>才能と経験豊かな社員がお客様の要望を理解し、お客様の歯科診療に貢献します。
+                  わたくしたちは、歯科技工士、歯科技工営業、歯科技工販売企画で構成され<br>経験豊かな社員が、みなさまの歯科診療に貢献します。
                   </p>
                 </div>
               </div>
@@ -59,7 +59,7 @@
                         <div class="p-career__content">
                           <h3 class="p-career__title">歯科技工士</h3>
                           <p>
-                            わたくしたちは2012年からCAD/CAMを導入、デジタル化による歯科技工製品の製作を充実してまいりました。
+                            わたくしたちは2012年からCAD/CAMを導入、デジタル化による歯科技工製品を充実してまいりました。
                           </p>
                           <p>
                             CAD/CAMで製作する歯科技工製品であっても、豊富な経験と知識、技術をそなえた歯科技工士が、咬合、形態、適合をそなえた製品を製作します。
@@ -84,10 +84,9 @@
                         <!-- 左：テキスト -->
                         <div class="p-career__content">
                           <h3 class="p-career__title">歯科技工営業</h3>
-                          <p>
-                            歯科技工製品の知識を持つお客様の担当営業が、ご要望に沿った提案とサポートをさせていただきます。</p>
-                          <p>営業社員は有限会社エフイスの所属となり事務所は当社施設内に併設されています。</p>
-                          <p>わたしたちは一緒に働く営業社員を募集しています。</p>
+                          <p>わたくしたちは、歯科医院様との信頼関係を第一に考えております。</p>
+                          <p>歯科医院様とわたくしたちをつなぐ窓口として、歯科技工製品に関する知識を持つ担当者が医院様のご要望に沿った提案とサポートをおこなっております。ご要望の背景まで丁寧に汲み取り、最適なご提案につなげてまいります</p>
+                          <p>また、迅速かつ丁寧な対応を徹底し、安心して技工製品をお任せいただける体制づくりに努めております。</p>
                         </div>
                         <div class="p-career__media" aria-label="歯科技工士の作業風景と製作物">
                           <div class="p-career__collage">
@@ -107,9 +106,9 @@
                         <!-- 左：テキスト -->
                         <div class="p-career__content">
                           <h3 class="p-career__title">歯科技工販売企画</h3>
-                          <p>最新の材料、機器、製作方法の得た情報を元に歯科技工製品カタログ、簡便なパッキング、指示書などを企画立案、制作します。</p>
+                          <p>私たち、販売企画部は、技工製品をお届けするだけでなく。歯科医院様と歯科技工士さんのお役に立つ、最新の材料、機器、製作方法など得た情報を元に課題を解決の企画の立案をし、サポートをさせていただいております。</p>
                           <p>営業社員は有限会社エフイスの所属となり事務所は当社施設内に併設されています。</p>
-                          <p>わたしたちは一緒に働く事務社員を募集しています</p>
+                          <p>わたしたちは一緒に働く事務社員を募集しています。</p>
                         </div>
                         <div class="p-career__media" aria-label="歯科技工士の作業風景と製作物">
                           <div class="p-career__collage">
@@ -143,6 +142,7 @@
                     </span>
                     <h2 class="c-title__ja">品質を支える職場環境</h2>
                   </div>
+                  <p>「品質」は、一人ひとりの「技術」と「職場環境」</p>
                 </div>
                 <div class="p-about-section__content">
                     <!-- ★ 横自動スクロール（ここ） -->
@@ -152,27 +152,27 @@
                         <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_01.webp')); ?>" alt="">
                         <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_02.webp')); ?>" alt="">
                         <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_03.webp')); ?>" alt="">
-                        <img src="<?php echo esc_url(get_theme_file_uri('assets/images/company_office-03.webp')); ?>" alt="">
-                        <img src="<?php echo esc_url(get_theme_file_uri('assets/images/company_office-04.webp')); ?>" alt="">
+                        <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_04.webp')); ?>" alt="">
+                        <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_03.webp')); ?>" alt="">
                       </div>
                       <div class="p-flow__row">
                         <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_01.webp')); ?>" alt="">
                         <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_02.webp')); ?>" alt="">
                         <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_03.webp')); ?>" alt="">
-                        <img src="<?php echo esc_url(get_theme_file_uri('assets/images/company_office-03.webp')); ?>" alt="">
-                        <img src="<?php echo esc_url(get_theme_file_uri('assets/images/company_office-04.webp')); ?>" alt="">
+                        <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_04.webp')); ?>" alt="">
+                        <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_03.webp')); ?>" alt="">
                       </div>
                     </div>
                   </div>
                   <div class="text-center">
                     <p>
-                      小さな会社だからこそ、私たちは 人と人との距離が近い環境を大切にしています。<br>歯科技工士・営業・事務と役割は違っても、<br> 立場に関係なく意見を交わし、同じゴールに向かって話し合う。<br>そんな日々の対話が、技工の精度を少しずつ高めていきます。
+                      高い品質は、技術だけでなく、<br>安心して働ける環境と、社内の円滑なコミュニケーションによって支えられています。
                     </p>
                     <p>
-                      ラウンジやカウンター、テラスは、仕事の相談から何気ない会話まで、<br>自然とコミュニケーションが生まれる場所です。
+                      私たちは、部署や役割を越えて相談しやすい職場づくりを大切にしています。<br>歯科技工士・営業・事務が日々情報を共有し、連携することが、仕事の正確さと品質につながっています。
                     </p>
                     <p>
-                    気づきや違和感をすぐに共有できることが、<br>一つひとつの技工物に丁寧に向き合う力になります。<br>そして、良いものづくりを支えるのは、会話や空気感だけではありません。
+                      社内のラウンジ、バーカウンター、テラスは、自然な会話や相談が生まれる場として機能しており、そうした日々のやり取りが、歯科技工の品質を支える土台になっています。
                     </p>
                   </div>
                   <div class="p-about-environment__support">
@@ -185,7 +185,7 @@
                         <li class="p-about-support__item">
                           <div class="p-about-support__card">
                             <img class="p-about-support__img"
-                              src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_01.webp')); ?>"
+                              src="<?php echo esc_url(get_theme_file_uri('assets/images/about_environment_01.webp')); ?>"
                               alt="">
                             <div class="p-about-support__body">
                               <h4 class="p-about-support__title">健康診断</h4>
@@ -198,7 +198,7 @@
                         <li class="p-about-support__item">
                           <div class="p-about-support__card">
                             <img class="p-about-support__img"
-                              src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_02.webp')); ?>"
+                              src="<?php echo esc_url(get_theme_file_uri('assets/images/about_environment_02.webp')); ?>"
                               alt="">
                             <div class="p-about-support__body">
                               <h4 class="p-about-support__title">作業環境測定</h4>
