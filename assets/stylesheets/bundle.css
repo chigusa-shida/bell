@@ -1723,6 +1723,22 @@ a {
   left: 0;
   margin: auto;
 }
+.p-recruitment-info__title--sub {
+  margin-left: 20px; /* 見出しとの左余白 */
+}
+@media (max-width: 767px){
+  /* subがblock化してtitleが縦に伸びるため、ドット(::before)の基準をh3に限定し
+     h3のみを基準に縦中央へ配置する */
+  .p-recruitment-info__title h3 {
+    position: relative;
+  }
+  /* SPは改行して見出しの下へ（h3テキスト開始位置に揃える） */
+  .p-recruitment-info__title--sub {
+    display: block;
+    margin-left: 20px;
+    margin-top: 8px;
+  }
+}
 .p-recruitment-info__table {
   border-collapse: collapse;
   font-size: 16px;

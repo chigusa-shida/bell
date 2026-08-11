@@ -6,7 +6,7 @@ get_header();
 ?>
 <main id="js-main">
   <div>
-    <div class="p-page__heading" style="background-image:url('<?php echo esc_url( get_theme_file_uri('assets/images/about_fv.webp') ); ?>')">
+    <div class="p-page__heading" style="background-image:url('<?php echo esc_url(get_theme_file_uri('assets/images/about_fv.webp')); ?>')">
       <div class="p-heading__title">
         <div class="c-title">
           <span class="c-title__en">
@@ -22,18 +22,20 @@ get_header();
           <div>
             <div class="p-company-outline" id="outline">
               <div class="p-company-outline__title text-center">
-              <div class="c-title">
-                <span class="c-title__en">
-                  <span class="c-title--red">Message</span>
-                </span>
-                <h2 class="c-title__ja">メッセージ</h2>
-              </div>
+                <div class="c-title">
+                  <span class="c-title__en">
+                    <span class="c-title--red">Message</span>
+                  </span>
+                  <h2 class="c-title__ja">メッセージ</h2>
+                </div>
               </div>
               <div class="p-page-section__content text-center">
-                <p>離職率が高いと言われる歯科技工業界において、当社では入社後に家族を持ち、<br>長く働き続けている社員が多く在籍しています。</p>
-                <p>それは、一人ひとりの考えやライフステージを尊重し、<br>時代に合わせて働き方や経営方針を見直してきた結果だと考えています。</p>
-                <p>現在は全社員の定時退社を目標に、朝会で業務内容を共有し、チームで業務量の偏りをなくす取り組みを行っています。</p>
-                <p>また私たちは、技術力だけでなく、価値を理解し、伝え、届ける力が<br>これからの歯科技工には必要だと考えています。歯科技工士、営業、事務と職種を問わず、<br>同じ想いを共有しながら、ともに成長していける仲間を募集しています。</p>
+                <p>私たちは小さな会社ですが、だからこそメンバー全員を家族のように大切にするビジョンを掲げています。</p>
+                <p>歯科技工士、営業、マーケティングなど、それぞれの専門性を活かしながら、<br>全員が主役として活躍できるチャンスがあります。</p>
+                <p>業界未経験や多様なバックグラウンドを持つ方も大歓迎です。</p>
+                <p>確かなスキルアップを支える充実した研修制度、納得の給与体系、そして安心して長く働ける福利厚生を整えています。</p>
+                <p>充実したワークライフバランスを実現するため、社内ラウンジやテラスなどのリフレッシュスペースも完備。</p>
+                <p>オンとオフをしっかり切り替えながら、最高の仲間と最高のキャリアを築きましょう。</p>
               </div>
             </div>
           </div>
@@ -78,7 +80,7 @@ get_header();
                 <ul class="p-recruitment-info__list">
                   <li id="technician">
                     <div class="p-recruitment-info__title">
-                      <h3>歯科技工士</h3>
+                      <h3>歯科技工士（歯科技工製造職）</h3><span class="p-recruitment-info__title--sub">※応募先はベルデンタルラボラトリー株式会社です。</span>
                     </div>
                     <table class="p-recruitment-info__table">
                       <tr>
@@ -132,7 +134,7 @@ get_header();
                   </li>
                   <li id="sales">
                     <div class="p-recruitment-info__title">
-                      <h3>営業</h3>
+                      <h3>営業職</h3><span class="p-recruitment-info__title--sub">※応募先は有限会社エフイスです。</span>
                     </div>
                     <table class="p-recruitment-info__table">
                       <tr>
@@ -186,7 +188,8 @@ get_header();
                   </li>
                   <li id="clerical">
                     <div class="p-recruitment-info__title">
-                      <h3>事務</h3>
+                      <h3>事務職（企画販売）</h3>
+                      <span class="p-recruitment-info__title--sub">※応募先は有限会社エフイスです。</span>
                     </div>
                     <table class="p-recruitment-info__table">
                       <tr>
