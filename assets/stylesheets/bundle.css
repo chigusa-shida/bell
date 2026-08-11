@@ -552,6 +552,106 @@ footer a {
   border: solid 1px #da0000;
 }
 
+/* ===== 会社概要テーブル（p-company-outline） ===== */
+.p-company-outline__body {
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: left;
+}
+/* PC：2社比較テーブル */
+.p-company-outline__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.p-company-outline__table th,
+.p-company-outline__table td {
+  border: 1px solid #4d4d4d;
+  padding: 14px 18px;
+  vertical-align: middle;
+}
+.p-company-outline__table thead th {
+  background-color: #2a2a2a;
+  font-weight: 600;
+  text-align: center;
+}
+.p-company-outline__table tbody th {
+  background-color: #242424;
+  font-weight: 500;
+  text-align: left;
+  white-space: nowrap;
+  width: 22%;
+}
+.p-company-outline__th-item {
+  width: 22%;
+}
+.p-company-outline__table tbody td {
+  text-align: left;
+}
+/* 住所（PCはインライン表示） */
+.p-company-outline__postal {
+  margin-right: .5em;
+}
+/* SP用の縦積みブロックはPCでは非表示 */
+.p-company-outline__blocks {
+  display: none;
+}
+
+/* SP：PCのテーブルデザインを縦方向へ最適化して縦積み */
+@media (max-width: 767px){
+  .p-company-outline__table {
+    display: none;
+  }
+  .p-company-outline__blocks {
+    display: block;
+  }
+  /* 1社目と2社目の区切り（詰めすぎず・広げすぎず） */
+  .p-company-outline__block + .p-company-outline__block {
+    margin-top: 40px;
+  }
+  /* 会社名＝PCのヘッダー行(thead th)と同じ見た目 */
+  .p-company-outline__company {
+    margin: 0;
+    padding: 14px 18px;
+    background-color: #2a2a2a;
+    border: 1px solid #4d4d4d;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+  }
+  /* dl全体をテーブルの枠として扱う（会社名セルの下線を共有） */
+  .p-company-outline__dl {
+    margin: 0;
+    border: 1px solid #4d4d4d;
+    border-top: none;
+  }
+  /* dt=項目名セル / dd=内容セル：PCのth/tdと同じ装飾（padding・font・行間） */
+  .p-company-outline__dl dt,
+  .p-company-outline__dl dd {
+    margin: 0;
+    padding: 14px 18px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .p-company-outline__dl dt {
+    background-color: #242424;
+    font-weight: 500;
+  }
+  /* セル間の区切り線（最後のセル以外に下線） */
+  .p-company-outline__dl > *:not(:last-child) {
+    border-bottom: 1px solid #4d4d4d;
+  }
+  /* 住所（SPは〒と番地を2行で） */
+  .p-company-outline__postal,
+  .p-company-outline__street {
+    display: block;
+  }
+  .p-company-outline__postal {
+    margin-right: 0;
+  }
+}
+
 .p-company-history__item {
   text-align: left;
   width: 100%;

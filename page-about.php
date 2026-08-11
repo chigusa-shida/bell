@@ -243,7 +243,67 @@
                   </div>
                 </div>
                 <div class="p-page-section__content">
-                  <?php the_content(); ?>
+                  <?php
+                  // 会社概要データ（PC表・SPブロックで共通利用＝二重管理を避ける）
+                  $bell_fis_companies = array(
+                    array('name' => 'ベルデンタルラボラトリー株式会社', 'founded' => '1981年4月', 'tel' => '03-6424-7829', 'fax' => '03-6424-5172', 'staff' => '25名'),
+                    array('name' => '有限会社エフイス', 'founded' => '2003年6月', 'tel' => '03-6424-5224', 'fax' => '03-6424-5212', 'staff' => '15名'),
+                  );
+                  // 住所は改行制御用にspan分割（PCはインライン／SPは2行）
+                  $bell_fis_address = '<span class="p-company-outline__postal">〒144-0056</span><span class="p-company-outline__street">東京都大田区西六郷2-44-6</span>';
+                  // 行定義：key=各社で異なる項目 / shared=両社共通（PCはcolspanで結合）
+                  $bell_fis_rows = array(
+                    array('label' => '会社名',     'key' => 'name'),
+                    array('label' => '創業',       'key' => 'founded'),
+                    array('label' => '所在地',     'shared' => $bell_fis_address),
+                    array('label' => 'TEL',        'key' => 'tel'),
+                    array('label' => 'FAX',        'key' => 'fax'),
+                    array('label' => '従業員数',   'key' => 'staff'),
+                    array('label' => '事業内容',   'shared' => esc_html('歯科技工製品の製造')),
+                    array('label' => '主な取引先', 'shared' => esc_html('日本全国の歯科医院・病院')),
+                  );
+                  ?>
+                  <div class="p-company-outline__body">
+                    <!-- PC：2社比較テーブル -->
+                    <table class="p-company-outline__table">
+                      <thead>
+                        <tr>
+                          <th scope="col" class="p-company-outline__th-item">項目</th>
+                          <?php foreach ($bell_fis_companies as $company) : ?>
+                            <th scope="col"><?php echo esc_html($company['name']); ?></th>
+                          <?php endforeach; ?>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php foreach ($bell_fis_rows as $row) : ?>
+                          <tr>
+                            <th scope="row"><?php echo esc_html($row['label']); ?></th>
+                            <?php if (isset($row['shared'])) : ?>
+                              <td colspan="2"><?php echo $row['shared']; ?></td>
+                            <?php else : ?>
+                              <?php foreach ($bell_fis_companies as $company) : ?>
+                                <td><?php echo esc_html($company[$row['key']]); ?></td>
+                              <?php endforeach; ?>
+                            <?php endif; ?>
+                          </tr>
+                        <?php endforeach; ?>
+                      </tbody>
+                    </table>
+                    <!-- SP：会社ごとに縦積み（セル結合は使わない） -->
+                    <div class="p-company-outline__blocks">
+                      <?php foreach ($bell_fis_companies as $company) : ?>
+                        <div class="p-company-outline__block">
+                          <h3 class="p-company-outline__company"><?php echo esc_html($company['name']); ?></h3>
+                          <dl class="p-company-outline__dl">
+                            <?php foreach ($bell_fis_rows as $row) : ?>
+                              <dt><?php echo esc_html($row['label']); ?></dt>
+                              <dd><?php echo isset($row['shared']) ? $row['shared'] : esc_html($company[$row['key']]); ?></dd>
+                            <?php endforeach; ?>
+                          </dl>
+                        </div>
+                      <?php endforeach; ?>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
