@@ -1,7 +1,7 @@
 <?php /* Template Name: 私たちについて */ get_header(); ?>
 <main>
   <div id="js-main">
-    <div class="p-page__heading" style="background-image:url('<?php echo esc_url( get_theme_file_uri('assets/images/about_fv.webp') ); ?>')">
+    <div class="p-page__heading" style="background-image:url('<?php echo esc_url(get_theme_file_uri('assets/images/about_fv.webp')); ?>')">
       <div class="p-heading__title">
         <div class="c-title">
           <span class="c-title__en">
@@ -22,10 +22,13 @@
                     <p class="p-heading__lead c-lead">お得意様からの信頼に知識と技術で応えします。</p>
                     <div class="p-heading__detail">
                       <p>
-                        1981年に設立されたベルデンタルラボラトリー株式会社は、日本各地の歯科医師と患者様に歯科技工サービスを提供しています。
-                        <br>私たちは、高品質な歯科技工製品、経験豊富な営業サポート、そして信頼できる品質へのこだわりを提供することに誇りを持っています。
-                        <br>満足と喜びそして笑顔を第一に、私たちはあらゆる活動をしてまいります。
-                        <br> 私たちががお客様の歯科診療にもたらす満足と喜びそして笑顔を、ぜひ一度ご体験ください。
+                        ベルデンタルラボラトリー株式会社は、1981年の設立以来、<br>日本各地の歯科医院様と患者様に歯科技工製品をお届けしています。
+                      </p>
+                      <p>
+                        2003年設立の有限会社エフィスとの連携による手厚い営業サポートを通じて、<br>確かな安心を提供することに誇りを持っています。
+                      </p>
+                      <p>
+                        すべての方の満足と喜び、そして笑顔を第一に、私たちはこれからも歩み続けます。
                       </p>
                     </div>
                   </div>
@@ -46,7 +49,7 @@
                 </div>
                 <div class="p-about-section__content">
                   <p class="text-center">
-                  わたくしたちは、歯科技工士、歯科技工営業、歯科技工販売企画で構成され<br>経験豊かな社員が、みなさまの歯科診療に貢献します。
+                    当社の強みは、歯科技工士・営業・企画販売による三位一体のチーム体制です。<br>技術的なこだわりから医院経営に直結する製品提案まで、多角的にサポートします。
                   </p>
                 </div>
               </div>
@@ -59,18 +62,14 @@
                         <div class="p-career__content">
                           <h3 class="p-career__title">歯科技工士</h3>
                           <p>
-                            わたくしたちは2012年からCAD/CAMを導入、デジタル化による歯科技工製品を充実してまいりました。
+                            精密で適合が良く、審美性の高い技工製品を作ることで、患者様の「噛める喜び」と「笑顔」を作ります。
                           </p>
-                          <p>
-                            CAD/CAMで製作する歯科技工製品であっても、豊富な経験と知識、技術をそなえた歯科技工士が、咬合、形態、適合をそなえた製品を製作します。
-                          </p>
-                          <p>わたしたちは一緒に働く歯科技工士を募集しています。</p>
                         </div>
                         <div class="p-career__media" aria-label="歯科技工士の作業風景と製作物">
                           <div class="p-career__collage">
                             <!-- 大（背景） -->
                             <img class="p-career__img p-career__img--top" src="<?php echo esc_url(get_theme_file_uri('assets/images/technician-01.webp')); ?>" alt="" />
-  
+
                             <!-- 小（手前） -->
                             <img class="p-career__img p-career__img--bottom" src="<?php echo esc_url(get_theme_file_uri('assets/images/technician-02.webp')); ?>" alt="" />
                           </div>
@@ -84,15 +83,13 @@
                         <!-- 左：テキスト -->
                         <div class="p-career__content">
                           <h3 class="p-career__title">歯科技工営業</h3>
-                          <p>わたくしたちは、歯科医院様との信頼関係を第一に考えております。</p>
-                          <p>歯科医院様とわたくしたちをつなぐ窓口として、歯科技工製品に関する知識を持つ担当者が医院様のご要望に沿った提案とサポートをおこなっております。ご要望の背景まで丁寧に汲み取り、最適なご提案につなげてまいります</p>
-                          <p>また、迅速かつ丁寧な対応を徹底し、安心して技工製品をお任せいただける体制づくりに努めております。</p>
+                          <p>歯科医院と技工所の「架け橋」として、ドクターの要望や症例の内容をヒアリングし、歯科技工士に正確な情報伝達で医院のストレスを軽減します。</p>
                         </div>
                         <div class="p-career__media" aria-label="歯科技工士の作業風景と製作物">
                           <div class="p-career__collage">
                             <!-- 大（背景） -->
                             <img class="p-career__img p-career__img--top" src="<?php echo esc_url(get_theme_file_uri('assets/images/about-sales-1.webp')); ?>" alt="" />
-  
+
                             <!-- 小（手前） -->
                             <img class="p-career__img p-career__img--bottom" src="<?php echo esc_url(get_theme_file_uri('assets/images/about-sales-2.webp')); ?>" alt="" />
                           </div>
@@ -106,15 +103,13 @@
                         <!-- 左：テキスト -->
                         <div class="p-career__content">
                           <h3 class="p-career__title">歯科技工販売企画</h3>
-                          <p>私たち、販売企画部は、技工製品をお届けするだけでなく。歯科医院様と歯科技工士さんのお役に立つ、最新の材料、機器、製作方法など得た情報を元に課題を解決の企画の立案をし、サポートをさせていただいております。</p>
-                          <p>営業社員は有限会社エフイスの所属となり事務所は当社施設内に併設されています。</p>
-                          <p>わたしたちは一緒に働く事務社員を募集しています。</p>
+                          <p>最新のデジタル技工（IOS・CAD/CAM）や、歯科医院様、患者様につながる新しい技工プラン・メニューを企画・提案します。</p>
                         </div>
                         <div class="p-career__media" aria-label="歯科技工士の作業風景と製作物">
                           <div class="p-career__collage">
                             <!-- 大（背景） -->
                             <img class="p-career__img p-career__img--top" src="<?php echo esc_url(get_theme_file_uri('assets/images/about-jimu-01.webp')); ?>" alt="" />
-  
+
                             <!-- 小（手前） -->
                             <img class="p-career__img p-career__img--bottom" src="<?php echo esc_url(get_theme_file_uri('assets/images/about-jimu-02.webp')); ?>" alt="" />
                           </div>
@@ -122,7 +117,7 @@
                       </div>
                     </div>
                   </div>
-  
+
                   <nav class="snap__pagination" aria-label="Pagination">
                     <button type="button" class="snap__dot is-active" aria-label="1"></button>
                     <button type="button" class="snap__dot" aria-label="2"></button>
@@ -145,7 +140,7 @@
                   <p>「品質」は、一人ひとりの「技術」と「職場環境」</p>
                 </div>
                 <div class="p-about-section__content">
-                    <!-- ★ 横自動スクロール（ここ） -->
+                  <!-- ★ 横自動スクロール（ここ） -->
                   <div class="p-flow js-flow">
                     <div class="p-flow__track">
                       <div class="p-flow__row">
@@ -166,16 +161,16 @@
                   </div>
                   <div class="text-center">
                     <p>
-                      高い品質は、技術だけでなく、<br>安心して働ける環境と、社内の円滑なコミュニケーションによって支えられています。
+                      高い品質を提供し続けるには、技術力のみならず、<br>社内の円滑なコミュニケーションと、それらを生み出す充実した環境によって支えられています。
                     </p>
                     <p>
-                      私たちは、部署や役割を越えて相談しやすい職場づくりを大切にしています。<br>歯科技工士・営業・事務が日々情報を共有し、連携することが、仕事の正確さと品質につながっています。
+                      部署や役割を越えて相談しやすい職場環境を整えることで、<br>歯科技工士・営業・事務がリアルタイムに情報を共有。<br>この緊密な連携が可能にしています。
                     </p>
                     <p>
-                      社内のラウンジ、バーカウンター、テラスは、自然な会話や相談が生まれる場として機能しており、そうした日々のやり取りが、歯科技工の品質を支える土台になっています。
+                      社内のラウンジ、バーカウンター、テラスは、<br>自由な意見交換や迅速な相談が生まれるコミュニケーションの場として利用されています。
                     </p>
                   </div>
-                  <div class="p-about-environment__support">
+                  <!-- <div class="p-about-environment__support">
                     <div class="text-center">
                       <span class="c-title--red">SUPPORTING</span>
                       <h3 class="c-heading-line">見えない部分まで、技工のために</h3>
@@ -194,7 +189,7 @@
                             </div>
                           </div>
                         </li>
-  
+
                         <li class="p-about-support__item">
                           <div class="p-about-support__card">
                             <img class="p-about-support__img"
@@ -209,7 +204,7 @@
                         </li>
                       </ul>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -265,7 +260,7 @@
                   <div class="p-company-history__list">
                     <dl class="p-company-history__item">
                       <dt><span>1981</span>年</dt>
-                      <dd>東京大森に移転/イタリア製技工デスクユニット「デンタルアート」を輸入し設置</dd>
+                      <dd>東京大森にて創業</dd>
                     </dl>
                     <dl class="p-company-history__item">
                       <dt><span>1984</span>年</dt>
@@ -277,11 +272,11 @@
                     </dl>
                     <dl class="p-company-history__item">
                       <dt><span>1994</span>年</dt>
-                      <dd>東京蒲田に移転</dd>
+                      <dd>東京蒲田本社ビルに移転</dd>
                     </dl>
                     <dl class="p-company-history__item">
                       <dt><span>2003</span>年</dt>
-                      <dd>営業所を分社化し「有限会社エフイス」設立/プロセラシステム(ノーベルバイオケア社)導</dd>
+                      <dd>「有限会社エフイス」設立　歯科技工営業、企画販売</dd>
                     </dl>
                     <dl class="p-company-history__item">
                       <dt><span>2012</span>年</dt>
@@ -296,7 +291,7 @@
               </div>
             </div>
           </section>
-          
+
         </div>
       </div>
     </div>
