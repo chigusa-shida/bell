@@ -3,18 +3,26 @@
     <div class="p-footer__mainWrap">
       <div class="p-footer__main">
         <div class="p-footer__info">
-          <div class="p-footer__logo">
-            <a href="<?php echo esc_url(home_url('/')); ?>" class="p-footer__logo--inner">
-              <img src="<?php echo get_theme_file_uri('assets/images/logo.png'); ?>" alt="株式会社ベルデンタルラボラトリーロゴ" />
-            </a>
-          </div>
-          <div class="p-footer__detail">
+          <div class="p-footer__detail p-footer__detail--left">
             <dl>
-              <dt>株式会社ベルデンタルラボラトリー</dt>
-              <dd>〒144-0056&nbsp;東京都大田区西六郷2-44-6</dd>
-              <dd>TEL&#0058;03-6424-7829&nbsp;FAX&#0058;03-6424-5172</dd>
+              <dt>ベルデンタルラボラトリー&nbsp;株式会社</dt>
+              <dd>TEL&#0058;03-6424-7829 FAX&#0058;03-6424-5172</dd>
             </dl>
           </div>
+          <div class="p-footer__logo">
+            <a href="<?php echo esc_url(home_url('/')); ?>" class="p-footer__logo--inner">
+              <img src="<?php echo get_theme_file_uri('assets/images/footer-logo.webp'); ?>" alt="ベルデンタルラボラトリー・エフイス ロゴ" />
+            </a>
+          </div>
+          <div class="p-footer__detail p-footer__detail--right">
+            <dl>
+              <dt>有限会社&nbsp;エフイス</dt>
+              <dd>TEL&#0058;03-6424-5224 FAX&#0058;03-6424-5212</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="p-footer__address">
+          <p>〒144-0056&nbsp;東京都大田区西六郷2-44-6</p>
         </div>
         <div class="p-footer__navWrap">
         <?php
