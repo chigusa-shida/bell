@@ -5857,6 +5857,87 @@ button.swiper-pagination-bullet {
   min-width: 0;
 }
 
+/* 画像なし・3枚カードの横並びレイアウト */
+.p-transaction__content--cards{
+  display: block;
+}
+.p-transaction__cards{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 上段：01・02を2カラム */
+  gap: clamp(16px, 2vw, 28px);
+}
+/* カード（既存のアドバンテージカードのトーンを流用／中身は中央揃え） */
+.p-transaction__card{
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 30px 26px;
+  background-color: #1c1c1c;
+  border: 1px solid #393939;
+  border-radius: 8px;
+  text-align: center;
+}
+/* 03は下段・横幅いっぱい（2カラムを跨ぐ） */
+.p-transaction__card:nth-child(3){
+  grid-column: 1 / -1;
+}
+/* タイトル（番号と横並び・本文との階層を明確に） */
+.p-transaction__card-title{
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+/* 番号：タイトルと同じ行・同じサイズ（赤いアクセント） */
+.p-transaction__card-num{
+  font-family: "Quicksand";
+  color: #da0000;
+  margin-right: 0.4em;
+}
+/* ボタンをカード下端に配置。03は横幅が広いのでPCは横並び（既存の300px幅を流用） */
+.p-transaction__card-actions{
+  margin-top: auto;
+  padding-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+/* カード下の注意事項（本文より控えめ・カードと少し区別） */
+.p-transaction__notice{
+  margin-top: clamp(28px, 4vw, 44px);
+  padding-top: 24px;
+  border-top: 1px solid #3a3a3a;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #b3b3b3;
+}
+/* SP：縦積み（1カラム、01→02→03の順） */
+@media (max-width: 767px){
+  .p-transaction__cards{
+    grid-template-columns: 1fr;
+  }
+  /* SPはボタンを縦積み・カード幅にフィット */
+  .p-transaction__card-actions{
+    flex-direction: column;
+    align-items: center;
+  }
+  .p-transaction__card-actions .c-button-red{
+    width: 100%;
+    max-width: 300px;
+  }
+  .p-transaction__card-title{
+    font-size: 16px;
+  }
+  .p-transaction__notice{
+    font-size: 13px;
+  }
+}
+
 /* 右：画像2枚にも対応 */
 .p-transaction__media{
   display: grid;
