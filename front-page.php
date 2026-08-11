@@ -4,56 +4,56 @@
     <div class="p-home-top">
       <div class="p-home-top__container" style="background-image: url('<?php echo esc_url(get_theme_file_uri('assets/images/home_fv-01.webp')); ?>');">
         <div class="p-home-top__catch">
-          <p class="p-home-top__copy">患者様のケースを<br class="u-br-sp">担当させていただく<br>わたくしたち第一の目標は<br>満足と喜びそして笑顔です</p>
-          <p class="p-home-top__lead">歯科業界の職人として高性能のデジタル技工に、技工士の技術を乗せて、完全と言えるまで再現した妥協なき技工物を全国の歯科医院様にご提供します。</p>
+          <p class="p-home-top__copy">歯科医院様へ<br>患者様の満足と、喜びの笑顔を作る<br>歯科技工所</p>
+          <!-- <p class="p-home-top__lead">歯科業界の職人として高性能のデジタル技工に、技工士の技術を乗せて、完全と言えるまで再現した妥協なき技工物を全国の歯科医院様にご提供します。</p> -->
         </div>
         <div class="p-home-top__notice">
           <div class="p-home-top__notice-title">Notice</div>
           <div class="p-home-top__notice-swiper swiper" id="js-swiper-home-notice">
-          <ul class="p-home-top__notice-list swiper-wrapper">
-            <?php
-            $args = array(
-              'post_type'      => 'post',     // 通常投稿
-              'posts_per_page' => 3,
-              'category_name'  => 'notice',   // カテゴリスラッグ
-              'post_status'    => 'publish',
-            );
+            <ul class="p-home-top__notice-list swiper-wrapper">
+              <?php
+              $args = array(
+                'post_type'      => 'post',     // 通常投稿
+                'posts_per_page' => 3,
+                'category_name'  => 'notice',   // カテゴリスラッグ
+                'post_status'    => 'publish',
+              );
 
-            $my_query = new WP_Query($args);
-            ?>
-            
-            <?php if ($my_query->have_posts()) : ?>
-              <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-                <li class="p-home-top__notice-item swiper-slide">
-                  <a href="<?php the_permalink(); ?>">
-                    <div>
-                      <div class="c-post-date">
-                        <?php echo get_the_date(); ?>
+              $my_query = new WP_Query($args);
+              ?>
+
+              <?php if ($my_query->have_posts()) : ?>
+                <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+                  <li class="p-home-top__notice-item swiper-slide">
+                    <a href="<?php the_permalink(); ?>">
+                      <div>
+                        <div class="c-post-date">
+                          <?php echo get_the_date(); ?>
+                        </div>
                       </div>
-                    </div>
-                    <div>
-                      <p class="postttl">
-                        <?php
-                        $title = get_the_title();
-                        if (mb_strlen($title) > 10) {
-                          echo mb_substr($title, 0, 10) . '...';
-                        } else {
-                          echo $title;
-                        }
-                        ?>
-                      </p>
-                    </div>
-                  </a>
+                      <div>
+                        <p class="postttl">
+                          <?php
+                          $title = get_the_title();
+                          if (mb_strlen($title) > 10) {
+                            echo mb_substr($title, 0, 10) . '...';
+                          } else {
+                            echo $title;
+                          }
+                          ?>
+                        </p>
+                      </div>
+                    </a>
+                  </li>
+                <?php endwhile; ?>
+              <?php else : ?>
+                <li>
+                  <p>記事はまだありません。</p>
                 </li>
-              <?php endwhile; ?>
-            <?php else : ?>
-              <li>
-                <p>記事はまだありません。</p>
-              </li>
-            <?php endif; ?>
+              <?php endif; ?>
 
-            <?php wp_reset_postdata(); ?>
-          </ul>
+              <?php wp_reset_postdata(); ?>
+            </ul>
           </div>
         </div>
       </div><!-- p-home-top__container -->
@@ -73,16 +73,13 @@
                   </div>
                 </div>
                 <div class="p-home-about__content">
-                  <p class="c-lead">お得意様からの信頼に<br>知識と技術で応えします。</p>
+                  <p class="c-lead">知識と技術で、<br>確かな信頼にお応えする</p>
                   <div class="p-home-about__detail">
                     <p>
-                      私たちはオーナー会社というだけでなく社員は家族もビジョンとしている会社です。W65.（BDLとFIS）ファミリーの一員に加わり、歯科技工士として営業、マーケティングとして、素晴らしいキャリアを築くチャンスを見つけましょう。
+                      私たちベルデンタルラボラトリー株式会社と有限会社エフイスは、日本各地の歯科医院様と患者様に歯科技工製品をお届けしています。
                     </p>
                     <p>
-                      単なる家族経営の企業ではなく、社員間コミュニケーションの良い会社です。当社W65.（BDLとFIS）では、多様なバックグラウンドを持つ才能ある方々に、やりがいのある歯科技工業のキャリアを提供しています。競争力のある給与、充実した福利厚生、そしてキャリアアップをサポートする研修機会で人生を楽しみましょう。
-                    </p>
-                    <p>
-                    社内、ラウンジ、テラスなど、ワークライフバランスへの取り組みも充実しており、仕事と仲間との絆を育むことができます。
+                      歯科医療に関わるすべての方の満足と喜び、そして笑顔を第一に、私たちはこれからも新たな価値を創造し、共に歩み続けます。
                     </p>
                   </div>
                 </div>
@@ -93,87 +90,87 @@
                 </div>
               </div>
               <div class="p-home-about__imge">
-                  <div>
-                    <picture>
-                      <source srcset="<?php echo get_theme_file_uri('assets/images/home_about-01.webp'); ?>" type="image/webp" />
-                      <img src="<?php echo get_theme_file_uri('assets/images/home_about-01.jpg'); ?>" alt="営業サポート" />
-                    </picture>
-                  </div>
+                <div>
+                  <picture>
+                    <source srcset="<?php echo get_theme_file_uri('assets/images/home_about-01.webp'); ?>" type="image/webp" />
+                    <img src="<?php echo get_theme_file_uri('assets/images/home_about-01.jpg'); ?>" alt="営業サポート" />
+                  </picture>
+                </div>
               </div>
             </div>
           </div><!-- p-home-about -->
           <div class="p-home-advantage__content">
-                <div class="p-home-advantage__listWrap">
-                  <ul class="p-home-advantage__list">
-                    <li class="p-home-advantage__item">
-                      <a href="<?php echo esc_url(home_url('/about#teams')); ?>">
-                        <div class="p-home-advantage-card">
-                          <div class="p-home-advantage-card__title">
-                            <p class="p-home-advantage-card__label">OUR&nbsp;TEAMS</p>
-                            <h3 class="p-home-advantage-card__lead">私たちのチーム</h3>
-                          </div>
-                          <div class="p-home-advantage-card__desc">
-                            <p class="p-home-advantage-card__detail">
-                            自費、インプラントに特化した技工所だからこそできる技術力で最高の技工物をご提供します。
-                            </p>
-                          </div>
-                          <div class="p-home-advantage-card__btn c-button">
-                            <span class="c-button__pageLink en">View&nbsp;More</span>
-                          </div>
-                          <div class="p-home-advantage-card__img">
-                            <picture>
-                              <source srcset="<?php echo get_theme_file_uri('assets/images/reason_1.webp'); ?>" type="image/webp" />
-                              <img src="<?php echo get_theme_file_uri('assets/images/reason_1.jpg'); ?>" alt="制作事例" />
-                            </picture>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="p-home-advantage__item">
-                      <a href="<?php echo esc_url(home_url('/about#environment')); ?>" class="p-home-advantage-card">
-                        <div class="p-home-advantage-card__title">
-                          <p class="p-home-advantage-card__label">ENVIRONMENT</p>
-                          <h3 class="p-home-advantage-card__lead">品質を支える職場環境</h3>
-                        </div>
-                        <div class="p-home-advantage-card__desc">
-                          <p class="p-home-advantage-card__detail">
-                            最新のデジタル機器をいち早く導入し最先端の技工を可能にする環境を整えています。
-                          </p>
-                        </div>
-                        <div class="p-home-advantage-card__btn c-button">
-                          <span class="c-button__pageLink en">View&nbsp;More</span>
-                        </div>
-                        <div class="p-home-advantage-card__img">
-                          <picture>
-                            <source srcset="<?php echo get_theme_file_uri('assets/images/reason_2.webp'); ?>" type="image/webp" />
-                            <img src="<?php echo get_theme_file_uri('assets/images/reason_2.jpg'); ?>" alt="設備情報" />
-                          </picture>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="p-home-advantage__item">
-                      <a href="<?php echo esc_url(home_url('/about#history')); ?>" class="p-home-advantage-card">
-                        <div class="p-home-advantage-card__title">
-                          <p class="p-home-advantage-card__label">HISTORY</p>
-                          <h3 class="p-home-advantage-card__lead">私たちの歴史</h3>
-                        </div>
-                        <div class="p-home-advantage-card__desc">
-                          <p class="p-home-advantage-card__detail">当ラボと併設された、歯科営業がある為歯科医院様と技工士のコミュニケーションがスムーズに行えます。</p>
-                        </div>
-                        <div class="p-home-advantage-card__btn c-button">
-                          <span class="c-button__pageLink en">View&nbsp;More</span>
-                        </div>
-                        <div class="p-home-advantage-card__img">
-                          <picture>
-                            <source srcset="<?php echo get_theme_file_uri('assets/images/reason_3.webp'); ?>" type="image/webp" />
-                            <img src="<?php echo get_theme_file_uri('assets/images/reason_3.jpg'); ?>" alt="営業サポート" />
-                          </picture>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+            <div class="p-home-advantage__listWrap">
+              <ul class="p-home-advantage__list">
+                <li class="p-home-advantage__item">
+                  <a href="<?php echo esc_url(home_url('/about#teams')); ?>">
+                    <div class="p-home-advantage-card">
+                      <div class="p-home-advantage-card__title">
+                        <p class="p-home-advantage-card__label">OUR&nbsp;TEAMS</p>
+                        <h3 class="p-home-advantage-card__lead">私たちのチーム</h3>
+                      </div>
+                      <div class="p-home-advantage-card__desc">
+                        <p class="p-home-advantage-card__detail">
+                          チーム（職種）には、「歯科技工士」「歯科技工営業」「歯科技工企画販売」で構成されています。
+                        </p>
+                      </div>
+                      <div class="p-home-advantage-card__btn c-button">
+                        <span class="c-button__pageLink en">View&nbsp;More</span>
+                      </div>
+                      <div class="p-home-advantage-card__img">
+                        <picture>
+                          <source srcset="<?php echo get_theme_file_uri('assets/images/reason_1.webp'); ?>" type="image/webp" />
+                          <img src="<?php echo get_theme_file_uri('assets/images/reason_1.jpg'); ?>" alt="制作事例" />
+                        </picture>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="p-home-advantage__item">
+                  <a href="<?php echo esc_url(home_url('/about#environment')); ?>" class="p-home-advantage-card">
+                    <div class="p-home-advantage-card__title">
+                      <p class="p-home-advantage-card__label">ENVIRONMENT</p>
+                      <h3 class="p-home-advantage-card__lead">品質を支える職場環境</h3>
+                    </div>
+                    <div class="p-home-advantage-card__desc">
+                      <p class="p-home-advantage-card__detail">
+                        最先端の機材を設備した技工室と青空の下で一息つけるテラス席を備えています。
+                      </p>
+                    </div>
+                    <div class="p-home-advantage-card__btn c-button">
+                      <span class="c-button__pageLink en">View&nbsp;More</span>
+                    </div>
+                    <div class="p-home-advantage-card__img">
+                      <picture>
+                        <source srcset="<?php echo get_theme_file_uri('assets/images/reason_2.webp'); ?>" type="image/webp" />
+                        <img src="<?php echo get_theme_file_uri('assets/images/reason_2.jpg'); ?>" alt="設備情報" />
+                      </picture>
+                    </div>
+                  </a>
+                </li>
+                <li class="p-home-advantage__item">
+                  <a href="<?php echo esc_url(home_url('/about#history')); ?>" class="p-home-advantage-card">
+                    <div class="p-home-advantage-card__title">
+                      <p class="p-home-advantage-card__label">HISTORY</p>
+                      <h3 class="p-home-advantage-card__lead">私たちの歴史</h3>
+                    </div>
+                    <div class="p-home-advantage-card__desc">
+                      <p class="p-home-advantage-card__detail">1981年に創立以来、現在に至ります。</p>
+                    </div>
+                    <div class="p-home-advantage-card__btn c-button">
+                      <span class="c-button__pageLink en">View&nbsp;More</span>
+                    </div>
+                    <div class="p-home-advantage-card__img">
+                      <picture>
+                        <source srcset="<?php echo get_theme_file_uri('assets/images/reason_3.webp'); ?>" type="image/webp" />
+                        <img src="<?php echo get_theme_file_uri('assets/images/reason_3.jpg'); ?>" alt="営業サポート" />
+                      </picture>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </section>
         <section>
           <div class="p-home__section">
@@ -189,7 +186,7 @@
                 </div>
                 <div class="p-home-product__text">
                   <p>
-                    インプラント年間2300本、全国高水準の自費納品率60%の技術とニーズに合ったIOSデータに対応できる最新機器の取り扱いで医院様、患者様の満足できる技工物をご提供します。
+                    デジタル技術の進歩によって歯科技工業界は変化し続けていますが、「咬合」「適合」「コンタクト」「適切な形態」といった基本概念の本質が変わることはありません。
                   </p>
                 </div>
                 <div class="p-home-product__btn c-button">
@@ -376,7 +373,8 @@
                             <li>
                               <p>記事はまだありません。</p>
                             </li>
-                          <?php endif; wp_reset_postdata(); ?>
+                          <?php endif;
+                          wp_reset_postdata(); ?>
                         </ul>
                       </div>
                     <?php endforeach; ?>

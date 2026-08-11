@@ -22,7 +22,7 @@
   <meta name="twitter:image" content="" />
 
   <script>
-    (function () {
+    (function() {
       if (location.hash) {
         sessionStorage.setItem('initialHash', location.hash);
         if (history.replaceState) {
@@ -54,12 +54,12 @@
             <?php if (is_front_page()) : ?>
               <h1 class="p-header__logo--inner">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
-                  <img src="<?php echo get_theme_file_uri('assets/images/logo.png'); ?>" alt="株式会社ベルデンタルラボラトリーロゴ" />
+                  <img src="<?php echo get_theme_file_uri('assets/images/logo.webp'); ?>" alt="株式会社ベルデンタルラボラトリーロゴ" />
                 </a>
               </h1>
             <?php else : ?>
               <a href="<?php echo esc_url(home_url('/')); ?>" class="p-header__logo--inner">
-                <img src="<?php echo get_theme_file_uri('assets/images/logo.png'); ?>" alt="株式会社ベルデンタルラボラトリーロゴ" />
+                <img src="<?php echo get_theme_file_uri('assets/images/logo.webp'); ?>" alt="株式会社ベルデンタルラボラトリーロゴ" />
               </a>
             <?php endif; ?>
           </div>
