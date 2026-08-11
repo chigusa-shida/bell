@@ -5549,7 +5549,7 @@ button.swiper-pagination-bullet {
   color: #fff;
 }
 
-/* 背景をフルブリードさせる */
+/* 背景をフルブリードさせる（recruit-cta-01〜03 の3枚コラージュ） */
 .p-recruit-cta::before{
   content: "";
   position: absolute;
@@ -5560,24 +5560,28 @@ button.swiper-pagination-bullet {
   left: 50%;
   transform: translateX(-50%);
 
-  background-image: url('../images/about_fv.webp'); /* ←差し替え */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /* 画像間の余白を埋めるベースカラー（サイト全体の暗色に馴染ませる） */
+  background-color: #1a1a1a;
+
+  /* 3枚を重なり・サイズ差をつけてコラージュ配置 */
+  background-image:
+    url('../images/recruit-cta-01.webp'),
+    url('../images/recruit-cta-02.webp'),
+    url('../images/recruit-cta-03.webp');
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position:
+    left 6% top 14%,     /* 01：左上 */
+    right 6% top 20%,    /* 02：右上 */
+    right 24% bottom 10%; /* 03：右下寄り（中央のテキストを避ける） */
+  background-size:
+    clamp(160px, 17vw, 300px) auto,
+    clamp(150px, 15vw, 270px) auto,
+    clamp(150px, 14vw, 250px) auto;
+
+  /* オーバーレイ(::after)は使わず、画像自体を透過させてテキストの可読性を確保 */
+  opacity: 0.4;
 
   z-index: 0;
-}
-
-/* うっすら暗くするオーバーレイ（任意） */
-.p-about-recruit .p-recruit-cta::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  width: 100vw;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,.50);
-  z-index: 1;
 }
 
 /* 中身 */
@@ -5595,6 +5599,7 @@ button.swiper-pagination-bullet {
   color: #da0000;
   letter-spacing: .12em;
   margin-bottom: 12px;
+  font-size: clamp(16px, 1.6vw, 19px);
 }
 
 .p-about-recruit .p-recruit-cta__title{
@@ -5606,9 +5611,80 @@ button.swiper-pagination-bullet {
   margin-bottom: 32px;
 }
 
+/* eyebrowの直上に配置するロゴ（footer-logo を流用） */
+.p-about-recruit .p-recruit-cta__logo{
+  margin-bottom: 16px;
+}
+.p-about-recruit .p-recruit-cta__logo img{
+  width: 80px;   /* PC */
+  height: auto;  /* アスペクト比維持 */
+  margin: 0 auto;
+}
+
 @media (max-width: 949px){
   .p-recruit-cta{
     margin: 55px 0;
+  }
+}
+
+/* SPは縮小ではなく再配置：01を上中央、02・03を下段左右に */
+@media (max-width: 767px){
+  /* 上下セクションとの距離を狭く（コンパクトに） */
+  .p-recruit-cta{
+    margin: 50px 0;
+  }
+  /* 画像上下の余白を詰める（間延び防止）。画像位置(%)の基準となる高さは確保しつつ縮小 */
+  .p-about-recruit .p-recruit-cta__inner{
+    padding:53px 24px 140px;
+  }
+  .p-about-recruit .p-recruit-cta__logo img{
+    width: 70px;   /* SP */
+  }
+  .p-recruit-cta::before{
+    background-position:
+      left 5% top 19%,      /* 01：左上 */
+      left 6% bottom 12%,   /* 02：下段左 */
+      right 6% bottom 14%;  /* 03：下段右 */
+    background-size:
+      clamp(140px, 34vw, 180px) auto,
+      clamp(110px, 33vw, 170px) auto,
+      clamp(110px, 33vw, 170px) auto;
+  }
+}
+
+/* PCのみ：CTAを独立させ、3枚の画像を大きく・ゆったり見せる */
+@media (min-width: 950px){
+  /* 上下セクションとの余白を広げてセクションを独立させる */
+  .p-recruit-cta{
+    margin: 160px 0;
+  }
+  /* セクションを縦に広げ、中央テキスト・ボタンの余白も確保 */
+  .p-about-recruit .p-recruit-cta__inner{
+    padding: 110px 24px;
+  }
+  /* サイズのみ調整（位置は変更しない）：min=314/310/300、maxは少し小さく */
+  .p-recruit-cta::before{
+    background-position:
+      left 3% top 8%,        /* 01：左上（変更しない） */
+      right 3% top 14%,      /* 02：右上（変更しない） */
+      left 10% bottom 6%;    /* 03：左下寄り（変更しない） */
+    background-size:
+      clamp(314px, 30vw, 520px) auto,
+      clamp(310px, 28vw, 500px) auto,
+      clamp(300px, 26vw, 480px) auto;
+  }
+}
+
+/* 1300px以上は「1300px時の状態」で固定（サイズ・位置ともに拡大/移動させない） */
+@media (min-width: 1300px){
+  .p-recruit-cta::before{
+    /* 配置基準を1300px幅に固定（外側は body と同色#1a1a1aで馴染む）→ %位置が固定される */
+    width: 1300px;
+    /* サイズも1300px時の値(30/28/26vw×1300)でpx固定 */
+    background-size:
+      390px auto,
+      364px auto,
+      338px auto;
   }
 }
 

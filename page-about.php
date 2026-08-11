@@ -213,10 +213,13 @@
             <div class="p-about-section p-about-recruit">
               <div class="p-recruit-cta">
                 <div class="p-recruit-cta__inner">
+                  <div class="p-recruit-cta__logo">
+                    <img src="<?php echo get_theme_file_uri('assets/images/footer-logo.webp'); ?>" alt="ベルデンタルラボラトリー ロゴ" />
+                  </div>
                   <p class="p-recruit-cta__eyebrow">For Those Who Share Our Values</p>
                   <h3 class="p-recruit-cta__title">私たちは、ともに働く仲間を募集しています。</h3>
                   <p class="p-recruit-cta__text">
-                    私たちは、歯科技工士・営業・事務など、さまざまな立場のメンバーが<br>
+                    私たちは、歯科技工士・営業・事務など、<br>さまざまな立場のメンバーが<br>
                     ともに歯科技工に向き合う仲間を募集しています。
                   </p>
                   <div class="p-about-recruit__btn c-button">
