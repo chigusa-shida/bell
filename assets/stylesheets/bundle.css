@@ -92,7 +92,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-  background-color: #1C1C1C;
+  background-color: #1a1a1a;
   color: #fff;
   letter-spacing: 0.08em;
   position: relative;
@@ -147,7 +147,7 @@ main {
 // Project
 // ==========================================================================*/
 .p-header__top {
-  background-color: #1a1a1a;
+  background-color: #000;
 }
 .p-header__tel {
   display: none;
@@ -159,7 +159,7 @@ main {
   width: min(150px, 36vw);
 }
 .p-header .p-header__bottom {
-  background: #1C1C1C;
+  background: #000;
 }
 .p-header .p-header__catch--text {
   font-size: clamp(0.875rem, 1.3333333333vw, 1rem);
@@ -695,19 +695,28 @@ footer a {
 }
 .p-home-advantage__listWrap {
   position: relative;
-  width: 100vw;
-  margin: 0 calc(50% - 50vw);
+  width: 100%;
+  margin: 0;
 }
 .p-home-advantage__head {
   display: block;
   text-decoration: none;
 }
 .p-home-advantage__list {
-  display: grid;
-}
-/* .p-home-advantage__item {
   display: flex;
-} */
+  flex-direction: column;
+  gap: 30px;
+}
+.p-home-advantage__item {
+  display: flex;
+  min-width: 0;
+}
+.p-home-advantage__item > a {
+  display: flex;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+}
 
 .p-home-advantage-card {
   display: flex;
@@ -717,7 +726,11 @@ footer a {
   position: relative;
   gap: 20px;
   width: 100%;
+  height: 100%;
   color: #fff;
+  background-color: #1c1c1c;
+  border: 1px solid #393939;
+  border-radius: 6px;
 }
 .p-home-advantage-card__desc {
   text-align: center;
@@ -740,29 +753,7 @@ footer a {
   text-align: center;
 }
 .p-home-advantage-card__img {
-  overflow: hidden;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.6;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  background-color: #000;
-  z-index: -2;
-}
-.p-home-advantage-card__img img {
-  height: 100%;
-  left: 0;
-  max-height: inherit;
-  max-width: inherit;
-  object-fit: cover;
-  opacity: 0.8;
-  position: absolute;
-  top: 0;
-  transition: transform 1s ease;
-  width: 100%;
+  display: none;
 }
 .p-home-advantage-card__btn {
   margin-top: auto;
@@ -2391,9 +2382,6 @@ br.u-br-sp {
   .p-home-advantage__btn {
     display: none;
   }
-  .p-home-advantage__list {
-    grid-template-columns: row(3, 1fr);
-  }
   .p-home-advantage-card__desc {
     max-width: 600px;
   }
@@ -3320,6 +3308,10 @@ br.u-br-sp {
   .p-header__btn {
     display: none;
   }
+  .p-home .p-home-top__container {
+    padding-left: 6.941%;
+    padding-right: 6.941%;
+  }
   .p-heading__content.row {
     justify-content: space-between;
     flex-direction: row;
@@ -3646,7 +3638,11 @@ br.u-br-sp {
     align-items: center;
   }
   .p-home-advantage__list {
-    grid-template-columns: repeat(3, 1fr);
+    flex-direction: row;
+  }
+  .p-home-advantage__item {
+    flex: 1 1 0;
+    min-width: 0;
   }
   .p-home-advantage-card__desc {
     max-width: 400px;
@@ -3874,9 +3870,6 @@ br.u-br-sp {
   .p-page-article-nav a:hover .fa-solid {
     color: #da0000;
   }
-  .p-home-advantage-card:hover .p-home-advantage-card__img img {
-    transform: scale(1.1);
-  }
   .p-news__cats li:hover {
     background-color: #fff;
     color: #000;
@@ -3976,10 +3969,6 @@ br.u-br-sp {
     color: #da0000;
   }
 
-  .p-home-advantage-card:hover .p-home-advantage-card__img img {
-    transform: scale(1.1);
-  }
-
   .p-news__cats li:hover {
     background-color: #fff;
     color: #000;
@@ -4061,9 +4050,6 @@ br.u-br-sp {
   }
   .p-page-article-nav a:active .fa-solid {
     color: #da0000;
-  }
-  .p-home-advantage-card:active .p-home-advantage-card__img img {
-    transform: scale(1.1);
   }
   .p-news__cats li:active {
     background-color: #fff;
