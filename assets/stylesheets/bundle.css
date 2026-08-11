@@ -3663,7 +3663,7 @@ br.u-br-sp {
     margin-top: 70px;
   }
   .p-home-shop {
-    gap: 80px;
+    gap: 30px;
   }
   .p-home-shop__title--sub {
     font-size: 16px;
@@ -6283,3 +6283,26 @@ font-size: 16px;
     background-color: #da0000;
   }
 }
+
+/* ==========================================================================
+   【一時対応 2026-08】デンタル便24 サービス休止のお知らせ表示（ここから）
+   ※ 復帰時はこのブロックを丸ごと削除し、front-page.php の __notice も元に戻す
+   ========================================================================== */
+.p-home-shop__btn {
+  display: none;
+}
+.p-home-shop__main {
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  gap: 24px;
+}
+.p-home-shop__notice {
+  max-width: 640px;
+  line-height: 2;
+  text-align: center;
+}
+.p-home-shop__notice p + p {
+  margin-top: 1.2em;
+}
+/* 【一時対応 2026-08】ここまで */
