@@ -6,7 +6,7 @@ get_header();
 ?>
 <main id="js-main">
   <div>
-    <div class="p-page__heading" style="background-image:url('<?php echo esc_url(get_theme_file_uri('assets/images/about_fv.webp')); ?>')">
+    <div class="p-page__heading" style="background-image:url('<?php echo esc_url(get_theme_file_uri('assets/images/recruit_fv.webp')); ?>')">
       <div class="p-heading__title">
         <div class="c-title">
           <span class="c-title__en">
