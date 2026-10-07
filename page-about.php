@@ -149,6 +149,7 @@
                         <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_03.webp')); ?>" alt="">
                         <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_04.webp')); ?>" alt="">
                         <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_05.webp')); ?>" alt="">
+                        <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_06.webp')); ?>" alt="">
                       </div>
                       <div class="p-flow__row">
                         <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_01.webp')); ?>" alt="">
@@ -156,6 +157,7 @@
                         <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_03.webp')); ?>" alt="">
                         <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_04.webp')); ?>" alt="">
                         <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_05.webp')); ?>" alt="">
+                        <img src="<?php echo esc_url(get_theme_file_uri('assets/images/about_communication_06.webp')); ?>" alt="">
                       </div>
                     </div>
                   </div>
