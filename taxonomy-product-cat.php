@@ -145,10 +145,10 @@ if (!empty($child_terms)) {
                                     </div>
 
                                     <?php
-                                    $product_catch      = function_exists('get_field') ? get_field('product_catch', get_the_ID()) : '';
+                                    $product_catch      = function_exists('get_field') ? get_field('product_description', get_the_ID()) : '';
                                     $product_usage      = function_exists('get_field') ? get_field('product_indication', get_the_ID()) : '';
                                     $product_feature    = function_exists('get_field') ? get_field('product_feature', get_the_ID()) : '';
-                                    $product_fix_method = function_exists('get_field') ? get_field('product_feature', get_the_ID()) : '';
+                                    $product_fix_method = function_exists('get_field') ? get_field('product_warranty', get_the_ID()) : '';
                                     $product_material   = function_exists('get_field') ? get_field('product_shade', get_the_ID()) : '';
                                     $product_prostheses = get_the_terms(get_the_ID(), 'product-prosthesis');
                                     ?>

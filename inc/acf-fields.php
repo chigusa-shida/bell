@@ -79,7 +79,7 @@ add_action('acf/include_fields', function () {
 			array(
 				'key' => 'field_69b334085a7d6',
 				'label' => '保証期間',
-				'name' => 'product_feature',
+				'name' => 'product_warranty',
 				'aria-label' => '',
 				'type' => 'text',
 				'instructions' => '保証期間を入れてください。',
