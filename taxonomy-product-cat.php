@@ -146,10 +146,10 @@ if (!empty($child_terms)) {
 
                                     <?php
                                     $product_catch      = function_exists('get_field') ? get_field('product_catch', get_the_ID()) : '';
-                                    $product_usage      = function_exists('get_field') ? get_field('product_usage', get_the_ID()) : '';
+                                    $product_usage      = function_exists('get_field') ? get_field('product_indication', get_the_ID()) : '';
                                     $product_feature    = function_exists('get_field') ? get_field('product_feature', get_the_ID()) : '';
-                                    $product_fix_method = function_exists('get_field') ? get_field('product_fix_method', get_the_ID()) : '';
-                                    $product_material   = function_exists('get_field') ? get_field('product_material', get_the_ID()) : '';
+                                    $product_fix_method = function_exists('get_field') ? get_field('product_feature', get_the_ID()) : '';
+                                    $product_material   = function_exists('get_field') ? get_field('product_shade', get_the_ID()) : '';
                                     $product_prostheses = get_the_terms(get_the_ID(), 'product-prosthesis');
                                     ?>
 
@@ -161,7 +161,7 @@ if (!empty($child_terms)) {
                                 <div class="p-product-category__footer">
                                     <div class="p-product-category__spec">
                                         <div class="p-product-category__specRow">
-                                            <span class="p-product-category__specLabel">用途</span>
+                                            <span class="p-product-category__specLabel">適応部位</span>
                                             <p class="p-product-category__specContent">
                                                 <?php echo esc_html($product_usage); ?>
                                             </p>
@@ -175,14 +175,14 @@ if (!empty($child_terms)) {
                                         </div>
 
                                         <div class="p-product-category__specRow">
-                                            <span class="p-product-category__specLabel">固定方法</span>
+                                            <span class="p-product-category__specLabel">保証期間</span>
                                             <p class="p-product-category__specContent">
                                                 <?php echo esc_html($product_fix_method); ?>
                                             </p>
                                         </div>
 
                                         <div class="p-product-category__specRow">
-                                            <span class="p-product-category__specLabel">素材</span>
+                                            <span class="p-product-category__specLabel">シェード</span>
                                             <p class="p-product-category__specContent">
                                                 <?php echo esc_html($product_material); ?>
                                             </p>

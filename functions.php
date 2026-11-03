@@ -1,5 +1,6 @@
 <?php
 require_once get_theme_file_path('/inc/contact-forms.php');
+require_once get_theme_file_path('/inc/acf-fields.php');
 
 function my_script_init()
 {
