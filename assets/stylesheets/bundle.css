@@ -92,7 +92,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-  background-color: #1a1a1a;
+  background-color: #000000;
   color: #fff;
   letter-spacing: 0.08em;
   position: relative;
@@ -5677,7 +5677,7 @@ button.swiper-pagination-bullet {
   transform: translateX(-50%);
 
   /* 画像間の余白を埋めるベースカラー（サイト全体の暗色に馴染ませる） */
-  background-color: #1a1a1a;
+  background-color: #000000;
 
   /* 3枚を重なり・サイズ差をつけてコラージュ配置 */
   background-image:
@@ -6048,6 +6048,12 @@ font-size: 16px;
   }
 
   /* ←ここ重要：SPで max-width:300px を絶対に書かない */
+}
+
+/* トリミングせず画像全体を表示（お支払い画像など） */
+.p-transaction__img.p-transaction__img--full{
+  aspect-ratio: auto;
+  object-fit: contain;
 }
 
 .c-button-red {

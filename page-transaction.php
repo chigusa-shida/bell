@@ -100,10 +100,10 @@ get_header();
                     </div>
                     <div class="p-transaction__content">
                         <div class="p-transaction__text">
-                            <p>Aお振込みまたはクレジットカード払い(American Express ・ Diners ・ Visa ・ Mastercard)をご利用いただけます。</p>
+                            <p>お振込みまたはクレジットカード払い(American Express ・ Diners ・ Visa ・ Mastercard)をご利用いただけます。</p>
                         </div>
                         <div class="p-transaction__media">
-                            <img loading="lazy" class="p-transaction__img" src="<?php echo esc_url(get_theme_file_uri('assets/images/transaction-payment.jpg')); ?>" alt="">
+                            <img loading="lazy" class="p-transaction__img p-transaction__img--full" src="<?php echo esc_url(get_theme_file_uri('assets/images/transaction-payment.jpg')); ?>" alt="">
                         </div>
                     </div>
                 </div>
