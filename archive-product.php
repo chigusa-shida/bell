@@ -60,7 +60,7 @@ get_header();
                 <li class="p-product-cat__item">
                   <a class="p-product-cat__card" href="<?php echo esc_url($term_link); ?>">
                     <span class="p-product-cat__thumb">
-                      <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($term->name); ?>">
+                      <img loading="lazy" src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($term->name); ?>">
                     </span>
 
                     <?php

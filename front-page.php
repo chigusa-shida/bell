@@ -93,7 +93,7 @@
                 <div>
                   <picture>
                     <source srcset="<?php echo get_theme_file_uri('assets/images/home_about-01.webp'); ?>" type="image/webp" />
-                    <img src="<?php echo get_theme_file_uri('assets/images/home_about-01.jpg'); ?>" alt="営業サポート" />
+                    <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/home_about-01.jpg'); ?>" alt="営業サポート" />
                   </picture>
                 </div>
               </div>
@@ -120,7 +120,7 @@
                       <div class="p-home-advantage-card__img">
                         <picture>
                           <source srcset="<?php echo get_theme_file_uri('assets/images/reason_1.webp'); ?>" type="image/webp" />
-                          <img src="<?php echo get_theme_file_uri('assets/images/reason_1.jpg'); ?>" alt="制作事例" />
+                          <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/reason_1.jpg'); ?>" alt="制作事例" />
                         </picture>
                       </div>
                     </div>
@@ -143,7 +143,7 @@
                     <div class="p-home-advantage-card__img">
                       <picture>
                         <source srcset="<?php echo get_theme_file_uri('assets/images/reason_2.webp'); ?>" type="image/webp" />
-                        <img src="<?php echo get_theme_file_uri('assets/images/reason_2.jpg'); ?>" alt="設備情報" />
+                        <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/reason_2.jpg'); ?>" alt="設備情報" />
                       </picture>
                     </div>
                   </a>
@@ -163,7 +163,7 @@
                     <div class="p-home-advantage-card__img">
                       <picture>
                         <source srcset="<?php echo get_theme_file_uri('assets/images/reason_3.webp'); ?>" type="image/webp" />
-                        <img src="<?php echo get_theme_file_uri('assets/images/reason_3.jpg'); ?>" alt="営業サポート" />
+                        <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/reason_3.jpg'); ?>" alt="営業サポート" />
                       </picture>
                     </div>
                   </a>
@@ -198,7 +198,7 @@
               <div class="p-home-product__imge">
                 <picture>
                   <source srcset="<?php echo get_theme_file_uri('assets/images/product_top.webp'); ?>" type="image/webp" />
-                  <img src="<?php echo get_theme_file_uri('assets/images/product_top.jpg'); ?>" alt="制作事例" />
+                  <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/product_top.jpg'); ?>" alt="制作事例" />
                 </picture>
               </div>
             </div><!-- p-home-product -->
@@ -215,7 +215,7 @@
                 <div class="p-home-shop__logo">
                   <picture>
                     <source srcset="<?php echo get_theme_file_uri('assets/images/dentalbin24_logo.webp'); ?>" type="image/webp" />
-                    <img src="<?php echo get_theme_file_uri('assets/images/dentalbin24_logo.jpg'); ?>" alt="デンタル便ロゴ" />
+                    <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/dentalbin24_logo.jpg'); ?>" alt="デンタル便ロゴ" />
                   </picture>
                 </div>
                 <div class="p-home-shop__desc">

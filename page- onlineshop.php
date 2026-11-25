@@ -54,7 +54,7 @@ get_header('shop');
             </div>
           </div>
           <div class="p-shop-comparison__imge">
-            <img src="<?php echo get_theme_file_uri('assets/images/shop-comparison.svg'); ?>" alt="発注行程比較">
+            <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/shop-comparison.svg'); ?>" alt="発注行程比較">
           </div>
         </div>
       </section>
@@ -71,7 +71,7 @@ get_header('shop');
                       納期で割安
                     </h3>
                     <div class="p-shop-merit__icon">
-                      <img src="<?php echo get_theme_file_uri('assets/images/merit-1.svg'); ?>" alt="発注行程比較">
+                      <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/merit-1.svg'); ?>" alt="発注行程比較">
                     </div>
                   </div>
                   <div class="p-shop-merit__card--bottom">
@@ -89,7 +89,7 @@ get_header('shop');
                       ペーパレス
                     </h3>
                     <div class="p-shop-merit__icon">
-                      <img src="<?php echo get_theme_file_uri('assets/images/merit-2.svg'); ?>" alt="発注行程比較">
+                      <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/merit-2.svg'); ?>" alt="発注行程比較">
                     </div>
                   </div>
                   <div class="p-shop-merit__card--bottom">
@@ -107,7 +107,7 @@ get_header('shop');
                       24時間対応
                     </h3>
                     <div class="p-shop-merit__icon">
-                      <img src="<?php echo get_theme_file_uri('assets/images/merit-3.svg'); ?>" alt="発注行程比較">
+                      <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/merit-3.svg'); ?>" alt="発注行程比較">
                     </div>
                   </div>
                   <div class="p-shop-merit__card--bottom">
@@ -126,7 +126,7 @@ get_header('shop');
                       キャッシュレス
                     </h3>
                     <div class="p-shop-merit__icon">
-                      <img src="<?php echo get_theme_file_uri('assets/images/merit-4.svg'); ?>" alt="発注行程比較">
+                      <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/merit-4.svg'); ?>" alt="発注行程比較">
                     </div>
                   </div>
                   <div class="p-shop-merit__card--bottom">
@@ -380,10 +380,10 @@ get_header('shop');
                 <div class="p-shop-info__card-cont--bottom">
                   <div class="p-shop-info__card-main">
                     <div class="p-shop-info__card-main--left">
-                      <img src="<?php echo get_theme_file_uri('assets/images/shop-info-mail.svg'); ?>" alt="メールアイコン">
+                      <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/shop-info-mail.svg'); ?>" alt="メールアイコン">
                     </div>
                     <div class="p-shop-info__card-main--right">
-                      <img src="<?php echo get_theme_file_uri('assets/images/dentalbin24_logo.webp'); ?>" alt="デンタル便24ロゴ" />
+                      <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/dentalbin24_logo.webp'); ?>" alt="デンタル便24ロゴ" />
                       <div class="p-shop-info__card-main--btn">
                         <a href="https://www.dentalbin24.net/" target="_blank" rel="noopener noreferrer">
                           デンタル便24
@@ -405,7 +405,7 @@ get_header('shop');
                 <div class="p-shop-info__card-cont--bottom">
                   <div class="p-shop-info__card-main">
                     <div class="p-shop-info__card-main--left">
-                      <img src="<?php echo get_theme_file_uri('assets/images/shop-info-tel.svg'); ?>" alt="電話アイコン">
+                      <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/shop-info-tel.svg'); ?>" alt="電話アイコン">
                     </div>
                     <div class="p-shop-info__card-main--right">
                       <p class="p-shop-info__tel">03-6424-5224</p>
@@ -429,7 +429,7 @@ get_header('shop');
   <div class="p-shop-bottomMenu__content">
     <ul class="p-shop-bottomMenu__list">
       <li class="p-shop-bottomMenu__list--pc">
-        <img src="<?php echo get_theme_file_uri('assets/images/dentalbin24_logo.webp'); ?>" alt="デンタル便24ロゴ" />
+        <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/dentalbin24_logo.webp'); ?>" alt="デンタル便24ロゴ" />
       </li>
       <li>
         <div class="p-shop-bottomMenu__button">

@@ -66,7 +66,7 @@ get_header();
                             <p>是非ご活用ください。</p>
                         </div>
                         <div class="p-transaction__media">
-                            <img class="p-transaction__img" src="<?php echo esc_url(get_theme_file_uri('assets/images/transaction_img_02.jpg')); ?>" alt="歯科技工製品の宅配に使用する宅配パッキングセット">
+                            <img loading="lazy" class="p-transaction__img" src="<?php echo esc_url(get_theme_file_uri('assets/images/transaction_img_02.jpg')); ?>" alt="歯科技工製品の宅配に使用する宅配パッキングセット">
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ get_header();
                             <p>IOSで採得された場合も製作可能でございます。</p> -->
                         </div>
                         <div class="p-transaction__media is-one">
-                            <img class="p-transaction__img" src="<?php echo esc_url(get_theme_file_uri('assets/images/dentalbin24_logo.webp')); ?>" alt="">
+                            <img loading="lazy" class="p-transaction__img" src="<?php echo esc_url(get_theme_file_uri('assets/images/dentalbin24_logo.webp')); ?>" alt="">
                         </div>
                     </div>
                     <!-- <div class="p-transaction__actions">
@@ -103,7 +103,7 @@ get_header();
                             <p>Aお振込みまたはクレジットカード払い(American Express ・ Diners ・ Visa ・ Mastercard)をご利用いただけます。</p>
                         </div>
                         <div class="p-transaction__media">
-                            <img class="p-transaction__img" src="<?php echo esc_url(get_theme_file_uri('assets/images/transaction-payment.jpg')); ?>" alt="">
+                            <img loading="lazy" class="p-transaction__img" src="<?php echo esc_url(get_theme_file_uri('assets/images/transaction-payment.jpg')); ?>" alt="">
                         </div>
                     </div>
                 </div>

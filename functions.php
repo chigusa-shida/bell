@@ -21,6 +21,16 @@ function my_script_init()
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
 
+// 3D FlipBookは本文でフリップブックを使うページ以外では読み込まない
+add_action('wp_enqueue_scripts', function () {
+  $post = get_queried_object();
+  if (is_singular() && $post instanceof WP_Post && strpos($post->post_content, 'dflip') !== false) {
+    return;
+  }
+  wp_dequeue_script('dflip-script');
+  wp_dequeue_style('dflip-style');
+}, 100);
+
 function add_wp_fontawesome()
 {
 ?>

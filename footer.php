@@ -11,7 +11,7 @@
           </div>
           <div class="p-footer__logo">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="p-footer__logo--inner">
-              <img src="<?php echo get_theme_file_uri('assets/images/footer-logo.webp'); ?>" alt="ベルデンタルラボラトリー・エフイス ロゴ" />
+              <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/footer-logo.webp'); ?>" alt="ベルデンタルラボラトリー・エフイス ロゴ" />
             </a>
           </div>
           <div class="p-footer__detail p-footer__detail--right">

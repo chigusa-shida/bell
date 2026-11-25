@@ -12,7 +12,7 @@
         <div class="p-footer-top__item--img">
           <picture>
             <source srcset="<?php echo get_theme_file_uri('assets/images/footer_contact.webp'); ?>" type="image/webp" />
-            <img src="<?php echo get_theme_file_uri('assets/images/footer_contact.jpg'); ?>" alt="" />
+            <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/footer_contact.jpg'); ?>" alt="" />
           </picture>
         </div>
       </a>
@@ -26,7 +26,7 @@
         <div class="p-footer-top__item--img">
           <picture>
             <source srcset="<?php echo get_theme_file_uri('assets/images/footer_deadline.webp'); ?>" type="image/webp" />
-            <img src="<?php echo get_theme_file_uri('assets/images/footer_deadline.jpg'); ?>" alt="" />
+            <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/footer_deadline.jpg'); ?>" alt="" />
           </picture>
         </div>
       </a>
@@ -40,7 +40,7 @@
         <div class="p-footer-top__item--img">
           <picture>
             <source srcset="<?php echo get_theme_file_uri('assets/images/footer_catalog.webp'); ?>" type="image/webp" />
-            <img src="<?php echo get_theme_file_uri('assets/images/footer_catalog.jpg'); ?>" alt="" />
+            <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/footer_catalog.jpg'); ?>" alt="" />
           </picture>
         </div>
       </a>

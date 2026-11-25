@@ -440,7 +440,8 @@ add_filter('wp_mail_from_name', function ($from_name) {
 add_action('wp_enqueue_scripts', function () {
   $settings = my_contact_get_settings();
 
-  if (!empty($settings['recaptcha_site_key'])) {
+  // フォームのあるページだけで読み込む
+  if (!empty($settings['recaptcha_site_key']) && is_page(['contact', 'entry'])) {
     wp_enqueue_script(
       'google-recaptcha-v2',
       'https://www.google.com/recaptcha/api.js',

@@ -12,7 +12,7 @@
         <div class="p-footer-top__item--img">
           <picture>
             <source srcset="<?php echo get_theme_file_uri('assets/images/footer_company.webp'); ?>" type="image/webp" />
-            <img src="<?php echo get_theme_file_uri('assets/images/footer_company.jpg'); ?>" alt="" />
+            <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/footer_company.jpg'); ?>" alt="" />
           </picture>
         </div>
       </a>
@@ -26,7 +26,7 @@
         <div class="p-footer-top__item--img">
           <picture>
             <source srcset="<?php echo get_theme_file_uri('assets/images/footer_recruit.webp'); ?>" type="image/webp" />
-            <img src="<?php echo get_theme_file_uri('assets/images/footer_recruit.jpg'); ?>" alt="" />
+            <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/footer_recruit.jpg'); ?>" alt="" />
           </picture>
         </div>
       </a>

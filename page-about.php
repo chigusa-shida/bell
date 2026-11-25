@@ -68,10 +68,10 @@
                         <div class="p-career__media" aria-label="歯科技工士の作業風景と製作物">
                           <div class="p-career__collage">
                             <!-- 大（背景） -->
-                            <img class="p-career__img p-career__img--top" src="<?php echo esc_url(get_theme_file_uri('assets/images/technician-01.webp')); ?>" alt="" />
+                            <img loading="lazy" class="p-career__img p-career__img--top" src="<?php echo esc_url(get_theme_file_uri('assets/images/technician-01.webp')); ?>" alt="" />
 
                             <!-- 小（手前） -->
-                            <img class="p-career__img p-career__img--bottom" src="<?php echo esc_url(get_theme_file_uri('assets/images/technician-02.webp')); ?>" alt="" />
+                            <img loading="lazy" class="p-career__img p-career__img--bottom" src="<?php echo esc_url(get_theme_file_uri('assets/images/technician-02.webp')); ?>" alt="" />
                           </div>
                         </div>
                       </div>
@@ -88,10 +88,10 @@
                         <div class="p-career__media" aria-label="歯科技工士の作業風景と製作物">
                           <div class="p-career__collage">
                             <!-- 大（背景） -->
-                            <img class="p-career__img p-career__img--top" src="<?php echo esc_url(get_theme_file_uri('assets/images/about-sales-1.webp')); ?>" alt="" />
+                            <img loading="lazy" class="p-career__img p-career__img--top" src="<?php echo esc_url(get_theme_file_uri('assets/images/about-sales-1.webp')); ?>" alt="" />
 
                             <!-- 小（手前） -->
-                            <img class="p-career__img p-career__img--bottom" src="<?php echo esc_url(get_theme_file_uri('assets/images/about-sales-2.webp')); ?>" alt="" />
+                            <img loading="lazy" class="p-career__img p-career__img--bottom" src="<?php echo esc_url(get_theme_file_uri('assets/images/about-sales-2.webp')); ?>" alt="" />
                           </div>
                         </div>
                       </div>
@@ -108,10 +108,10 @@
                         <div class="p-career__media" aria-label="歯科技工士の作業風景と製作物">
                           <div class="p-career__collage">
                             <!-- 大（背景） -->
-                            <img class="p-career__img p-career__img--top" src="<?php echo esc_url(get_theme_file_uri('assets/images/about-jimu-01.webp')); ?>" alt="" />
+                            <img loading="lazy" class="p-career__img p-career__img--top" src="<?php echo esc_url(get_theme_file_uri('assets/images/about-jimu-01.webp')); ?>" alt="" />
 
                             <!-- 小（手前） -->
-                            <img class="p-career__img p-career__img--bottom" src="<?php echo esc_url(get_theme_file_uri('assets/images/about-jimu-02.webp')); ?>" alt="" />
+                            <img loading="lazy" class="p-career__img p-career__img--bottom" src="<?php echo esc_url(get_theme_file_uri('assets/images/about-jimu-02.webp')); ?>" alt="" />
                           </div>
                         </div>
                       </div>
@@ -181,7 +181,7 @@
                       <ul class="p-about-support__list">
                         <li class="p-about-support__item">
                           <div class="p-about-support__card">
-                            <img class="p-about-support__img"
+                            <img loading="lazy" class="p-about-support__img"
                               src="<?php echo esc_url(get_theme_file_uri('assets/images/about_environment_01.webp')); ?>"
                               alt="">
                             <div class="p-about-support__body">
@@ -194,7 +194,7 @@
 
                         <li class="p-about-support__item">
                           <div class="p-about-support__card">
-                            <img class="p-about-support__img"
+                            <img loading="lazy" class="p-about-support__img"
                               src="<?php echo esc_url(get_theme_file_uri('assets/images/about_environment_02.webp')); ?>"
                               alt="">
                             <div class="p-about-support__body">
@@ -216,7 +216,7 @@
               <div class="p-recruit-cta">
                 <div class="p-recruit-cta__inner">
                   <div class="p-recruit-cta__logo">
-                    <img src="<?php echo get_theme_file_uri('assets/images/footer-logo.webp'); ?>" alt="ベルデンタルラボラトリー ロゴ" />
+                    <img loading="lazy" src="<?php echo get_theme_file_uri('assets/images/footer-logo.webp'); ?>" alt="ベルデンタルラボラトリー ロゴ" />
                   </div>
                   <p class="p-recruit-cta__eyebrow">For Those Who Share Our Values</p>
                   <h3 class="p-recruit-cta__title">私たちは、ともに働く仲間を募集しています。</h3>
