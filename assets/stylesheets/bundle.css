@@ -6250,30 +6250,29 @@ font-size: 16px;
 .p-product-category__list{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
+  column-gap: 32px;
+  row-gap: 0; /* subgridの行内に余白が入らないよう、カード間の縦余白はitemのpaddingで取る */
   margin-top: 30px;
   align-items: stretch;
 }
 
+/* subgridで同じ行のカード同士の各要素の高さを揃える（画像〜注文の9行） */
 .p-product-category__item{
-  height: 100%;
   min-width: 0;
   list-style: none;
+  display: grid;
+  grid-row: span 9;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+  padding-bottom: 32px;
 }
 
 .p-product-category__card{
-  height: 100%;
   min-width: 0;
   display: grid;
-  grid-template-rows:
-    auto
-    auto
-    auto
-    auto
-    auto
-    auto
-    auto
-    auto;
+  grid-row: span 9;
+  grid-template-rows: subgrid;
+  row-gap: 0;
   align-content: start;
 }
 
@@ -6323,11 +6322,6 @@ font-size: 16px;
   margin: 0;
   font-size: 15px;
   line-height: 1.75;
-
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
 }
 
 .p-product-category__specRow:nth-of-type(1){
@@ -6447,7 +6441,10 @@ font-size: 16px;
 
   .p-product-category__list{
     grid-template-columns: 1fr;
-    gap: 50px;
+  }
+
+  .p-product-category__item{
+    padding-bottom: 50px;
   }
 
   .p-product-category__cardTitle{
@@ -6461,6 +6458,7 @@ font-size: 16px;
 }
 
 .p-product-category__order{
+  grid-row: 9;
   margin-top:25px;
   min-height:44px;
   display:flex;
