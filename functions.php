@@ -4,8 +4,8 @@ require_once get_theme_file_path('/inc/acf-fields.php');
 
 function my_script_init()
 {
-  // google fonts CSS
-  wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Quicksand:wght@300..700&family=Roboto+Condensed:wght@100..900&display=swap', array(), null);
+  // Webフォント（Google Fontsから取得したものを自前で配信。日本語は文字範囲ごとに分割済み）
+  wp_enqueue_style('theme-fonts', get_theme_file_uri('assets/stylesheets/fonts.css'), array(), filemtime(get_theme_file_path('assets/stylesheets/fonts.css')));
 
   //glob関数を使うことでPRODUCTION時のハッシュに対応したファイルに対応
   $cssFilePath = glob(get_template_directory() . '/assets/stylesheets/bundle*.css');

@@ -303,7 +303,6 @@
     // PC以外は見た目だけ戻して終了
     if (!MQ.matches) {
       viewport.style.height = "";
-      viewport.classList.remove("is-fading", "is-fadeout");
       panels.forEach((p, i) => p.classList.toggle("is-active", i === 0));
       dots.forEach((d, i) => d.classList.toggle("is-active", i === 0));
       return;
@@ -318,7 +317,7 @@
   
     const OFFSET = 20;
     const threshold = 80;
-    const cooldownMs = 550;
+    const cooldownMs = 900; // 切替アニメーション中に次へ進まないよう長めに
     const suppressMs = 700;
   
     // 固定header高さをCSS変数から取得
@@ -361,29 +360,17 @@
       viewport.style.height = `${Math.min(need, available)}px`;
     }
   
+    // 黒幕を挟まずクロスフェードで切り替え（演出はCSSのtransition）
     function setActive(i) {
       const next = Math.max(0, Math.min(panels.length - 1, i));
-  
-      viewport.classList.remove("is-fadeout");
-      viewport.classList.add("is-fading");
-  
-      panels.forEach((p) => p.classList.remove("is-active"));
-  
-      setTimeout(() => {
-        index = next;
-  
-        panels.forEach((p, pi) => p.classList.toggle("is-active", pi === index));
-        dots.forEach((d, di) => d.classList.toggle("is-active", di === index));
-  
-        fitSnapViewport();
-  
-        viewport.classList.remove("is-fading");
-        viewport.classList.add("is-fadeout");
-  
-        setTimeout(() => {
-          viewport.classList.remove("is-fadeout");
-        }, 1200);
-      }, 200);
+      if (next === index) return;
+
+      index = next;
+
+      panels.forEach((p, pi) => p.classList.toggle("is-active", pi === index));
+      dots.forEach((d, di) => d.classList.toggle("is-active", di === index));
+
+      fitSnapViewport();
     }
   
     function lockPage() {
@@ -483,7 +470,6 @@
       MQ.removeEventListener("change", onMediaChange);
   
       viewport.style.height = "";
-      viewport.classList.remove("is-fading", "is-fadeout");
       locked = false;
     };
   
